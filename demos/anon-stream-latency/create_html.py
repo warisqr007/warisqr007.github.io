@@ -15,8 +15,10 @@ html_fpath.write("\t</tr>\n")
 for chunk_size in [20, 40, 80, 160, 240, 320]:
     html_fpath.write("\t<tr>\n")
     html_fpath.write("\t\t<td rowspan=\"3\">"+str(chunk_size)+"ms</td>\n")
-    for sample in ["arctic_a0010", "arctic_a0011", "arctic_a0012"]:
-        for model in ["input", "base", "lite"]:
+    for i, sample in enumerate(["arctic_a0010", "arctic_a0011", "arctic_a0012"]):
+        if i != 0:
+            html_fpath.write("\t<tr>\n")
+        for j, model in enumerate(["input", "base", "lite"]):
             if model == "input":
                 audio_fpath = f"wav/input/{sample}.wav"
             else:
@@ -27,7 +29,7 @@ for chunk_size in [20, 40, 80, 160, 240, 320]:
             html_fpath.write("\t\t\t</audio>\n")
             html_fpath.write("\t\t<td>\n")
         
-        html_fpath.write("\t\t<td>\n")
+        # html_fpath.write("\t\t<td>\n")
         html_fpath.write("\t</tr>\n")
 
 html_fpath.write("</tbody>\n")
