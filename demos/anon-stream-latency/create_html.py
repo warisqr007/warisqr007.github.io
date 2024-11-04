@@ -27,8 +27,8 @@ for chunk_size in [20, 40, 80, 160, 240, 320]:
             html_fpath.write("\t\t\t</audio>\n")
             html_fpath.write("\t\t<td>\n")
         
-    html_fpath.write("\t\t<td>\n")
-    html_fpath.write("\t</tr>\n")
+        html_fpath.write("\t\t<td>\n")
+        html_fpath.write("\t</tr>\n")
 
 html_fpath.write("</tbody>\n")
 html_fpath.write("</table>\n")
