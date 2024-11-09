@@ -102,7 +102,7 @@ pre code {
 <tbody>
 <tr>
 <td>
-<h1>End-to-end Streaming model for Low-Latency Speech Anonymization</h1>
+<h1>Attribute Editing in Embedding Space</h1>
 <h2>Waris Quamer<sup>1</sup>, Ricardo Gutierrez-Osuna<sup>1</sup></h2>
 <h2><sup>1</sup>Department of Computer Science and Engineering, Texas A&M University, USA</h2>
 </td>
@@ -110,8 +110,225 @@ pre code {
 </table>
 <main>
 
+    <!-- <h2>Attribute Editing in Embedding Space</h2> -->
+    <p>We have developed a parametric approach to modify specific speaker attributes, such as age and gender, within latent speaker embeddings. First, we applied principal component analysis (PCA) to the speaker embeddings, then we identified PC directions in the latent space that correlate with the desired attributes. For this purpose, we computed the Pearson correlation coefficient ρ of each PCA dimension with the speaker attributes (e.g., age).</p>
+    
+    <p>Then, we used these correlation coefficients as weights to construct a composite direction V<sub>age</sub> that captures the primary variance associated with age:</p>
+    
+    <p style="text-align: center;">V<sub>age</sub> = w<sub>1</sub> PC<sub>1</sub> + w<sub>2</sub> PC<sub>2</sub> + ⋯</p>
+    
+    <p>where, w<sub>i</sub> = ρ(PC<sub>i</sub>, age). To modify the attribute in the embedding, we adjust the original embedding Z along this direction:</p>
+    
+    <p style="text-align: center;">Z' = Z + λV<sub>age</sub></p>
+    
+    <p>where λ controls the extent of modification: positive λ increases the attribute (e.g., age), while negative λ decreases it. This method enables fine-grained control over age or gender within speaker embeddings by moving in attribute-correlated directions in latent space, as illustrated in the figure below. Note that, by identifying these latent vectors along the directions of highest variance in the data, the approach is robust to noise. Audio samples of the results of our approach to attribute editing are available in a footnote.</p>
+    
+    <!-- <h3>Figure: Attribute editing in embedding space via principal components projections</h3> -->
+    <figure>
+        <img style="display: block; margin: 20px auto; max-width: 100%;" src="image.png" alt="Attribute Editing Diagram" >
+        <figcaption>Attribute editing in embedding space via principal components projections</figcaption>
+    </figure>
+    <!-- <img src="image.png" alt="Attribute Editing Diagram" style="display: block; margin: 20px auto; max-width: 100%;"> -->
 
+    <h2>Notes</h2>
+    <ul>
+        <li>Dataset (CMU-ARCTIC corpus): <a href="http://www.festvox.org/cmu_arctic/">http://www.festvox.org/cmu_arctic/</a></li>
+        <li>Synthesis Model: End-to-end Streaming model for Low-Latency Speech Anonymization [1] [<a href="https://arxiv.org/abs/2406.09277" target="_blank">Arxiv</a>]</li>
+    </ul>
 
+    <h2></h2>
+    <p><br><br></p>
+
+    <h2>Audio Samples</h2>
+    <p>Below are audio samples of the results of our approach to attribute editing in speaker embeddings.</p>  
+    <table class="samples">
+    <h2>Age Editing</h2>
+    <tbody>
+        <tr>
+            <th>Speaker</th>
+            <th>Age --</th>
+            <th>Original</th>
+            <th>Age ++</th>
+        </tr>
+        <tr>
+            <td>
+                BDL (Male)
+            </td>
+            <td>
+                <audio controls="">
+                    <source src="wav/input/BDL/arctic_a0002.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+                </audio>
+            </td>
+            <td>
+                <audio controls="">
+                    <source src="wav/base/BDL/arctic_a0002.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+                </audio>
+            </td>
+            <td>
+                <audio controls="">
+                    <source src="wav/lite/BDL/arctic_a0002.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+                </audio>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                RMS (Male)
+            </td>
+            <td>
+                <audio controls="">
+                    <source src="wav/input/BDL/arctic_a0002.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+                </audio>
+            </td>
+            <td>
+                <audio controls="">
+                    <source src="wav/base/BDL/arctic_a0002.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+                </audio>
+            </td>
+            <td>
+                <audio controls="">
+                    <source src="wav/lite/BDL/arctic_a0002.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+                </audio>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                SLT (Female)
+            </td>
+            <td>
+                <audio controls="">
+                    <source src="wav/input/BDL/arctic_a0002.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+                </audio>
+            </td>
+            <td>
+                <audio controls="">
+                    <source src="wav/base/BDL/arctic_a0002.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+                </audio>
+            </td>
+            <td>
+                <audio controls="">
+                    <source src="wav/lite/BDL/arctic_a0002.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+                </audio>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                CLB (Female)
+            </td>
+            <td>
+                <audio controls="">
+                    <source src="wav/input/BDL/arctic_a0002.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+                </audio>
+            </td>
+            <td>
+                <audio controls="">
+                    <source src="wav/base/BDL/arctic_a0002.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+                </audio>
+            </td>
+            <td>
+                <audio controls="">
+                    <source src="wav/lite/BDL/arctic_a0002.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+                </audio>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2></h2>
+<p><br><br></p>
+<table class="samples">
+    <h2>Sex Editing</h2>
+    <tbody>
+        <tr>
+            <th>Speaker</th>
+            <th>Feminine --</th>
+            <th>Original</th>
+            <th>Feminine ++</th>
+        </tr>
+        <tr>
+            <td>
+                BDL (Male)
+            </td>
+            <td>
+                <audio controls="">
+                    <source src="wav/input/BDL/arctic_a0002.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+                </audio>
+            </td>
+            <td>
+                <audio controls="">
+                    <source src="wav/base/BDL/arctic_a0002.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+                </audio>
+            </td>
+            <td>
+                <audio controls="">
+                    <source src="wav/lite/BDL/arctic_a0002.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+                </audio>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                RMS (Male)
+            </td>
+            <td>
+                <audio controls="">
+                    <source src="wav/input/BDL/arctic_a0002.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+                </audio>
+            </td>
+            <td>
+                <audio controls="">
+                    <source src="wav/base/BDL/arctic_a0002.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+                </audio>
+            </td>
+            <td>
+                <audio controls="">
+                    <source src="wav/lite/BDL/arctic_a0002.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+                </audio>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                SLT (Female)
+            </td>
+            <td>
+                <audio controls="">
+                    <source src="wav/input/BDL/arctic_a0002.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+                </audio>
+            </td>
+            <td>
+                <audio controls="">
+                    <source src="wav/base/BDL/arctic_a0002.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+                </audio>
+            </td>
+            <td>
+                <audio controls="">
+                    <source src="wav/lite/BDL/arctic_a0002.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+                </audio>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                CLB (Female)
+            </td>
+            <td>
+                <audio controls="">
+                    <source src="wav/input/BDL/arctic_a0002.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+                </audio>
+            </td>
+            <td>
+                <audio controls="">
+                    <source src="wav/base/BDL/arctic_a0002.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+                </audio>
+            </td>
+            <td>
+                <audio controls="">
+                    <source src="wav/lite/BDL/arctic_a0002.wav" type="audio/wav">Your browser does not support the audio tag.</source>
+                </audio>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h2></h2>
+<p><br><br></p>
+<h2>References</h2>
+<p>[1] W. Quamer <i>et al</i>., "End-to-end streaming model for low-latency speech anonymization," in <i>IEEE SLT 2024</i>.</p>
 <h2></h2>
 <p><br><br><br><br><br></p>
 </main>
