@@ -320,6 +320,48 @@
                 text-align: left;
             }
         }
+
+        /* Prompt appendix styling */
+        .prompt-section {
+            max-width: 900px;
+            margin: 32px auto;
+            padding: 16px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: var(--panel);
+        }
+
+        .prompt-section h2 {
+            margin-top: 0;
+            font-size: 22px;
+        }
+
+        .prompt-section h3 {
+            margin: 20px 0 8px;
+            font-size: 18px;
+            color: var(--accent);
+        }
+
+        .prompt-section p {
+            margin: 6px 0 12px;
+            color: var(--muted);
+        }
+
+        pre.prompt-block {
+            background: #0f1220;
+            color: #e8eaed;
+            padding: 14px;
+            border-radius: 10px;
+            overflow-x: auto;
+            font-size: 13px;
+            line-height: 1.45;
+            border: 1px solid var(--border);
+        }
+
+        pre.prompt-block code {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+        }
+
     </style>
 </head>
 
@@ -1021,6 +1063,83 @@ Expressive text-to-speech (TTS) for automated dubbing often misses time-varying 
 
         </div>
     </section>
+
+    <section class="prompt-section">
+        <h2>A. Language Model Prompts</h2>
+
+        <h3>A.1 Vision LM Prompt</h3>
+        <p>Prompt used for structured, observation-grounded video scene analysis.</p>
+
+        <pre class="prompt-block"><code>[
+        {
+            "role": "system",
+            "content": "You are an expert video scene analyst who provides objective, structured descriptions of video content. Your analysis focuses solely on observable details within the frames. You describe scenes using a specific template format, carefully avoiding assumptions or hallucinations about information not directly visible. When analyzing character interactions and emotions, you may make reasonable inferences based only on clear visual cues present in the footage."
+        },
+        {
+            "role": "user",
+            "content": [
+                {
+                    "type": "video",
+                    "video": {
+                        "video_path": video_path,
+                        "fps": 1,
+                        "max_frames": 180
+                    }
+                },
+                {
+                    "type": "text",
+                    "text": "Please describe the scene in the following structured format:\nScene Setting: Describe the physical location, lighting conditions, and overall atmosphere in one sentence.\nSpeaker Demographics: Describe the approximate age range (child, teenager, young adult, middle-aged, elderly) and gender presentation of any speaking characters.\nActions: Describe the primary movements and actions of the characters in one sentence, focusing on what they are physically doing.\nCharacter Interactions: Describe how the characters relate to and engage with each other in one sentence, including eye contact, spatial relationships, and non-verbal communication.\nEmotional Expression: Describe the facial expressions, body language, and emotional cues displayed by the characters in one sentence.\nVisual Composition: Describe the camera angle, framing, and any notable cinematographic techniques used in one sentence.\nEnvironmental Acoustics: Describe the likely acoustic properties of the space and any visible sources of background sound.\n\n### ANSWER TEMPLATE ###\n1. Scene Setting: '';\n2. Speaker Demographics: '';\n3. Actions: '';\n4. Character Interactions: '';\n5. Emotional Expression: '';\n6. Visual Composition: '';\n7. Environmental Acoustics: ''.\n\nNote: Focus only on observable details and avoid hallucinations."
+                }
+            ]
+        }
+    ]</code></pre>
+
+        <h3>A.2 Audio LM Prompt</h3>
+        <p>Prompt used for layered emotional and acoustic analysis from speech.</p>
+
+        <pre class="prompt-block"><code>[
+        {
+            "role": "system",
+            "content": "You are an expert in audio-based emotional analysis with exceptional ability to detect nuanced emotional states from speech patterns, vocal tones, and audio cues. Your task is to provide detailed, layered emotional descriptions from the audio input. Do not hallucinate information."
+        },
+        {
+            "role": "user",
+            "content": [
+                {
+                    "type": "audio",
+                    "audio_url": audio_path
+                },
+                {
+                    "type": "text",
+                    "text": "When analyzing the provided audio, please:\n1. Identify the primary emotional state expressed\n2. Detect underlying or secondary emotions present\n3. Note the intensity and progression of emotions\n4. Analyze vocal qualities (pitch, pacing, volume, strain)\n5. Use rich emotional vocabulary\n6. Identify speaker age range and gender\n7. Analyze the acoustic environment\n\nStructure the response as:\n## Speaker Voice Characteristics\n## Primary Emotional State\n## Emotional Layers and Nuance\n## Emotional Progression\n## Supporting Vocal Indicators\n## Acoustic Environment\n## Overall Emotional Description"
+                }
+            ]
+        }
+    ]</code></pre>
+
+        <h3>A.3 LLM Prompt (Dubbing Director)</h3>
+        <p>Prompt used to fuse multimodal analyses into concise, TTS-ready performance instructions.</p>
+
+        <pre class="prompt-block"><code>[
+        {
+            "role": "assistant",
+            "content": [
+                {
+                    "text": "You are an expert dubbing director creating concise TTS-ready performance instructions."
+                }
+            ]
+        },
+        {
+            "role": "user",
+            "content": [
+                {
+                    "text": "Synthesize the provided video and audio analysis into extremely brief performance guidance (maximum 45 words).\n\n## INPUT:\n1. VIDEO ANALYSIS\n{video_desc}\n\n2. AUDIO ANALYSIS\n{audio_desc}\n\n## OUTPUT REQUIREMENTS:\n- Speaker demographics\n- Brief scene context\n- Core emotional state and nuance\n- Emotional progression\n- Vocal qualities (pace, pitch, volume)\n- Environmental acoustics\n\nUse only TTS-compatible notation and avoid complex formatting."
+                }
+            ]
+        }
+    ]</code></pre>
+    </section>
+
 <div class="disclaimer" style="background-color: #f9f9f9; border-left: 4px solid #ccc; padding: 15px; margin: 20px 0; font-size: 14px;">
   <p><strong>Disclaimer:</strong> The comparisons presented on this website are for research purposes only and serve as an instantiation of the associated paper.</p>
   
