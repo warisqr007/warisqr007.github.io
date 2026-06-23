@@ -1,0 +1,218 @@
+[
+  {
+    "attribute": "age",
+    "age_group": "young_20s",
+    "gender_group": "male",
+    "cohort": "20s M",
+    "item_id": "GLOBE::train::S_021413::00039664_000006.v2.vad",
+    "dataset": "GLOBE",
+    "source_wav": "/data/waris/data/GLOBE/data/train/S_021413/wav/00039664_000006.v2.vad.wav"
+  },
+  {
+    "attribute": "age",
+    "age_group": "young_20s",
+    "gender_group": "female",
+    "cohort": "20s F",
+    "item_id": "GLOBE::train::S_008132::00022382_000004.v2.vad",
+    "dataset": "GLOBE",
+    "source_wav": "/data/waris/data/GLOBE/data/train/S_008132/wav/00022382_000004.v2.vad.wav"
+  },
+  {
+    "attribute": "age",
+    "age_group": "mid_40s",
+    "gender_group": "male",
+    "cohort": "40s M",
+    "item_id": "AESRC::Indian_G0760::G0760S1086",
+    "dataset": "AESRC",
+    "source_wav": "/data/waris/data/AESRC/data/Indian_G0760/wav/G0760S1086.wav"
+  },
+  {
+    "attribute": "age",
+    "age_group": "mid_40s",
+    "gender_group": "female",
+    "cohort": "40s F",
+    "item_id": "GLOBE::train::S_021246::00035324_000006.v2.vad",
+    "dataset": "GLOBE",
+    "source_wav": "/data/waris/data/GLOBE/data/train/S_021246/wav/00035324_000006.v2.vad.wav"
+  },
+  {
+    "attribute": "age",
+    "age_group": "senior_60s",
+    "gender_group": "male",
+    "cohort": "60s M",
+    "item_id": "GLOBE::train::S_002429::00306976_000012.v2.vad",
+    "dataset": "GLOBE",
+    "source_wav": "/data/waris/data/GLOBE/data/train/S_002429/wav/00306976_000012.v2.vad.wav"
+  },
+  {
+    "attribute": "age",
+    "age_group": "senior_60s",
+    "gender_group": "female",
+    "cohort": "60s F",
+    "item_id": "AESRC::Indian_G01565::G01565S1260",
+    "dataset": "AESRC",
+    "source_wav": "/data/waris/data/AESRC/data/Indian_G01565/wav/G01565S1260.wav"
+  },
+  {
+    "attribute": "gender_male",
+    "age_group": "young_20s",
+    "gender_group": "male",
+    "cohort": "20s M",
+    "item_id": "GLOBE::train::S_002333::00266973_000004.v2.vad",
+    "dataset": "GLOBE",
+    "source_wav": "/data/waris/data/GLOBE/data/train/S_002333/wav/00266973_000004.v2.vad.wav"
+  },
+  {
+    "attribute": "gender_male",
+    "age_group": "young_20s",
+    "gender_group": "female",
+    "cohort": "20s F",
+    "item_id": "LibriTTS::7481::7481_101276_000139_000000",
+    "dataset": "LibriTTS",
+    "source_wav": "/data/waris/data/streamVC_data/data/7481/wav/7481_101276_000139_000000.wav"
+  },
+  {
+    "attribute": "gender_male",
+    "age_group": "mid_40s",
+    "gender_group": "male",
+    "cohort": "40s M",
+    "item_id": "VoxCeleb1::train::id11214::kf1ELZhWtEM::00004",
+    "dataset": "VoxCeleb1",
+    "source_wav": "/data/waris/data/Voxceleb/voxceleb1/train/wav/id11214/kf1ELZhWtEM/00004.wav"
+  },
+  {
+    "attribute": "gender_male",
+    "age_group": "mid_40s",
+    "gender_group": "female",
+    "cohort": "40s F",
+    "item_id": "VoxCeleb1::train::id10968::t3z1N9QWI_8::00005",
+    "dataset": "VoxCeleb1",
+    "source_wav": "/data/waris/data/Voxceleb/voxceleb1/train/wav/id10968/t3z1N9QWI_8/00005.wav"
+  },
+  {
+    "attribute": "gender_male",
+    "age_group": "senior_60s",
+    "gender_group": "male",
+    "cohort": "60s M",
+    "item_id": "NaturalVoices::MSP-PODCAST_6709::MSP-PODCAST_6709_14",
+    "dataset": "NaturalVoices",
+    "source_wav": "/data/waris/data/NaturalVoices/data/MSP-PODCAST_6709/wav/MSP-PODCAST_6709_14.wav"
+  },
+  {
+    "attribute": "gender_male",
+    "age_group": "senior_60s",
+    "gender_group": "female",
+    "cohort": "60s F",
+    "item_id": "NaturalVoices::MSP-PODCAST_1740::MSP-PODCAST_1740_843",
+    "dataset": "NaturalVoices",
+    "source_wav": "/data/waris/data/NaturalVoices/data/MSP-PODCAST_1740/wav/MSP-PODCAST_1740_843.wav"
+  },
+  {
+    "attribute": "pitch",
+    "age_group": "young_20s",
+    "gender_group": "male",
+    "cohort": "20s M",
+    "item_id": "LibriTTS::727::727_124443_000038_000002",
+    "dataset": "LibriTTS",
+    "source_wav": "/data/waris/data/streamVC_data/data/727/wav/727_124443_000038_000002.wav"
+  },
+  {
+    "attribute": "pitch",
+    "age_group": "young_20s",
+    "gender_group": "female",
+    "cohort": "20s F",
+    "item_id": "LibriTTS::7481::7481_101276_000139_000000",
+    "dataset": "LibriTTS",
+    "source_wav": "/data/waris/data/streamVC_data/data/7481/wav/7481_101276_000139_000000.wav"
+  },
+  {
+    "attribute": "pitch",
+    "age_group": "mid_40s",
+    "gender_group": "male",
+    "cohort": "40s M",
+    "item_id": "LibriTTS::3955::3955_181692_000006_000004",
+    "dataset": "LibriTTS",
+    "source_wav": "/data/waris/data/streamVC_data/data/3955/wav/3955_181692_000006_000004.wav"
+  },
+  {
+    "attribute": "pitch",
+    "age_group": "mid_40s",
+    "gender_group": "female",
+    "cohort": "40s F",
+    "item_id": "VoxCeleb1::train::id10968::t3z1N9QWI_8::00005",
+    "dataset": "VoxCeleb1",
+    "source_wav": "/data/waris/data/Voxceleb/voxceleb1/train/wav/id10968/t3z1N9QWI_8/00005.wav"
+  },
+  {
+    "attribute": "pitch",
+    "age_group": "senior_60s",
+    "gender_group": "male",
+    "cohort": "60s M",
+    "item_id": "LibriTTS::3955::3955_181692_000011_000004",
+    "dataset": "LibriTTS",
+    "source_wav": "/data/waris/data/streamVC_data/data/3955/wav/3955_181692_000011_000004.wav"
+  },
+  {
+    "attribute": "pitch",
+    "age_group": "senior_60s",
+    "gender_group": "female",
+    "cohort": "60s F",
+    "item_id": "LibriTTS::8778::8778_246974_000024_000009",
+    "dataset": "LibriTTS",
+    "source_wav": "/data/waris/data/streamVC_data/data/8778/wav/8778_246974_000024_000009.wav"
+  },
+  {
+    "attribute": "voice_quality_hnr",
+    "age_group": "young_20s",
+    "gender_group": "male",
+    "cohort": "20s M",
+    "item_id": "LibriTTS::727::727_124443_000038_000002",
+    "dataset": "LibriTTS",
+    "source_wav": "/data/waris/data/streamVC_data/data/727/wav/727_124443_000038_000002.wav"
+  },
+  {
+    "attribute": "voice_quality_hnr",
+    "age_group": "young_20s",
+    "gender_group": "female",
+    "cohort": "20s F",
+    "item_id": "NaturalVoices::MSP-PODCAST_3617::MSP-PODCAST_3617_325",
+    "dataset": "NaturalVoices",
+    "source_wav": "/data/waris/data/NaturalVoices/data/MSP-PODCAST_3617/wav/MSP-PODCAST_3617_325.wav"
+  },
+  {
+    "attribute": "voice_quality_hnr",
+    "age_group": "mid_40s",
+    "gender_group": "male",
+    "cohort": "40s M",
+    "item_id": "GLOBE::train::S_002060::00057675_000001.v2.vad",
+    "dataset": "GLOBE",
+    "source_wav": "/data/waris/data/GLOBE/data/train/S_002060/wav/00057675_000001.v2.vad.wav"
+  },
+  {
+    "attribute": "voice_quality_hnr",
+    "age_group": "mid_40s",
+    "gender_group": "female",
+    "cohort": "40s F",
+    "item_id": "NaturalVoices::MSP-PODCAST_0478::MSP-PODCAST_0478_1",
+    "dataset": "NaturalVoices",
+    "source_wav": "/data/waris/data/NaturalVoices/data/MSP-PODCAST_0478/wav/MSP-PODCAST_0478_1.wav"
+  },
+  {
+    "attribute": "voice_quality_hnr",
+    "age_group": "senior_60s",
+    "gender_group": "male",
+    "cohort": "60s M",
+    "item_id": "GLOBE::val::S_010055::00002970_000003.v2.vad",
+    "dataset": "GLOBE",
+    "source_wav": "/data/waris/data/GLOBE/data/val/S_010055/wav/00002970_000003.v2.vad.wav"
+  },
+  {
+    "attribute": "voice_quality_hnr",
+    "age_group": "senior_60s",
+    "gender_group": "female",
+    "cohort": "60s F",
+    "item_id": "LibriTTS::8778::8778_246974_000024_000009",
+    "dataset": "LibriTTS",
+    "source_wav": "/data/waris/data/streamVC_data/data/8778/wav/8778_246974_000024_000009.wav"
+  }
+]
