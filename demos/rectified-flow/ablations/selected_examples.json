@@ -1,0 +1,34 @@
+[
+  {
+    "attribute": "age",
+    "item_id": "GLOBE::train::S_007523::00435966_000002.v2.vad",
+    "dataset": "GLOBE",
+    "age_group": "young_20s",
+    "gender_group": "male",
+    "source_wav": "/data/waris/data/GLOBE/data/train/S_007523/wav/00435966_000002.v2.vad.wav"
+  },
+  {
+    "attribute": "gender_male",
+    "item_id": "LibriTTS::4234::4234_187735_000005_000000",
+    "dataset": "LibriTTS",
+    "age_group": "senior_60s",
+    "gender_group": "female",
+    "source_wav": "/data/waris/data/streamVC_data/data/4234/wav/4234_187735_000005_000000.wav"
+  },
+  {
+    "attribute": "pitch",
+    "item_id": "LibriTTS::6804::6804_79287_000013_000013",
+    "dataset": "LibriTTS",
+    "age_group": "senior_60s",
+    "gender_group": "male",
+    "source_wav": "/data/waris/data/streamVC_data/data/6804/wav/6804_79287_000013_000013.wav"
+  },
+  {
+    "attribute": "voice_quality_hnr",
+    "item_id": "LibriTTS::8108::8108_274318_000012_000000",
+    "dataset": "LibriTTS",
+    "age_group": "young_20s",
+    "gender_group": "male",
+    "source_wav": "/data/waris/data/streamVC_data/data/8108/wav/8108_274318_000012_000000.wav"
+  }
+]
