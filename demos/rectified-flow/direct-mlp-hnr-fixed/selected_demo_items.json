@@ -1,0 +1,34 @@
+{
+  "age": {
+    "mid_40s/female": "NaturalVoices::MSP-PODCAST_1279::MSP-PODCAST_1279_101",
+    "mid_40s/male": "VoxCeleb1::train::id11214::kf1ELZhWtEM::00004",
+    "senior_60s/female": "NaturalVoices::MSP-PODCAST_2478::MSP-PODCAST_2478_279",
+    "senior_60s/male": "NaturalVoices::MSP-PODCAST_2124::MSP-PODCAST_2124_214",
+    "young_20s/female": "NaturalVoices::MSP-PODCAST_1541::MSP-PODCAST_1541_526",
+    "young_20s/male": "VoxCeleb1::train::id10246::BNvnSCsKngw::00020"
+  },
+  "gender_male": {
+    "mid_40s/female": "AESRC::Portuguese_G10503::G10503S1196",
+    "mid_40s/male": "VoxCeleb1::train::id10922::dzCIG5YuVj0::00001",
+    "senior_60s/female": "LibriTTS::7883::7883_260944_000021_000000",
+    "senior_60s/male": "NaturalVoices::MSP-PODCAST_0777::MSP-PODCAST_0777_265",
+    "young_20s/female": "LibriTTS::8543::8543_280375_000043_000001",
+    "young_20s/male": "NaturalVoices::MSP-PODCAST_4903::MSP-PODCAST_4903_1389"
+  },
+  "pitch": {
+    "mid_40s/female": "NaturalVoices::MSP-PODCAST_4508::MSP-PODCAST_4508_154",
+    "mid_40s/male": "AESRC::British_G10805::G10805S1223",
+    "senior_60s/female": "NaturalVoices::MSP-PODCAST_6007::MSP-PODCAST_6007_232",
+    "senior_60s/male": "NaturalVoices::MSP-PODCAST_6922::MSP-PODCAST_6922_77",
+    "young_20s/female": "NaturalVoices::MSP-PODCAST_1330::MSP-PODCAST_1330_1006",
+    "young_20s/male": "VoxCeleb1::train::id10052::qaAeXlQcn2k::00008"
+  },
+  "voice_quality_hnr": {
+    "mid_40s/female": "VoxCeleb1::train::id10032::AVCdDfeeYuY::00003",
+    "mid_40s/male": "NaturalVoices::MSP-PODCAST_2057::MSP-PODCAST_2057_10",
+    "senior_60s/female": "LibriTTS::6206::6206_14958_000023_000000",
+    "senior_60s/male": "NaturalVoices::MSP-PODCAST_6922::MSP-PODCAST_6922_77",
+    "young_20s/female": "VoxCeleb1::train::id10073::uQEWZAL6rXg::00003",
+    "young_20s/male": "VoxCeleb1::train::id10810::PEgPMe2yjqo::00003"
+  }
+}
