@@ -1,0 +1,22 @@
+{
+  "age": {
+    "dir": "/data/waris/code/warisqr007.github.io/user-study/RAFT-Edit/age",
+    "trials": 20,
+    "index": "/data/waris/code/warisqr007.github.io/user-study/RAFT-Edit/age/index.html"
+  },
+  "gender": {
+    "dir": "/data/waris/code/warisqr007.github.io/user-study/RAFT-Edit/gender",
+    "trials": 20,
+    "index": "/data/waris/code/warisqr007.github.io/user-study/RAFT-Edit/gender/index.html"
+  },
+  "pitch": {
+    "dir": "/data/waris/code/warisqr007.github.io/user-study/RAFT-Edit/pitch",
+    "trials": 20,
+    "index": "/data/waris/code/warisqr007.github.io/user-study/RAFT-Edit/pitch/index.html"
+  },
+  "hnr": {
+    "dir": "/data/waris/code/warisqr007.github.io/user-study/RAFT-Edit/hnr",
+    "trials": 20,
+    "index": "/data/waris/code/warisqr007.github.io/user-study/RAFT-Edit/hnr/index.html"
+  }
+}
