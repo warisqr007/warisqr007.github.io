@@ -5,46 +5,48 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Gender Presentation A/B Test</title>
 <style>
-:root { color-scheme: light; --ink:#17202a; --muted:#5f6e7d; --line:#dce5ee; --band:#f6f8fb; --accent:#123f6d; --ok:#e6f4ec; --warn:#fff8e7; }
+:root { color-scheme: light; --ink:#17202a; --muted:#4d5d70; --line:#d5e0eb; --band:#f6f8fb; --accent:#123f6d; --ok:#e6f4ec; --warn:#fff8e7; }
 * { box-sizing: border-box; }
-body { margin:0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color:var(--ink); background:#fff; }
-main { max-width: 1180px; margin:0 auto; padding: 28px 20px 80px; }
-header { text-align:center; padding: 18px 0 16px; }
-h1 { margin:0 0 10px; font-size: clamp(28px, 4vw, 42px); }
-p, li { color:var(--muted); line-height:1.55; }
-.instructions { background:var(--band); border:1px solid var(--line); border-radius:10px; padding:18px 22px; margin:16px 0 24px; }
+body { margin:0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color:var(--ink); background:#fff; font-size:18px; }
+main { max-width: 1480px; margin:0 auto; padding: 30px 28px 90px; }
+header { text-align:center; padding: 16px 0 20px; }
+h1 { margin:0 0 12px; font-size: clamp(34px, 4.2vw, 52px); line-height:1.08; }
+p, li { color:var(--muted); line-height:1.58; }
+.instructions { background:var(--band); border:1px solid var(--line); border-radius:10px; padding:22px 26px; margin:18px auto 28px; max-width: 1260px; }
 .instructions strong { color:var(--ink); }
-.test-set { margin: 26px 0 34px; }
-h2 { font-size:22px; margin: 0 0 10px; }
+.test-set { margin: 28px 0 38px; }
+h2 { font-size:26px; margin: 0 0 8px; }
+.set-question { margin: 0 0 12px; font-size: 20px; color: #24364a; }
 .table-wrap { overflow-x:auto; border:1px solid var(--line); border-radius:10px; }
-table.tests { width:100%; min-width: 1000px; border-collapse:collapse; table-layout:fixed; }
-th, td { border-bottom:1px solid var(--line); padding:10px; text-align:center; vertical-align:middle; }
-thead th { background:#edf3f8; color:#27384b; font-weight:700; }
-thead span { font-size:11px; font-weight:500; color:#536577; }
+table.tests { width:100%; min-width: 1320px; border-collapse:collapse; table-layout:fixed; }
+th, td { border-bottom:1px solid var(--line); padding:12px 12px; text-align:center; vertical-align:middle; }
+thead th { background:#edf3f8; color:#24364a; font-weight:800; font-size:16px; }
+thead .confidence-title { background:#ddebf7; font-size:17px; }
+thead .confidence-row th { font-size:16px; }
+thead span { font-size:12px; font-weight:600; color:#516479; }
 tbody tr:nth-child(even) { background:#fbfcfe; }
 tbody tr.complete { background: var(--ok); }
-.qid { width:105px; }
-.qid span { display:block; margin-top:4px; font-size:12px; color:var(--muted); }
-.audio-cell { width: 210px; }
-audio { width: 100%; max-width: 190px; }
-.select-cell { width: 220px; }
-.select-cell label { display:block; font-size:13px; color:#344256; margin-bottom:6px; font-weight:600; }
-select { width: 100%; border:1px solid #b8c5d3; border-radius:7px; padding:8px; background:#fff; font-size:14px; }
-input[type=radio] { width:20px; height:20px; }
-.post { margin-top: 22px; padding:18px 22px; border:1px solid var(--line); border-radius:10px; background:#fbfcfe; }
-.post label { display:block; margin: 12px 0 6px; font-weight:600; }
-.post input, .post textarea { width:100%; border:1px solid #b8c5d3; border-radius:7px; padding:9px; font-size:14px; }
-button { border:0; background:var(--accent); color:white; border-radius:8px; padding:12px 18px; font-size:16px; font-weight:700; cursor:pointer; }
+.qid { width:95px; font-size:18px; }
+.audio-cell { width: 310px; }
+audio { width: 285px; max-width:100%; min-height: 44px; }
+.select-cell { width: 210px; }
+select { width: 100%; min-width: 175px; border:2px solid #8aa3bd; border-radius:8px; padding:10px 12px; background:#fff; color:#17202a; font-size:16px; font-weight:700; }
+select:invalid, select option[value="0"] { color:#5c6977; }
+input[type=radio] { width:23px; height:23px; accent-color:#123f6d; }
+.post { margin-top: 26px; padding:22px 26px; border:1px solid var(--line); border-radius:10px; background:#fbfcfe; }
+.post label { display:block; margin: 14px 0 7px; font-weight:700; }
+.post input, .post textarea, .post select { width:100%; border:1px solid #9fb1c4; border-radius:8px; padding:11px; font-size:16px; }
+button { border:0; background:var(--accent); color:white; border-radius:8px; padding:14px 20px; font-size:18px; font-weight:800; cursor:pointer; }
 button:disabled { opacity:.55; cursor:not-allowed; }
 .status { margin-left:12px; color:var(--muted); }
-.notice { background:var(--warn); border:1px solid #f0dfb0; padding:12px 14px; border-radius:8px; }
-@media (max-width:760px) { main { padding:18px 10px 60px; } table.tests { min-width: 920px; } .audio-cell { width:180px; } }
+.notice { background:var(--warn); border:1px solid #f0dfb0; padding:13px 15px; border-radius:8px; }
+@media (max-width:900px) { main { padding:20px 12px 70px; } body { font-size:16px; } table.tests { min-width: 1180px; } .audio-cell { width:260px; } audio { width: 240px; } }
 </style>
 <script>
 const APPS_SCRIPT_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbzG036OQcUQnDDy_h2CQ59-SLZ8ohhfpqG0BRMOqiF6GUXNVfDBxYzgpv6w_1pyXdKM/exec";
 const PROLIFIC_COMPLETION_URL = "https://app.prolific.com/submissions/complete?cc=C6IEG2VT";
 const STUDY_ATTRIBUTE = "gender";
-const TRIALS = [{"qid": "Q01", "set_id": 1, "attribute": "gender_male", "target_direction": "negative", "target_text": "less masculine-presenting", "question": "Which clip sounds less masculine-presenting?", "clip_a": "audio/Q01_gender_male_negative_GLOBE__train__S_012138__00480100_000001.v2.vad_reference.wav", "clip_b": "audio/Q01_gender_male_negative_GLOBE__train__S_012138__00480100_000001.v2.vad_edited.wav", "clip_a_role": "reference", "clip_b_role": "edited", "correct_choice": "B", "source_trial_id": "0060_gender_male_negative_GLOBE__train__S_012138__00480100_000001.v2.vad", "item_id": "GLOBE::train::S_012138::00480100_000001.v2.vad", "age_group": "senior_60s", "gender_group": "male", "decision_from_curation": "selected", "selection_score": 1.4162977430969477}, {"qid": "Q02", "set_id": 1, "attribute": "gender_male", "target_direction": "positive", "target_text": "more masculine-presenting", "question": "Which clip sounds more masculine-presenting?", "clip_a": "audio/Q02_gender_male_positive_GLOBE__train__S_020124__00018555_000017.v2.vad_reference.wav", "clip_b": "audio/Q02_gender_male_positive_GLOBE__train__S_020124__00018555_000017.v2.vad_edited.wav", "clip_a_role": "reference", "clip_b_role": "edited", "correct_choice": "B", "source_trial_id": "0081_gender_male_positive_GLOBE__train__S_020124__00018555_000017.v2.vad", "item_id": "GLOBE::train::S_020124::00018555_000017.v2.vad", "age_group": "senior_60s", "gender_group": "female", "decision_from_curation": "selected", "selection_score": 1.4417214145651087}, {"qid": "Q03", "set_id": 1, "attribute": "gender_male", "target_direction": "negative", "target_text": "less masculine-presenting", "question": "Which clip sounds less masculine-presenting?", "clip_a": "audio/Q03_gender_male_negative_NaturalVoices__MSP-PODCAST_3298__MSP-PODCAST_3298_481_reference.wav", "clip_b": "audio/Q03_gender_male_negative_NaturalVoices__MSP-PODCAST_3298__MSP-PODCAST_3298_481_edited.wav", "clip_a_role": "reference", "clip_b_role": "edited", "correct_choice": "B", "source_trial_id": "0061_gender_male_negative_NaturalVoices__MSP-PODCAST_3298__MSP-PODCAST_3298_481", "item_id": "NaturalVoices::MSP-PODCAST_3298::MSP-PODCAST_3298_481", "age_group": "senior_60s", "gender_group": "male", "decision_from_curation": "selected", "selection_score": 1.4077270673587918}, {"qid": "Q04", "set_id": 1, "attribute": "gender_male", "target_direction": "positive", "target_text": "more masculine-presenting", "question": "Which clip sounds more masculine-presenting?", "clip_a": "audio/Q04_gender_male_positive_LibriTTS__4280__4280_185518_000037_000002_edited.wav", "clip_b": "audio/Q04_gender_male_positive_LibriTTS__4280__4280_185518_000037_000002_reference.wav", "clip_a_role": "edited", "clip_b_role": "reference", "correct_choice": "A", "source_trial_id": "0083_gender_male_positive_LibriTTS__4280__4280_185518_000037_000002", "item_id": "LibriTTS::4280::4280_185518_000037_000002", "age_group": "senior_60s", "gender_group": "female", "decision_from_curation": "selected", "selection_score": 1.4259777590632439}, {"qid": "Q05", "set_id": 2, "attribute": "gender_male", "target_direction": "negative", "target_text": "less masculine-presenting", "question": "Which clip sounds less masculine-presenting?", "clip_a": "audio/Q05_gender_male_negative_GLOBE__train__S_000942__00220381_000000.v2.vad_reference.wav", "clip_b": "audio/Q05_gender_male_negative_GLOBE__train__S_000942__00220381_000000.v2.vad_edited.wav", "clip_a_role": "reference", "clip_b_role": "edited", "correct_choice": "B", "source_trial_id": "0068_gender_male_negative_GLOBE__train__S_000942__00220381_000000.v2.vad", "item_id": "GLOBE::train::S_000942::00220381_000000.v2.vad", "age_group": "young_20s", "gender_group": "male", "decision_from_curation": "selected", "selection_score": 1.4008833263069391}, {"qid": "Q06", "set_id": 2, "attribute": "gender_male", "target_direction": "positive", "target_text": "more masculine-presenting", "question": "Which clip sounds more masculine-presenting?", "clip_a": "audio/Q06_gender_male_positive_AESRC__Portuguese_G10503__G10503S1196_reference.wav", "clip_b": "audio/Q06_gender_male_positive_AESRC__Portuguese_G10503__G10503S1196_edited.wav", "clip_a_role": "reference", "clip_b_role": "edited", "correct_choice": "B", "source_trial_id": "0073_gender_male_positive_AESRC__Portuguese_G10503__G10503S1196", "item_id": "AESRC::Portuguese_G10503::G10503S1196", "age_group": "mid_40s", "gender_group": "female", "decision_from_curation": "selected", "selection_score": 1.4064472324680537}, {"qid": "Q07", "set_id": 2, "attribute": "gender_male", "target_direction": "negative", "target_text": "less masculine-presenting", "question": "Which clip sounds less masculine-presenting?", "clip_a": "audio/Q07_gender_male_negative_AESRC__Indian_G1757__G1757S1062_reference.wav", "clip_b": "audio/Q07_gender_male_negative_AESRC__Indian_G1757__G1757S1062_edited.wav", "clip_a_role": "reference", "clip_b_role": "edited", "correct_choice": "B", "source_trial_id": "0069_gender_male_negative_AESRC__Indian_G1757__G1757S1062", "item_id": "AESRC::Indian_G1757::G1757S1062", "age_group": "young_20s", "gender_group": "male", "decision_from_curation": "selected", "selection_score": 1.3940089093521235}, {"qid": "Q08", "set_id": 2, "attribute": "gender_male", "target_direction": "positive", "target_text": "more masculine-presenting", "question": "Which clip sounds more masculine-presenting?", "clip_a": "audio/Q08_gender_male_positive_GLOBE__train__S_013904__00115359_000001.v2.vad_edited.wav", "clip_b": "audio/Q08_gender_male_positive_GLOBE__train__S_013904__00115359_000001.v2.vad_reference.wav", "clip_a_role": "edited", "clip_b_role": "reference", "correct_choice": "A", "source_trial_id": "0082_gender_male_positive_GLOBE__train__S_013904__00115359_000001.v2.vad", "item_id": "GLOBE::train::S_013904::00115359_000001.v2.vad", "age_group": "senior_60s", "gender_group": "female", "decision_from_curation": "maybe", "selection_score": 1.428331803763285}, {"qid": "Q09", "set_id": 3, "attribute": "gender_male", "target_direction": "negative", "target_text": "less masculine-presenting", "question": "Which clip sounds less masculine-presenting?", "clip_a": "audio/Q09_gender_male_negative_NaturalVoices__MSP-PODCAST_0478__MSP-PODCAST_0478_1_edited.wav", "clip_b": "audio/Q09_gender_male_negative_NaturalVoices__MSP-PODCAST_0478__MSP-PODCAST_0478_1_reference.wav", "clip_a_role": "edited", "clip_b_role": "reference", "correct_choice": "A", "source_trial_id": "0049_gender_male_negative_NaturalVoices__MSP-PODCAST_0478__MSP-PODCAST_0478_1", "item_id": "NaturalVoices::MSP-PODCAST_0478::MSP-PODCAST_0478_1", "age_group": "mid_40s", "gender_group": "female", "decision_from_curation": "selected", "selection_score": 0.4754032591590657}, {"qid": "Q10", "set_id": 3, "attribute": "gender_male", "target_direction": "positive", "target_text": "more masculine-presenting", "question": "Which clip sounds more masculine-presenting?", "clip_a": "audio/Q10_gender_male_positive_LibriTTS__6782__6782_61316_000007_000010_edited.wav", "clip_b": "audio/Q10_gender_male_positive_LibriTTS__6782__6782_61316_000007_000010_reference.wav", "clip_a_role": "edited", "clip_b_role": "reference", "correct_choice": "A", "source_trial_id": "0072_gender_male_positive_LibriTTS__6782__6782_61316_000007_000010", "item_id": "LibriTTS::6782::6782_61316_000007_000010", "age_group": "mid_40s", "gender_group": "female", "decision_from_curation": "maybe", "selection_score": 1.4086635676212609}, {"qid": "Q11", "set_id": 3, "attribute": "gender_male", "target_direction": "negative", "target_text": "less masculine-presenting", "question": "Which clip sounds less masculine-presenting?", "clip_a": "audio/Q11_gender_male_negative_NaturalVoices__MSP-PODCAST_2484__MSP-PODCAST_2484_483_reference.wav", "clip_b": "audio/Q11_gender_male_negative_NaturalVoices__MSP-PODCAST_2484__MSP-PODCAST_2484_483_edited.wav", "clip_a_role": "reference", "clip_b_role": "edited", "correct_choice": "B", "source_trial_id": "0065_gender_male_negative_NaturalVoices__MSP-PODCAST_2484__MSP-PODCAST_2484_483", "item_id": "NaturalVoices::MSP-PODCAST_2484::MSP-PODCAST_2484_483", "age_group": "young_20s", "gender_group": "female", "decision_from_curation": "selected", "selection_score": 0.11838149419054386}, {"qid": "Q12", "set_id": 3, "attribute": "gender_male", "target_direction": "positive", "target_text": "more masculine-presenting", "question": "Which clip sounds more masculine-presenting?", "clip_a": "audio/Q12_gender_male_positive_LibriTTS__3889__3889_9915_000007_000001_edited.wav", "clip_b": "audio/Q12_gender_male_positive_LibriTTS__3889__3889_9915_000007_000001_reference.wav", "clip_a_role": "edited", "clip_b_role": "reference", "correct_choice": "A", "source_trial_id": "0088_gender_male_positive_LibriTTS__3889__3889_9915_000007_000001", "item_id": "LibriTTS::3889::3889_9915_000007_000001", "age_group": "young_20s", "gender_group": "female", "decision_from_curation": "maybe", "selection_score": 1.3983121963683516}, {"qid": "Q13", "set_id": 4, "attribute": "gender_male", "target_direction": "negative", "target_text": "less masculine-presenting", "question": "Which clip sounds less masculine-presenting?", "clip_a": "audio/Q13_gender_male_negative_NaturalVoices__MSP-PODCAST_6709__MSP-PODCAST_6709_14_edited.wav", "clip_b": "audio/Q13_gender_male_negative_NaturalVoices__MSP-PODCAST_6709__MSP-PODCAST_6709_14_reference.wav", "clip_a_role": "edited", "clip_b_role": "reference", "correct_choice": "A", "source_trial_id": "0062_gender_male_negative_NaturalVoices__MSP-PODCAST_6709__MSP-PODCAST_6709_14", "item_id": "NaturalVoices::MSP-PODCAST_6709::MSP-PODCAST_6709_14", "age_group": "senior_60s", "gender_group": "male", "decision_from_curation": "maybe", "selection_score": 1.404164606006816}, {"qid": "Q14", "set_id": 4, "attribute": "gender_male", "target_direction": "positive", "target_text": "more masculine-presenting", "question": "Which clip sounds more masculine-presenting?", "clip_a": "audio/Q14_gender_male_positive_GLOBE__train__S_008034__00354203_000009.v2.vad_reference.wav", "clip_b": "audio/Q14_gender_male_positive_GLOBE__train__S_008034__00354203_000009.v2.vad_edited.wav", "clip_a_role": "reference", "clip_b_role": "edited", "correct_choice": "B", "source_trial_id": "0074_gender_male_positive_GLOBE__train__S_008034__00354203_000009.v2.vad", "item_id": "GLOBE::train::S_008034::00354203_000009.v2.vad", "age_group": "mid_40s", "gender_group": "female", "decision_from_curation": "maybe", "selection_score": 1.3973574107512832}, {"qid": "Q15", "set_id": 4, "attribute": "gender_male", "target_direction": "negative", "target_text": "less masculine-presenting", "question": "Which clip sounds less masculine-presenting?", "clip_a": "audio/Q15_gender_male_negative_NaturalVoices__MSP-PODCAST_6649__MSP-PODCAST_6649_27_reference.wav", "clip_b": "audio/Q15_gender_male_negative_NaturalVoices__MSP-PODCAST_6649__MSP-PODCAST_6649_27_edited.wav", "clip_a_role": "reference", "clip_b_role": "edited", "correct_choice": "B", "source_trial_id": "0053_gender_male_negative_NaturalVoices__MSP-PODCAST_6649__MSP-PODCAST_6649_27", "item_id": "NaturalVoices::MSP-PODCAST_6649::MSP-PODCAST_6649_27", "age_group": "mid_40s", "gender_group": "male", "decision_from_curation": "maybe", "selection_score": 1.389038153574802}, {"qid": "Q16", "set_id": 4, "attribute": "gender_male", "target_direction": "positive", "target_text": "more masculine-presenting", "question": "Which clip sounds more masculine-presenting?", "clip_a": "audio/Q16_gender_male_positive_NaturalVoices__MSP-PODCAST_4984__MSP-PODCAST_4984_162_edited.wav", "clip_b": "audio/Q16_gender_male_positive_NaturalVoices__MSP-PODCAST_4984__MSP-PODCAST_4984_162_reference.wav", "clip_a_role": "edited", "clip_b_role": "reference", "correct_choice": "A", "source_trial_id": "0075_gender_male_positive_NaturalVoices__MSP-PODCAST_4984__MSP-PODCAST_4984_162", "item_id": "NaturalVoices::MSP-PODCAST_4984::MSP-PODCAST_4984_162", "age_group": "mid_40s", "gender_group": "female", "decision_from_curation": "maybe", "selection_score": 1.3927328831050545}, {"qid": "Q17", "set_id": 5, "attribute": "gender_male", "target_direction": "negative", "target_text": "less masculine-presenting", "question": "Which clip sounds less masculine-presenting?", "clip_a": "audio/Q17_gender_male_negative_GLOBE__train__S_017349__00470362_000000.v2.vad_edited.wav", "clip_b": "audio/Q17_gender_male_negative_GLOBE__train__S_017349__00470362_000000.v2.vad_reference.wav", "clip_a_role": "edited", "clip_b_role": "reference", "correct_choice": "A", "source_trial_id": "0071_gender_male_negative_GLOBE__train__S_017349__00470362_000000.v2.vad", "item_id": "GLOBE::train::S_017349::00470362_000000.v2.vad", "age_group": "young_20s", "gender_group": "male", "decision_from_curation": "maybe", "selection_score": 1.388668218627572}, {"qid": "Q18", "set_id": 5, "attribute": "gender_male", "target_direction": "positive", "target_text": "more masculine-presenting", "question": "Which clip sounds more masculine-presenting?", "clip_a": "audio/Q18_gender_male_positive_GLOBE__train__S_004216__00510341_000002.v2.vad_reference.wav", "clip_b": "audio/Q18_gender_male_positive_GLOBE__train__S_004216__00510341_000002.v2.vad_edited.wav", "clip_a_role": "reference", "clip_b_role": "edited", "correct_choice": "B", "source_trial_id": "0090_gender_male_positive_GLOBE__train__S_004216__00510341_000002.v2.vad", "item_id": "GLOBE::train::S_004216::00510341_000002.v2.vad", "age_group": "young_20s", "gender_group": "female", "decision_from_curation": "maybe", "selection_score": 1.320426150225103}, {"qid": "Q19", "set_id": 5, "attribute": "gender_male", "target_direction": "negative", "target_text": "less masculine-presenting", "question": "Which clip sounds less masculine-presenting?", "clip_a": "audio/Q19_gender_male_negative_VoxCeleb1__train__id10645__BryeQfBIpm4__00003_edited.wav", "clip_b": "audio/Q19_gender_male_negative_VoxCeleb1__train__id10645__BryeQfBIpm4__00003_reference.wav", "clip_a_role": "edited", "clip_b_role": "reference", "correct_choice": "A", "source_trial_id": "0055_gender_male_negative_VoxCeleb1__train__id10645__BryeQfBIpm4__00003", "item_id": "VoxCeleb1::train::id10645::BryeQfBIpm4::00003", "age_group": "mid_40s", "gender_group": "male", "decision_from_curation": "maybe", "selection_score": 1.3857388764154166}, {"qid": "Q20", "set_id": 5, "attribute": "gender_male", "target_direction": "positive", "target_text": "more masculine-presenting", "question": "Which clip sounds more masculine-presenting?", "clip_a": "audio/Q20_gender_male_positive_LibriTTS__2346__2346_152201_000014_000002_edited.wav", "clip_b": "audio/Q20_gender_male_positive_LibriTTS__2346__2346_152201_000014_000002_reference.wav", "clip_a_role": "edited", "clip_b_role": "reference", "correct_choice": "A", "source_trial_id": "0091_gender_male_positive_LibriTTS__2346__2346_152201_000014_000002", "item_id": "LibriTTS::2346::2346_152201_000014_000002", "age_group": "young_20s", "gender_group": "female", "decision_from_curation": "maybe", "selection_score": 1.3101406241767108}];
+const TRIALS = [{"qid": "Q01", "set_id": 1, "attribute": "gender_male", "target_direction": "negative", "question_direction": "positive", "clip_a": "audio/Q01_gender_male_negative_GLOBE__train__S_012138__00480100_000001.v2.vad_reference.wav", "clip_b": "audio/Q01_gender_male_negative_GLOBE__train__S_012138__00480100_000001.v2.vad_edited.wav", "clip_a_role": "reference", "clip_b_role": "edited", "correct_choice": "A", "source_trial_id": "0060_gender_male_negative_GLOBE__train__S_012138__00480100_000001.v2.vad", "item_id": "GLOBE::train::S_012138::00480100_000001.v2.vad", "age_group": "senior_60s", "gender_group": "male", "decision_from_curation": "selected", "selection_score": 1.4162977430969477}, {"qid": "Q02", "set_id": 1, "attribute": "gender_male", "target_direction": "positive", "question_direction": "positive", "clip_a": "audio/Q02_gender_male_positive_GLOBE__train__S_020124__00018555_000017.v2.vad_edited.wav", "clip_b": "audio/Q02_gender_male_positive_GLOBE__train__S_020124__00018555_000017.v2.vad_reference.wav", "clip_a_role": "edited", "clip_b_role": "reference", "correct_choice": "A", "source_trial_id": "0081_gender_male_positive_GLOBE__train__S_020124__00018555_000017.v2.vad", "item_id": "GLOBE::train::S_020124::00018555_000017.v2.vad", "age_group": "senior_60s", "gender_group": "female", "decision_from_curation": "selected", "selection_score": 1.4417214145651087}, {"qid": "Q03", "set_id": 1, "attribute": "gender_male", "target_direction": "negative", "question_direction": "positive", "clip_a": "audio/Q03_gender_male_negative_NaturalVoices__MSP-PODCAST_3298__MSP-PODCAST_3298_481_edited.wav", "clip_b": "audio/Q03_gender_male_negative_NaturalVoices__MSP-PODCAST_3298__MSP-PODCAST_3298_481_reference.wav", "clip_a_role": "edited", "clip_b_role": "reference", "correct_choice": "B", "source_trial_id": "0061_gender_male_negative_NaturalVoices__MSP-PODCAST_3298__MSP-PODCAST_3298_481", "item_id": "NaturalVoices::MSP-PODCAST_3298::MSP-PODCAST_3298_481", "age_group": "senior_60s", "gender_group": "male", "decision_from_curation": "selected", "selection_score": 1.4077270673587918}, {"qid": "Q04", "set_id": 1, "attribute": "gender_male", "target_direction": "positive", "question_direction": "positive", "clip_a": "audio/Q04_gender_male_positive_LibriTTS__4280__4280_185518_000037_000002_reference.wav", "clip_b": "audio/Q04_gender_male_positive_LibriTTS__4280__4280_185518_000037_000002_edited.wav", "clip_a_role": "reference", "clip_b_role": "edited", "correct_choice": "B", "source_trial_id": "0083_gender_male_positive_LibriTTS__4280__4280_185518_000037_000002", "item_id": "LibriTTS::4280::4280_185518_000037_000002", "age_group": "senior_60s", "gender_group": "female", "decision_from_curation": "selected", "selection_score": 1.4259777590632439}, {"qid": "Q05", "set_id": 2, "attribute": "gender_male", "target_direction": "negative", "question_direction": "positive", "clip_a": "audio/Q05_gender_male_negative_GLOBE__train__S_000942__00220381_000000.v2.vad_reference.wav", "clip_b": "audio/Q05_gender_male_negative_GLOBE__train__S_000942__00220381_000000.v2.vad_edited.wav", "clip_a_role": "reference", "clip_b_role": "edited", "correct_choice": "A", "source_trial_id": "0068_gender_male_negative_GLOBE__train__S_000942__00220381_000000.v2.vad", "item_id": "GLOBE::train::S_000942::00220381_000000.v2.vad", "age_group": "young_20s", "gender_group": "male", "decision_from_curation": "selected", "selection_score": 1.4008833263069391}, {"qid": "Q06", "set_id": 2, "attribute": "gender_male", "target_direction": "positive", "question_direction": "positive", "clip_a": "audio/Q06_gender_male_positive_AESRC__Portuguese_G10503__G10503S1196_reference.wav", "clip_b": "audio/Q06_gender_male_positive_AESRC__Portuguese_G10503__G10503S1196_edited.wav", "clip_a_role": "reference", "clip_b_role": "edited", "correct_choice": "B", "source_trial_id": "0073_gender_male_positive_AESRC__Portuguese_G10503__G10503S1196", "item_id": "AESRC::Portuguese_G10503::G10503S1196", "age_group": "mid_40s", "gender_group": "female", "decision_from_curation": "selected", "selection_score": 1.4064472324680537}, {"qid": "Q07", "set_id": 2, "attribute": "gender_male", "target_direction": "negative", "question_direction": "positive", "clip_a": "audio/Q07_gender_male_negative_AESRC__Indian_G1757__G1757S1062_edited.wav", "clip_b": "audio/Q07_gender_male_negative_AESRC__Indian_G1757__G1757S1062_reference.wav", "clip_a_role": "edited", "clip_b_role": "reference", "correct_choice": "B", "source_trial_id": "0069_gender_male_negative_AESRC__Indian_G1757__G1757S1062", "item_id": "AESRC::Indian_G1757::G1757S1062", "age_group": "young_20s", "gender_group": "male", "decision_from_curation": "selected", "selection_score": 1.3940089093521235}, {"qid": "Q08", "set_id": 2, "attribute": "gender_male", "target_direction": "positive", "question_direction": "positive", "clip_a": "audio/Q08_gender_male_positive_GLOBE__train__S_013904__00115359_000001.v2.vad_edited.wav", "clip_b": "audio/Q08_gender_male_positive_GLOBE__train__S_013904__00115359_000001.v2.vad_reference.wav", "clip_a_role": "edited", "clip_b_role": "reference", "correct_choice": "A", "source_trial_id": "0082_gender_male_positive_GLOBE__train__S_013904__00115359_000001.v2.vad", "item_id": "GLOBE::train::S_013904::00115359_000001.v2.vad", "age_group": "senior_60s", "gender_group": "female", "decision_from_curation": "maybe", "selection_score": 1.428331803763285}, {"qid": "Q09", "set_id": 3, "attribute": "gender_male", "target_direction": "negative", "question_direction": "positive", "clip_a": "audio/Q09_gender_male_negative_NaturalVoices__MSP-PODCAST_0478__MSP-PODCAST_0478_1_edited.wav", "clip_b": "audio/Q09_gender_male_negative_NaturalVoices__MSP-PODCAST_0478__MSP-PODCAST_0478_1_reference.wav", "clip_a_role": "edited", "clip_b_role": "reference", "correct_choice": "B", "source_trial_id": "0049_gender_male_negative_NaturalVoices__MSP-PODCAST_0478__MSP-PODCAST_0478_1", "item_id": "NaturalVoices::MSP-PODCAST_0478::MSP-PODCAST_0478_1", "age_group": "mid_40s", "gender_group": "female", "decision_from_curation": "selected", "selection_score": 0.4754032591590657}, {"qid": "Q10", "set_id": 3, "attribute": "gender_male", "target_direction": "positive", "question_direction": "positive", "clip_a": "audio/Q10_gender_male_positive_LibriTTS__6782__6782_61316_000007_000010_edited.wav", "clip_b": "audio/Q10_gender_male_positive_LibriTTS__6782__6782_61316_000007_000010_reference.wav", "clip_a_role": "edited", "clip_b_role": "reference", "correct_choice": "A", "source_trial_id": "0072_gender_male_positive_LibriTTS__6782__6782_61316_000007_000010", "item_id": "LibriTTS::6782::6782_61316_000007_000010", "age_group": "mid_40s", "gender_group": "female", "decision_from_curation": "maybe", "selection_score": 1.4086635676212609}, {"qid": "Q11", "set_id": 3, "attribute": "gender_male", "target_direction": "negative", "question_direction": "positive", "clip_a": "audio/Q11_gender_male_negative_NaturalVoices__MSP-PODCAST_2484__MSP-PODCAST_2484_483_reference.wav", "clip_b": "audio/Q11_gender_male_negative_NaturalVoices__MSP-PODCAST_2484__MSP-PODCAST_2484_483_edited.wav", "clip_a_role": "reference", "clip_b_role": "edited", "correct_choice": "A", "source_trial_id": "0065_gender_male_negative_NaturalVoices__MSP-PODCAST_2484__MSP-PODCAST_2484_483", "item_id": "NaturalVoices::MSP-PODCAST_2484::MSP-PODCAST_2484_483", "age_group": "young_20s", "gender_group": "female", "decision_from_curation": "selected", "selection_score": 0.11838149419054386}, {"qid": "Q12", "set_id": 3, "attribute": "gender_male", "target_direction": "positive", "question_direction": "positive", "clip_a": "audio/Q12_gender_male_positive_LibriTTS__3889__3889_9915_000007_000001_edited.wav", "clip_b": "audio/Q12_gender_male_positive_LibriTTS__3889__3889_9915_000007_000001_reference.wav", "clip_a_role": "edited", "clip_b_role": "reference", "correct_choice": "A", "source_trial_id": "0088_gender_male_positive_LibriTTS__3889__3889_9915_000007_000001", "item_id": "LibriTTS::3889::3889_9915_000007_000001", "age_group": "young_20s", "gender_group": "female", "decision_from_curation": "maybe", "selection_score": 1.3983121963683516}, {"qid": "Q13", "set_id": 4, "attribute": "gender_male", "target_direction": "negative", "question_direction": "positive", "clip_a": "audio/Q13_gender_male_negative_NaturalVoices__MSP-PODCAST_6709__MSP-PODCAST_6709_14_reference.wav", "clip_b": "audio/Q13_gender_male_negative_NaturalVoices__MSP-PODCAST_6709__MSP-PODCAST_6709_14_edited.wav", "clip_a_role": "reference", "clip_b_role": "edited", "correct_choice": "A", "source_trial_id": "0062_gender_male_negative_NaturalVoices__MSP-PODCAST_6709__MSP-PODCAST_6709_14", "item_id": "NaturalVoices::MSP-PODCAST_6709::MSP-PODCAST_6709_14", "age_group": "senior_60s", "gender_group": "male", "decision_from_curation": "maybe", "selection_score": 1.404164606006816}, {"qid": "Q14", "set_id": 4, "attribute": "gender_male", "target_direction": "positive", "question_direction": "positive", "clip_a": "audio/Q14_gender_male_positive_GLOBE__train__S_008034__00354203_000009.v2.vad_edited.wav", "clip_b": "audio/Q14_gender_male_positive_GLOBE__train__S_008034__00354203_000009.v2.vad_reference.wav", "clip_a_role": "edited", "clip_b_role": "reference", "correct_choice": "A", "source_trial_id": "0074_gender_male_positive_GLOBE__train__S_008034__00354203_000009.v2.vad", "item_id": "GLOBE::train::S_008034::00354203_000009.v2.vad", "age_group": "mid_40s", "gender_group": "female", "decision_from_curation": "maybe", "selection_score": 1.3973574107512832}, {"qid": "Q15", "set_id": 4, "attribute": "gender_male", "target_direction": "negative", "question_direction": "positive", "clip_a": "audio/Q15_gender_male_negative_NaturalVoices__MSP-PODCAST_6649__MSP-PODCAST_6649_27_edited.wav", "clip_b": "audio/Q15_gender_male_negative_NaturalVoices__MSP-PODCAST_6649__MSP-PODCAST_6649_27_reference.wav", "clip_a_role": "edited", "clip_b_role": "reference", "correct_choice": "B", "source_trial_id": "0053_gender_male_negative_NaturalVoices__MSP-PODCAST_6649__MSP-PODCAST_6649_27", "item_id": "NaturalVoices::MSP-PODCAST_6649::MSP-PODCAST_6649_27", "age_group": "mid_40s", "gender_group": "male", "decision_from_curation": "maybe", "selection_score": 1.389038153574802}, {"qid": "Q16", "set_id": 4, "attribute": "gender_male", "target_direction": "positive", "question_direction": "positive", "clip_a": "audio/Q16_gender_male_positive_NaturalVoices__MSP-PODCAST_4984__MSP-PODCAST_4984_162_reference.wav", "clip_b": "audio/Q16_gender_male_positive_NaturalVoices__MSP-PODCAST_4984__MSP-PODCAST_4984_162_edited.wav", "clip_a_role": "reference", "clip_b_role": "edited", "correct_choice": "B", "source_trial_id": "0075_gender_male_positive_NaturalVoices__MSP-PODCAST_4984__MSP-PODCAST_4984_162", "item_id": "NaturalVoices::MSP-PODCAST_4984::MSP-PODCAST_4984_162", "age_group": "mid_40s", "gender_group": "female", "decision_from_curation": "maybe", "selection_score": 1.3927328831050545}, {"qid": "Q17", "set_id": 5, "attribute": "gender_male", "target_direction": "negative", "question_direction": "positive", "clip_a": "audio/Q17_gender_male_negative_GLOBE__train__S_017349__00470362_000000.v2.vad_reference.wav", "clip_b": "audio/Q17_gender_male_negative_GLOBE__train__S_017349__00470362_000000.v2.vad_edited.wav", "clip_a_role": "reference", "clip_b_role": "edited", "correct_choice": "A", "source_trial_id": "0071_gender_male_negative_GLOBE__train__S_017349__00470362_000000.v2.vad", "item_id": "GLOBE::train::S_017349::00470362_000000.v2.vad", "age_group": "young_20s", "gender_group": "male", "decision_from_curation": "maybe", "selection_score": 1.388668218627572}, {"qid": "Q18", "set_id": 5, "attribute": "gender_male", "target_direction": "positive", "question_direction": "positive", "clip_a": "audio/Q18_gender_male_positive_GLOBE__train__S_004216__00510341_000002.v2.vad_edited.wav", "clip_b": "audio/Q18_gender_male_positive_GLOBE__train__S_004216__00510341_000002.v2.vad_reference.wav", "clip_a_role": "edited", "clip_b_role": "reference", "correct_choice": "A", "source_trial_id": "0090_gender_male_positive_GLOBE__train__S_004216__00510341_000002.v2.vad", "item_id": "GLOBE::train::S_004216::00510341_000002.v2.vad", "age_group": "young_20s", "gender_group": "female", "decision_from_curation": "maybe", "selection_score": 1.320426150225103}, {"qid": "Q19", "set_id": 5, "attribute": "gender_male", "target_direction": "negative", "question_direction": "positive", "clip_a": "audio/Q19_gender_male_negative_VoxCeleb1__train__id10645__BryeQfBIpm4__00003_reference.wav", "clip_b": "audio/Q19_gender_male_negative_VoxCeleb1__train__id10645__BryeQfBIpm4__00003_edited.wav", "clip_a_role": "reference", "clip_b_role": "edited", "correct_choice": "A", "source_trial_id": "0055_gender_male_negative_VoxCeleb1__train__id10645__BryeQfBIpm4__00003", "item_id": "VoxCeleb1::train::id10645::BryeQfBIpm4::00003", "age_group": "mid_40s", "gender_group": "male", "decision_from_curation": "maybe", "selection_score": 1.3857388764154166}, {"qid": "Q20", "set_id": 5, "attribute": "gender_male", "target_direction": "positive", "question_direction": "positive", "clip_a": "audio/Q20_gender_male_positive_LibriTTS__2346__2346_152201_000014_000002_edited.wav", "clip_b": "audio/Q20_gender_male_positive_LibriTTS__2346__2346_152201_000014_000002_reference.wav", "clip_a_role": "edited", "clip_b_role": "reference", "correct_choice": "A", "source_trial_id": "0091_gender_male_positive_LibriTTS__2346__2346_152201_000014_000002", "item_id": "LibriTTS::2346::2346_152201_000014_000002", "age_group": "young_20s", "gender_group": "female", "decision_from_curation": "maybe", "selection_score": 1.3101406241767108}];
 function getProlificParams() {
   const p = new URLSearchParams(window.location.search);
   return { PROLIFIC_PID: p.get('PROLIFIC_PID') || '', STUDY_ID: p.get('STUDY_ID') || '', SESSION_ID: p.get('SESSION_ID') || '' };
@@ -77,7 +79,7 @@ function collectResponses() {
     const checked = document.querySelector(`input[name="${qid}_confidence"]:checked`);
     rows.push({
       qid, attribute: STUDY_ATTRIBUTE, target_direction: tr.dataset.targetDirection,
-      choice: sel ? sel.value : '', confidence: checked ? checked.value : '',
+      question_direction: 'positive', choice: sel ? sel.value : '', confidence: checked ? checked.value : '',
       correct_choice: tr.dataset.correctChoice, is_directionally_correct: sel ? String(sel.value === tr.dataset.correctChoice) : '',
       clip_a: trial.clip_a || '', clip_b: trial.clip_b || '', clip_a_role: trial.clip_a_role || '', clip_b_role: trial.clip_b_role || '',
       source_trial_id: trial.source_trial_id || '', item_id: trial.item_id || ''
@@ -115,9 +117,9 @@ document.addEventListener('DOMContentLoaded', () => { updateCompletion(); docume
 <section class="instructions">
   <p class="notice"><strong>Headphones required.</strong> Please complete this task in a quiet environment using good headphones. You may replay each clip as needed.</p>
   <ul>
-    <li>In each question, listen to both clips and choose which one sounds more or less masculine-presenting, depending on the question. This is a perception task about voice presentation, not a judgment of a person&#x27;s identity.</li>
+    <li>In each question, listen to both clips and choose which one sounds more masculine-presenting. This is a perception task about voice presentation, not a judgment of a person&#x27;s identity.</li>
     <li>Each row has two clips, <strong>A</strong> and <strong>B</strong>. One clip is the unedited synthesized reference and the other is the edited version.</li>
-    <li>Choose the clip that best matches the question, then rate your confidence from 1 to 7.</li>
+    <li>Choose either <strong>Clip A</strong> or <strong>Clip B</strong>, then rate your confidence from 1 to 7.</li>
     <li>Do not judge recording content or speaker identity. Focus only on gender presentation.</li>
     <li>Your responses may be screened for completion and consistency.</li>
   </ul>
@@ -125,35 +127,42 @@ document.addEventListener('DOMContentLoaded', () => { updateCompletion(); docume
 
         <section class="test-set">
           <h2>Set 1</h2>
+          <p class="set-question"><strong>Which clip sounds more masculine-presenting?</strong></p>
           <div class="table-wrap">
           <table class="tests">
-            <thead><tr>
-              <th>Question</th><th>Clip A</th><th>Clip B</th><th>Your answer</th>
-              <th>1<br><span>Not at all</span></th><th>2</th><th>3<br><span>Somewhat</span></th><th>4</th><th>5<br><span>Quite a bit</span></th><th>6</th><th>7<br><span>Extremely</span></th>
-            </tr></thead>
+            <thead>
+              <tr>
+                <th rowspan="2">Question</th>
+                <th rowspan="2">Clip A</th>
+                <th rowspan="2">Clip B</th>
+                <th rowspan="2">Your answer</th>
+                <th colspan="7" class="confidence-title">Confidence rating</th>
+              </tr>
+              <tr class="confidence-row">
+                <th>1<br><span>Not at all</span></th><th>2</th><th>3<br><span>Somewhat</span></th><th>4</th><th>5<br><span>Quite a bit</span></th><th>6</th><th>7<br><span>Extremely</span></th>
+              </tr>
+            </thead>
             <tbody>
-      <tr data-qid="Q01" data-attribute="gender_male" data-target-direction="negative" data-correct-choice="B">
-        <td class="qid"><strong>Q01</strong><span>less masculine-presenting</span></td>
+      <tr data-qid="Q01" data-attribute="gender_male" data-target-direction="negative" data-correct-choice="A">
+        <td class="qid"><strong>Q01</strong></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q01_gender_male_negative_GLOBE__train__S_012138__00480100_000001.v2.vad_reference.wav" type="audio/wav"></audio></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q01_gender_male_negative_GLOBE__train__S_012138__00480100_000001.v2.vad_edited.wav" type="audio/wav"></audio></td>
         <td class="select-cell">
-          <label>Which clip sounds less masculine-presenting?</label>
           <select class="overall" name="Q01_overall" required>
-            <option selected value="0">- select one -</option>
+            <option selected value="0">Select Clip A or B</option>
             <option value="A">Clip A</option>
             <option value="B">Clip B</option>
           </select>
         </td>
         <td class="center"><input name="Q01_confidence" type="radio" value="1" required></td><td class="center"><input name="Q01_confidence" type="radio" value="2" required></td><td class="center"><input name="Q01_confidence" type="radio" value="3" required></td><td class="center"><input name="Q01_confidence" type="radio" value="4" required></td><td class="center"><input name="Q01_confidence" type="radio" value="5" required></td><td class="center"><input name="Q01_confidence" type="radio" value="6" required></td><td class="center"><input name="Q01_confidence" type="radio" value="7" required></td>
       </tr>
-      <tr data-qid="Q02" data-attribute="gender_male" data-target-direction="positive" data-correct-choice="B">
-        <td class="qid"><strong>Q02</strong><span>more masculine-presenting</span></td>
-        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q02_gender_male_positive_GLOBE__train__S_020124__00018555_000017.v2.vad_reference.wav" type="audio/wav"></audio></td>
+      <tr data-qid="Q02" data-attribute="gender_male" data-target-direction="positive" data-correct-choice="A">
+        <td class="qid"><strong>Q02</strong></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q02_gender_male_positive_GLOBE__train__S_020124__00018555_000017.v2.vad_edited.wav" type="audio/wav"></audio></td>
+        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q02_gender_male_positive_GLOBE__train__S_020124__00018555_000017.v2.vad_reference.wav" type="audio/wav"></audio></td>
         <td class="select-cell">
-          <label>Which clip sounds more masculine-presenting?</label>
           <select class="overall" name="Q02_overall" required>
-            <option selected value="0">- select one -</option>
+            <option selected value="0">Select Clip A or B</option>
             <option value="A">Clip A</option>
             <option value="B">Clip B</option>
           </select>
@@ -161,27 +170,25 @@ document.addEventListener('DOMContentLoaded', () => { updateCompletion(); docume
         <td class="center"><input name="Q02_confidence" type="radio" value="1" required></td><td class="center"><input name="Q02_confidence" type="radio" value="2" required></td><td class="center"><input name="Q02_confidence" type="radio" value="3" required></td><td class="center"><input name="Q02_confidence" type="radio" value="4" required></td><td class="center"><input name="Q02_confidence" type="radio" value="5" required></td><td class="center"><input name="Q02_confidence" type="radio" value="6" required></td><td class="center"><input name="Q02_confidence" type="radio" value="7" required></td>
       </tr>
       <tr data-qid="Q03" data-attribute="gender_male" data-target-direction="negative" data-correct-choice="B">
-        <td class="qid"><strong>Q03</strong><span>less masculine-presenting</span></td>
-        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q03_gender_male_negative_NaturalVoices__MSP-PODCAST_3298__MSP-PODCAST_3298_481_reference.wav" type="audio/wav"></audio></td>
+        <td class="qid"><strong>Q03</strong></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q03_gender_male_negative_NaturalVoices__MSP-PODCAST_3298__MSP-PODCAST_3298_481_edited.wav" type="audio/wav"></audio></td>
+        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q03_gender_male_negative_NaturalVoices__MSP-PODCAST_3298__MSP-PODCAST_3298_481_reference.wav" type="audio/wav"></audio></td>
         <td class="select-cell">
-          <label>Which clip sounds less masculine-presenting?</label>
           <select class="overall" name="Q03_overall" required>
-            <option selected value="0">- select one -</option>
+            <option selected value="0">Select Clip A or B</option>
             <option value="A">Clip A</option>
             <option value="B">Clip B</option>
           </select>
         </td>
         <td class="center"><input name="Q03_confidence" type="radio" value="1" required></td><td class="center"><input name="Q03_confidence" type="radio" value="2" required></td><td class="center"><input name="Q03_confidence" type="radio" value="3" required></td><td class="center"><input name="Q03_confidence" type="radio" value="4" required></td><td class="center"><input name="Q03_confidence" type="radio" value="5" required></td><td class="center"><input name="Q03_confidence" type="radio" value="6" required></td><td class="center"><input name="Q03_confidence" type="radio" value="7" required></td>
       </tr>
-      <tr data-qid="Q04" data-attribute="gender_male" data-target-direction="positive" data-correct-choice="A">
-        <td class="qid"><strong>Q04</strong><span>more masculine-presenting</span></td>
-        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q04_gender_male_positive_LibriTTS__4280__4280_185518_000037_000002_edited.wav" type="audio/wav"></audio></td>
+      <tr data-qid="Q04" data-attribute="gender_male" data-target-direction="positive" data-correct-choice="B">
+        <td class="qid"><strong>Q04</strong></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q04_gender_male_positive_LibriTTS__4280__4280_185518_000037_000002_reference.wav" type="audio/wav"></audio></td>
+        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q04_gender_male_positive_LibriTTS__4280__4280_185518_000037_000002_edited.wav" type="audio/wav"></audio></td>
         <td class="select-cell">
-          <label>Which clip sounds more masculine-presenting?</label>
           <select class="overall" name="Q04_overall" required>
-            <option selected value="0">- select one -</option>
+            <option selected value="0">Select Clip A or B</option>
             <option value="A">Clip A</option>
             <option value="B">Clip B</option>
           </select>
@@ -194,21 +201,29 @@ document.addEventListener('DOMContentLoaded', () => { updateCompletion(); docume
         
         <section class="test-set">
           <h2>Set 2</h2>
+          <p class="set-question"><strong>Which clip sounds more masculine-presenting?</strong></p>
           <div class="table-wrap">
           <table class="tests">
-            <thead><tr>
-              <th>Question</th><th>Clip A</th><th>Clip B</th><th>Your answer</th>
-              <th>1<br><span>Not at all</span></th><th>2</th><th>3<br><span>Somewhat</span></th><th>4</th><th>5<br><span>Quite a bit</span></th><th>6</th><th>7<br><span>Extremely</span></th>
-            </tr></thead>
+            <thead>
+              <tr>
+                <th rowspan="2">Question</th>
+                <th rowspan="2">Clip A</th>
+                <th rowspan="2">Clip B</th>
+                <th rowspan="2">Your answer</th>
+                <th colspan="7" class="confidence-title">Confidence rating</th>
+              </tr>
+              <tr class="confidence-row">
+                <th>1<br><span>Not at all</span></th><th>2</th><th>3<br><span>Somewhat</span></th><th>4</th><th>5<br><span>Quite a bit</span></th><th>6</th><th>7<br><span>Extremely</span></th>
+              </tr>
+            </thead>
             <tbody>
-      <tr data-qid="Q05" data-attribute="gender_male" data-target-direction="negative" data-correct-choice="B">
-        <td class="qid"><strong>Q05</strong><span>less masculine-presenting</span></td>
+      <tr data-qid="Q05" data-attribute="gender_male" data-target-direction="negative" data-correct-choice="A">
+        <td class="qid"><strong>Q05</strong></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q05_gender_male_negative_GLOBE__train__S_000942__00220381_000000.v2.vad_reference.wav" type="audio/wav"></audio></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q05_gender_male_negative_GLOBE__train__S_000942__00220381_000000.v2.vad_edited.wav" type="audio/wav"></audio></td>
         <td class="select-cell">
-          <label>Which clip sounds less masculine-presenting?</label>
           <select class="overall" name="Q05_overall" required>
-            <option selected value="0">- select one -</option>
+            <option selected value="0">Select Clip A or B</option>
             <option value="A">Clip A</option>
             <option value="B">Clip B</option>
           </select>
@@ -216,13 +231,12 @@ document.addEventListener('DOMContentLoaded', () => { updateCompletion(); docume
         <td class="center"><input name="Q05_confidence" type="radio" value="1" required></td><td class="center"><input name="Q05_confidence" type="radio" value="2" required></td><td class="center"><input name="Q05_confidence" type="radio" value="3" required></td><td class="center"><input name="Q05_confidence" type="radio" value="4" required></td><td class="center"><input name="Q05_confidence" type="radio" value="5" required></td><td class="center"><input name="Q05_confidence" type="radio" value="6" required></td><td class="center"><input name="Q05_confidence" type="radio" value="7" required></td>
       </tr>
       <tr data-qid="Q06" data-attribute="gender_male" data-target-direction="positive" data-correct-choice="B">
-        <td class="qid"><strong>Q06</strong><span>more masculine-presenting</span></td>
+        <td class="qid"><strong>Q06</strong></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q06_gender_male_positive_AESRC__Portuguese_G10503__G10503S1196_reference.wav" type="audio/wav"></audio></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q06_gender_male_positive_AESRC__Portuguese_G10503__G10503S1196_edited.wav" type="audio/wav"></audio></td>
         <td class="select-cell">
-          <label>Which clip sounds more masculine-presenting?</label>
           <select class="overall" name="Q06_overall" required>
-            <option selected value="0">- select one -</option>
+            <option selected value="0">Select Clip A or B</option>
             <option value="A">Clip A</option>
             <option value="B">Clip B</option>
           </select>
@@ -230,13 +244,12 @@ document.addEventListener('DOMContentLoaded', () => { updateCompletion(); docume
         <td class="center"><input name="Q06_confidence" type="radio" value="1" required></td><td class="center"><input name="Q06_confidence" type="radio" value="2" required></td><td class="center"><input name="Q06_confidence" type="radio" value="3" required></td><td class="center"><input name="Q06_confidence" type="radio" value="4" required></td><td class="center"><input name="Q06_confidence" type="radio" value="5" required></td><td class="center"><input name="Q06_confidence" type="radio" value="6" required></td><td class="center"><input name="Q06_confidence" type="radio" value="7" required></td>
       </tr>
       <tr data-qid="Q07" data-attribute="gender_male" data-target-direction="negative" data-correct-choice="B">
-        <td class="qid"><strong>Q07</strong><span>less masculine-presenting</span></td>
-        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q07_gender_male_negative_AESRC__Indian_G1757__G1757S1062_reference.wav" type="audio/wav"></audio></td>
+        <td class="qid"><strong>Q07</strong></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q07_gender_male_negative_AESRC__Indian_G1757__G1757S1062_edited.wav" type="audio/wav"></audio></td>
+        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q07_gender_male_negative_AESRC__Indian_G1757__G1757S1062_reference.wav" type="audio/wav"></audio></td>
         <td class="select-cell">
-          <label>Which clip sounds less masculine-presenting?</label>
           <select class="overall" name="Q07_overall" required>
-            <option selected value="0">- select one -</option>
+            <option selected value="0">Select Clip A or B</option>
             <option value="A">Clip A</option>
             <option value="B">Clip B</option>
           </select>
@@ -244,13 +257,12 @@ document.addEventListener('DOMContentLoaded', () => { updateCompletion(); docume
         <td class="center"><input name="Q07_confidence" type="radio" value="1" required></td><td class="center"><input name="Q07_confidence" type="radio" value="2" required></td><td class="center"><input name="Q07_confidence" type="radio" value="3" required></td><td class="center"><input name="Q07_confidence" type="radio" value="4" required></td><td class="center"><input name="Q07_confidence" type="radio" value="5" required></td><td class="center"><input name="Q07_confidence" type="radio" value="6" required></td><td class="center"><input name="Q07_confidence" type="radio" value="7" required></td>
       </tr>
       <tr data-qid="Q08" data-attribute="gender_male" data-target-direction="positive" data-correct-choice="A">
-        <td class="qid"><strong>Q08</strong><span>more masculine-presenting</span></td>
+        <td class="qid"><strong>Q08</strong></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q08_gender_male_positive_GLOBE__train__S_013904__00115359_000001.v2.vad_edited.wav" type="audio/wav"></audio></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q08_gender_male_positive_GLOBE__train__S_013904__00115359_000001.v2.vad_reference.wav" type="audio/wav"></audio></td>
         <td class="select-cell">
-          <label>Which clip sounds more masculine-presenting?</label>
           <select class="overall" name="Q08_overall" required>
-            <option selected value="0">- select one -</option>
+            <option selected value="0">Select Clip A or B</option>
             <option value="A">Clip A</option>
             <option value="B">Clip B</option>
           </select>
@@ -263,21 +275,29 @@ document.addEventListener('DOMContentLoaded', () => { updateCompletion(); docume
         
         <section class="test-set">
           <h2>Set 3</h2>
+          <p class="set-question"><strong>Which clip sounds more masculine-presenting?</strong></p>
           <div class="table-wrap">
           <table class="tests">
-            <thead><tr>
-              <th>Question</th><th>Clip A</th><th>Clip B</th><th>Your answer</th>
-              <th>1<br><span>Not at all</span></th><th>2</th><th>3<br><span>Somewhat</span></th><th>4</th><th>5<br><span>Quite a bit</span></th><th>6</th><th>7<br><span>Extremely</span></th>
-            </tr></thead>
+            <thead>
+              <tr>
+                <th rowspan="2">Question</th>
+                <th rowspan="2">Clip A</th>
+                <th rowspan="2">Clip B</th>
+                <th rowspan="2">Your answer</th>
+                <th colspan="7" class="confidence-title">Confidence rating</th>
+              </tr>
+              <tr class="confidence-row">
+                <th>1<br><span>Not at all</span></th><th>2</th><th>3<br><span>Somewhat</span></th><th>4</th><th>5<br><span>Quite a bit</span></th><th>6</th><th>7<br><span>Extremely</span></th>
+              </tr>
+            </thead>
             <tbody>
-      <tr data-qid="Q09" data-attribute="gender_male" data-target-direction="negative" data-correct-choice="A">
-        <td class="qid"><strong>Q09</strong><span>less masculine-presenting</span></td>
+      <tr data-qid="Q09" data-attribute="gender_male" data-target-direction="negative" data-correct-choice="B">
+        <td class="qid"><strong>Q09</strong></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q09_gender_male_negative_NaturalVoices__MSP-PODCAST_0478__MSP-PODCAST_0478_1_edited.wav" type="audio/wav"></audio></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q09_gender_male_negative_NaturalVoices__MSP-PODCAST_0478__MSP-PODCAST_0478_1_reference.wav" type="audio/wav"></audio></td>
         <td class="select-cell">
-          <label>Which clip sounds less masculine-presenting?</label>
           <select class="overall" name="Q09_overall" required>
-            <option selected value="0">- select one -</option>
+            <option selected value="0">Select Clip A or B</option>
             <option value="A">Clip A</option>
             <option value="B">Clip B</option>
           </select>
@@ -285,27 +305,25 @@ document.addEventListener('DOMContentLoaded', () => { updateCompletion(); docume
         <td class="center"><input name="Q09_confidence" type="radio" value="1" required></td><td class="center"><input name="Q09_confidence" type="radio" value="2" required></td><td class="center"><input name="Q09_confidence" type="radio" value="3" required></td><td class="center"><input name="Q09_confidence" type="radio" value="4" required></td><td class="center"><input name="Q09_confidence" type="radio" value="5" required></td><td class="center"><input name="Q09_confidence" type="radio" value="6" required></td><td class="center"><input name="Q09_confidence" type="radio" value="7" required></td>
       </tr>
       <tr data-qid="Q10" data-attribute="gender_male" data-target-direction="positive" data-correct-choice="A">
-        <td class="qid"><strong>Q10</strong><span>more masculine-presenting</span></td>
+        <td class="qid"><strong>Q10</strong></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q10_gender_male_positive_LibriTTS__6782__6782_61316_000007_000010_edited.wav" type="audio/wav"></audio></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q10_gender_male_positive_LibriTTS__6782__6782_61316_000007_000010_reference.wav" type="audio/wav"></audio></td>
         <td class="select-cell">
-          <label>Which clip sounds more masculine-presenting?</label>
           <select class="overall" name="Q10_overall" required>
-            <option selected value="0">- select one -</option>
+            <option selected value="0">Select Clip A or B</option>
             <option value="A">Clip A</option>
             <option value="B">Clip B</option>
           </select>
         </td>
         <td class="center"><input name="Q10_confidence" type="radio" value="1" required></td><td class="center"><input name="Q10_confidence" type="radio" value="2" required></td><td class="center"><input name="Q10_confidence" type="radio" value="3" required></td><td class="center"><input name="Q10_confidence" type="radio" value="4" required></td><td class="center"><input name="Q10_confidence" type="radio" value="5" required></td><td class="center"><input name="Q10_confidence" type="radio" value="6" required></td><td class="center"><input name="Q10_confidence" type="radio" value="7" required></td>
       </tr>
-      <tr data-qid="Q11" data-attribute="gender_male" data-target-direction="negative" data-correct-choice="B">
-        <td class="qid"><strong>Q11</strong><span>less masculine-presenting</span></td>
+      <tr data-qid="Q11" data-attribute="gender_male" data-target-direction="negative" data-correct-choice="A">
+        <td class="qid"><strong>Q11</strong></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q11_gender_male_negative_NaturalVoices__MSP-PODCAST_2484__MSP-PODCAST_2484_483_reference.wav" type="audio/wav"></audio></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q11_gender_male_negative_NaturalVoices__MSP-PODCAST_2484__MSP-PODCAST_2484_483_edited.wav" type="audio/wav"></audio></td>
         <td class="select-cell">
-          <label>Which clip sounds less masculine-presenting?</label>
           <select class="overall" name="Q11_overall" required>
-            <option selected value="0">- select one -</option>
+            <option selected value="0">Select Clip A or B</option>
             <option value="A">Clip A</option>
             <option value="B">Clip B</option>
           </select>
@@ -313,13 +331,12 @@ document.addEventListener('DOMContentLoaded', () => { updateCompletion(); docume
         <td class="center"><input name="Q11_confidence" type="radio" value="1" required></td><td class="center"><input name="Q11_confidence" type="radio" value="2" required></td><td class="center"><input name="Q11_confidence" type="radio" value="3" required></td><td class="center"><input name="Q11_confidence" type="radio" value="4" required></td><td class="center"><input name="Q11_confidence" type="radio" value="5" required></td><td class="center"><input name="Q11_confidence" type="radio" value="6" required></td><td class="center"><input name="Q11_confidence" type="radio" value="7" required></td>
       </tr>
       <tr data-qid="Q12" data-attribute="gender_male" data-target-direction="positive" data-correct-choice="A">
-        <td class="qid"><strong>Q12</strong><span>more masculine-presenting</span></td>
+        <td class="qid"><strong>Q12</strong></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q12_gender_male_positive_LibriTTS__3889__3889_9915_000007_000001_edited.wav" type="audio/wav"></audio></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q12_gender_male_positive_LibriTTS__3889__3889_9915_000007_000001_reference.wav" type="audio/wav"></audio></td>
         <td class="select-cell">
-          <label>Which clip sounds more masculine-presenting?</label>
           <select class="overall" name="Q12_overall" required>
-            <option selected value="0">- select one -</option>
+            <option selected value="0">Select Clip A or B</option>
             <option value="A">Clip A</option>
             <option value="B">Clip B</option>
           </select>
@@ -332,35 +349,42 @@ document.addEventListener('DOMContentLoaded', () => { updateCompletion(); docume
         
         <section class="test-set">
           <h2>Set 4</h2>
+          <p class="set-question"><strong>Which clip sounds more masculine-presenting?</strong></p>
           <div class="table-wrap">
           <table class="tests">
-            <thead><tr>
-              <th>Question</th><th>Clip A</th><th>Clip B</th><th>Your answer</th>
-              <th>1<br><span>Not at all</span></th><th>2</th><th>3<br><span>Somewhat</span></th><th>4</th><th>5<br><span>Quite a bit</span></th><th>6</th><th>7<br><span>Extremely</span></th>
-            </tr></thead>
+            <thead>
+              <tr>
+                <th rowspan="2">Question</th>
+                <th rowspan="2">Clip A</th>
+                <th rowspan="2">Clip B</th>
+                <th rowspan="2">Your answer</th>
+                <th colspan="7" class="confidence-title">Confidence rating</th>
+              </tr>
+              <tr class="confidence-row">
+                <th>1<br><span>Not at all</span></th><th>2</th><th>3<br><span>Somewhat</span></th><th>4</th><th>5<br><span>Quite a bit</span></th><th>6</th><th>7<br><span>Extremely</span></th>
+              </tr>
+            </thead>
             <tbody>
       <tr data-qid="Q13" data-attribute="gender_male" data-target-direction="negative" data-correct-choice="A">
-        <td class="qid"><strong>Q13</strong><span>less masculine-presenting</span></td>
-        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q13_gender_male_negative_NaturalVoices__MSP-PODCAST_6709__MSP-PODCAST_6709_14_edited.wav" type="audio/wav"></audio></td>
+        <td class="qid"><strong>Q13</strong></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q13_gender_male_negative_NaturalVoices__MSP-PODCAST_6709__MSP-PODCAST_6709_14_reference.wav" type="audio/wav"></audio></td>
+        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q13_gender_male_negative_NaturalVoices__MSP-PODCAST_6709__MSP-PODCAST_6709_14_edited.wav" type="audio/wav"></audio></td>
         <td class="select-cell">
-          <label>Which clip sounds less masculine-presenting?</label>
           <select class="overall" name="Q13_overall" required>
-            <option selected value="0">- select one -</option>
+            <option selected value="0">Select Clip A or B</option>
             <option value="A">Clip A</option>
             <option value="B">Clip B</option>
           </select>
         </td>
         <td class="center"><input name="Q13_confidence" type="radio" value="1" required></td><td class="center"><input name="Q13_confidence" type="radio" value="2" required></td><td class="center"><input name="Q13_confidence" type="radio" value="3" required></td><td class="center"><input name="Q13_confidence" type="radio" value="4" required></td><td class="center"><input name="Q13_confidence" type="radio" value="5" required></td><td class="center"><input name="Q13_confidence" type="radio" value="6" required></td><td class="center"><input name="Q13_confidence" type="radio" value="7" required></td>
       </tr>
-      <tr data-qid="Q14" data-attribute="gender_male" data-target-direction="positive" data-correct-choice="B">
-        <td class="qid"><strong>Q14</strong><span>more masculine-presenting</span></td>
-        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q14_gender_male_positive_GLOBE__train__S_008034__00354203_000009.v2.vad_reference.wav" type="audio/wav"></audio></td>
+      <tr data-qid="Q14" data-attribute="gender_male" data-target-direction="positive" data-correct-choice="A">
+        <td class="qid"><strong>Q14</strong></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q14_gender_male_positive_GLOBE__train__S_008034__00354203_000009.v2.vad_edited.wav" type="audio/wav"></audio></td>
+        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q14_gender_male_positive_GLOBE__train__S_008034__00354203_000009.v2.vad_reference.wav" type="audio/wav"></audio></td>
         <td class="select-cell">
-          <label>Which clip sounds more masculine-presenting?</label>
           <select class="overall" name="Q14_overall" required>
-            <option selected value="0">- select one -</option>
+            <option selected value="0">Select Clip A or B</option>
             <option value="A">Clip A</option>
             <option value="B">Clip B</option>
           </select>
@@ -368,27 +392,25 @@ document.addEventListener('DOMContentLoaded', () => { updateCompletion(); docume
         <td class="center"><input name="Q14_confidence" type="radio" value="1" required></td><td class="center"><input name="Q14_confidence" type="radio" value="2" required></td><td class="center"><input name="Q14_confidence" type="radio" value="3" required></td><td class="center"><input name="Q14_confidence" type="radio" value="4" required></td><td class="center"><input name="Q14_confidence" type="radio" value="5" required></td><td class="center"><input name="Q14_confidence" type="radio" value="6" required></td><td class="center"><input name="Q14_confidence" type="radio" value="7" required></td>
       </tr>
       <tr data-qid="Q15" data-attribute="gender_male" data-target-direction="negative" data-correct-choice="B">
-        <td class="qid"><strong>Q15</strong><span>less masculine-presenting</span></td>
-        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q15_gender_male_negative_NaturalVoices__MSP-PODCAST_6649__MSP-PODCAST_6649_27_reference.wav" type="audio/wav"></audio></td>
+        <td class="qid"><strong>Q15</strong></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q15_gender_male_negative_NaturalVoices__MSP-PODCAST_6649__MSP-PODCAST_6649_27_edited.wav" type="audio/wav"></audio></td>
+        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q15_gender_male_negative_NaturalVoices__MSP-PODCAST_6649__MSP-PODCAST_6649_27_reference.wav" type="audio/wav"></audio></td>
         <td class="select-cell">
-          <label>Which clip sounds less masculine-presenting?</label>
           <select class="overall" name="Q15_overall" required>
-            <option selected value="0">- select one -</option>
+            <option selected value="0">Select Clip A or B</option>
             <option value="A">Clip A</option>
             <option value="B">Clip B</option>
           </select>
         </td>
         <td class="center"><input name="Q15_confidence" type="radio" value="1" required></td><td class="center"><input name="Q15_confidence" type="radio" value="2" required></td><td class="center"><input name="Q15_confidence" type="radio" value="3" required></td><td class="center"><input name="Q15_confidence" type="radio" value="4" required></td><td class="center"><input name="Q15_confidence" type="radio" value="5" required></td><td class="center"><input name="Q15_confidence" type="radio" value="6" required></td><td class="center"><input name="Q15_confidence" type="radio" value="7" required></td>
       </tr>
-      <tr data-qid="Q16" data-attribute="gender_male" data-target-direction="positive" data-correct-choice="A">
-        <td class="qid"><strong>Q16</strong><span>more masculine-presenting</span></td>
-        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q16_gender_male_positive_NaturalVoices__MSP-PODCAST_4984__MSP-PODCAST_4984_162_edited.wav" type="audio/wav"></audio></td>
+      <tr data-qid="Q16" data-attribute="gender_male" data-target-direction="positive" data-correct-choice="B">
+        <td class="qid"><strong>Q16</strong></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q16_gender_male_positive_NaturalVoices__MSP-PODCAST_4984__MSP-PODCAST_4984_162_reference.wav" type="audio/wav"></audio></td>
+        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q16_gender_male_positive_NaturalVoices__MSP-PODCAST_4984__MSP-PODCAST_4984_162_edited.wav" type="audio/wav"></audio></td>
         <td class="select-cell">
-          <label>Which clip sounds more masculine-presenting?</label>
           <select class="overall" name="Q16_overall" required>
-            <option selected value="0">- select one -</option>
+            <option selected value="0">Select Clip A or B</option>
             <option value="A">Clip A</option>
             <option value="B">Clip B</option>
           </select>
@@ -401,35 +423,42 @@ document.addEventListener('DOMContentLoaded', () => { updateCompletion(); docume
         
         <section class="test-set">
           <h2>Set 5</h2>
+          <p class="set-question"><strong>Which clip sounds more masculine-presenting?</strong></p>
           <div class="table-wrap">
           <table class="tests">
-            <thead><tr>
-              <th>Question</th><th>Clip A</th><th>Clip B</th><th>Your answer</th>
-              <th>1<br><span>Not at all</span></th><th>2</th><th>3<br><span>Somewhat</span></th><th>4</th><th>5<br><span>Quite a bit</span></th><th>6</th><th>7<br><span>Extremely</span></th>
-            </tr></thead>
+            <thead>
+              <tr>
+                <th rowspan="2">Question</th>
+                <th rowspan="2">Clip A</th>
+                <th rowspan="2">Clip B</th>
+                <th rowspan="2">Your answer</th>
+                <th colspan="7" class="confidence-title">Confidence rating</th>
+              </tr>
+              <tr class="confidence-row">
+                <th>1<br><span>Not at all</span></th><th>2</th><th>3<br><span>Somewhat</span></th><th>4</th><th>5<br><span>Quite a bit</span></th><th>6</th><th>7<br><span>Extremely</span></th>
+              </tr>
+            </thead>
             <tbody>
       <tr data-qid="Q17" data-attribute="gender_male" data-target-direction="negative" data-correct-choice="A">
-        <td class="qid"><strong>Q17</strong><span>less masculine-presenting</span></td>
-        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q17_gender_male_negative_GLOBE__train__S_017349__00470362_000000.v2.vad_edited.wav" type="audio/wav"></audio></td>
+        <td class="qid"><strong>Q17</strong></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q17_gender_male_negative_GLOBE__train__S_017349__00470362_000000.v2.vad_reference.wav" type="audio/wav"></audio></td>
+        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q17_gender_male_negative_GLOBE__train__S_017349__00470362_000000.v2.vad_edited.wav" type="audio/wav"></audio></td>
         <td class="select-cell">
-          <label>Which clip sounds less masculine-presenting?</label>
           <select class="overall" name="Q17_overall" required>
-            <option selected value="0">- select one -</option>
+            <option selected value="0">Select Clip A or B</option>
             <option value="A">Clip A</option>
             <option value="B">Clip B</option>
           </select>
         </td>
         <td class="center"><input name="Q17_confidence" type="radio" value="1" required></td><td class="center"><input name="Q17_confidence" type="radio" value="2" required></td><td class="center"><input name="Q17_confidence" type="radio" value="3" required></td><td class="center"><input name="Q17_confidence" type="radio" value="4" required></td><td class="center"><input name="Q17_confidence" type="radio" value="5" required></td><td class="center"><input name="Q17_confidence" type="radio" value="6" required></td><td class="center"><input name="Q17_confidence" type="radio" value="7" required></td>
       </tr>
-      <tr data-qid="Q18" data-attribute="gender_male" data-target-direction="positive" data-correct-choice="B">
-        <td class="qid"><strong>Q18</strong><span>more masculine-presenting</span></td>
-        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q18_gender_male_positive_GLOBE__train__S_004216__00510341_000002.v2.vad_reference.wav" type="audio/wav"></audio></td>
+      <tr data-qid="Q18" data-attribute="gender_male" data-target-direction="positive" data-correct-choice="A">
+        <td class="qid"><strong>Q18</strong></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q18_gender_male_positive_GLOBE__train__S_004216__00510341_000002.v2.vad_edited.wav" type="audio/wav"></audio></td>
+        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q18_gender_male_positive_GLOBE__train__S_004216__00510341_000002.v2.vad_reference.wav" type="audio/wav"></audio></td>
         <td class="select-cell">
-          <label>Which clip sounds more masculine-presenting?</label>
           <select class="overall" name="Q18_overall" required>
-            <option selected value="0">- select one -</option>
+            <option selected value="0">Select Clip A or B</option>
             <option value="A">Clip A</option>
             <option value="B">Clip B</option>
           </select>
@@ -437,13 +466,12 @@ document.addEventListener('DOMContentLoaded', () => { updateCompletion(); docume
         <td class="center"><input name="Q18_confidence" type="radio" value="1" required></td><td class="center"><input name="Q18_confidence" type="radio" value="2" required></td><td class="center"><input name="Q18_confidence" type="radio" value="3" required></td><td class="center"><input name="Q18_confidence" type="radio" value="4" required></td><td class="center"><input name="Q18_confidence" type="radio" value="5" required></td><td class="center"><input name="Q18_confidence" type="radio" value="6" required></td><td class="center"><input name="Q18_confidence" type="radio" value="7" required></td>
       </tr>
       <tr data-qid="Q19" data-attribute="gender_male" data-target-direction="negative" data-correct-choice="A">
-        <td class="qid"><strong>Q19</strong><span>less masculine-presenting</span></td>
-        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q19_gender_male_negative_VoxCeleb1__train__id10645__BryeQfBIpm4__00003_edited.wav" type="audio/wav"></audio></td>
+        <td class="qid"><strong>Q19</strong></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q19_gender_male_negative_VoxCeleb1__train__id10645__BryeQfBIpm4__00003_reference.wav" type="audio/wav"></audio></td>
+        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q19_gender_male_negative_VoxCeleb1__train__id10645__BryeQfBIpm4__00003_edited.wav" type="audio/wav"></audio></td>
         <td class="select-cell">
-          <label>Which clip sounds less masculine-presenting?</label>
           <select class="overall" name="Q19_overall" required>
-            <option selected value="0">- select one -</option>
+            <option selected value="0">Select Clip A or B</option>
             <option value="A">Clip A</option>
             <option value="B">Clip B</option>
           </select>
@@ -451,13 +479,12 @@ document.addEventListener('DOMContentLoaded', () => { updateCompletion(); docume
         <td class="center"><input name="Q19_confidence" type="radio" value="1" required></td><td class="center"><input name="Q19_confidence" type="radio" value="2" required></td><td class="center"><input name="Q19_confidence" type="radio" value="3" required></td><td class="center"><input name="Q19_confidence" type="radio" value="4" required></td><td class="center"><input name="Q19_confidence" type="radio" value="5" required></td><td class="center"><input name="Q19_confidence" type="radio" value="6" required></td><td class="center"><input name="Q19_confidence" type="radio" value="7" required></td>
       </tr>
       <tr data-qid="Q20" data-attribute="gender_male" data-target-direction="positive" data-correct-choice="A">
-        <td class="qid"><strong>Q20</strong><span>more masculine-presenting</span></td>
+        <td class="qid"><strong>Q20</strong></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q20_gender_male_positive_LibriTTS__2346__2346_152201_000014_000002_edited.wav" type="audio/wav"></audio></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q20_gender_male_positive_LibriTTS__2346__2346_152201_000014_000002_reference.wav" type="audio/wav"></audio></td>
         <td class="select-cell">
-          <label>Which clip sounds more masculine-presenting?</label>
           <select class="overall" name="Q20_overall" required>
-            <option selected value="0">- select one -</option>
+            <option selected value="0">Select Clip A or B</option>
             <option value="A">Clip A</option>
             <option value="B">Clip B</option>
           </select>

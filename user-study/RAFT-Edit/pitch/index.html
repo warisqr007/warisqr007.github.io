@@ -5,46 +5,48 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pitch A/B Test</title>
 <style>
-:root { color-scheme: light; --ink:#17202a; --muted:#5f6e7d; --line:#dce5ee; --band:#f6f8fb; --accent:#123f6d; --ok:#e6f4ec; --warn:#fff8e7; }
+:root { color-scheme: light; --ink:#17202a; --muted:#4d5d70; --line:#d5e0eb; --band:#f6f8fb; --accent:#123f6d; --ok:#e6f4ec; --warn:#fff8e7; }
 * { box-sizing: border-box; }
-body { margin:0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color:var(--ink); background:#fff; }
-main { max-width: 1180px; margin:0 auto; padding: 28px 20px 80px; }
-header { text-align:center; padding: 18px 0 16px; }
-h1 { margin:0 0 10px; font-size: clamp(28px, 4vw, 42px); }
-p, li { color:var(--muted); line-height:1.55; }
-.instructions { background:var(--band); border:1px solid var(--line); border-radius:10px; padding:18px 22px; margin:16px 0 24px; }
+body { margin:0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color:var(--ink); background:#fff; font-size:18px; }
+main { max-width: 1480px; margin:0 auto; padding: 30px 28px 90px; }
+header { text-align:center; padding: 16px 0 20px; }
+h1 { margin:0 0 12px; font-size: clamp(34px, 4.2vw, 52px); line-height:1.08; }
+p, li { color:var(--muted); line-height:1.58; }
+.instructions { background:var(--band); border:1px solid var(--line); border-radius:10px; padding:22px 26px; margin:18px auto 28px; max-width: 1260px; }
 .instructions strong { color:var(--ink); }
-.test-set { margin: 26px 0 34px; }
-h2 { font-size:22px; margin: 0 0 10px; }
+.test-set { margin: 28px 0 38px; }
+h2 { font-size:26px; margin: 0 0 8px; }
+.set-question { margin: 0 0 12px; font-size: 20px; color: #24364a; }
 .table-wrap { overflow-x:auto; border:1px solid var(--line); border-radius:10px; }
-table.tests { width:100%; min-width: 1000px; border-collapse:collapse; table-layout:fixed; }
-th, td { border-bottom:1px solid var(--line); padding:10px; text-align:center; vertical-align:middle; }
-thead th { background:#edf3f8; color:#27384b; font-weight:700; }
-thead span { font-size:11px; font-weight:500; color:#536577; }
+table.tests { width:100%; min-width: 1320px; border-collapse:collapse; table-layout:fixed; }
+th, td { border-bottom:1px solid var(--line); padding:12px 12px; text-align:center; vertical-align:middle; }
+thead th { background:#edf3f8; color:#24364a; font-weight:800; font-size:16px; }
+thead .confidence-title { background:#ddebf7; font-size:17px; }
+thead .confidence-row th { font-size:16px; }
+thead span { font-size:12px; font-weight:600; color:#516479; }
 tbody tr:nth-child(even) { background:#fbfcfe; }
 tbody tr.complete { background: var(--ok); }
-.qid { width:105px; }
-.qid span { display:block; margin-top:4px; font-size:12px; color:var(--muted); }
-.audio-cell { width: 210px; }
-audio { width: 100%; max-width: 190px; }
-.select-cell { width: 220px; }
-.select-cell label { display:block; font-size:13px; color:#344256; margin-bottom:6px; font-weight:600; }
-select { width: 100%; border:1px solid #b8c5d3; border-radius:7px; padding:8px; background:#fff; font-size:14px; }
-input[type=radio] { width:20px; height:20px; }
-.post { margin-top: 22px; padding:18px 22px; border:1px solid var(--line); border-radius:10px; background:#fbfcfe; }
-.post label { display:block; margin: 12px 0 6px; font-weight:600; }
-.post input, .post textarea { width:100%; border:1px solid #b8c5d3; border-radius:7px; padding:9px; font-size:14px; }
-button { border:0; background:var(--accent); color:white; border-radius:8px; padding:12px 18px; font-size:16px; font-weight:700; cursor:pointer; }
+.qid { width:95px; font-size:18px; }
+.audio-cell { width: 310px; }
+audio { width: 285px; max-width:100%; min-height: 44px; }
+.select-cell { width: 210px; }
+select { width: 100%; min-width: 175px; border:2px solid #8aa3bd; border-radius:8px; padding:10px 12px; background:#fff; color:#17202a; font-size:16px; font-weight:700; }
+select:invalid, select option[value="0"] { color:#5c6977; }
+input[type=radio] { width:23px; height:23px; accent-color:#123f6d; }
+.post { margin-top: 26px; padding:22px 26px; border:1px solid var(--line); border-radius:10px; background:#fbfcfe; }
+.post label { display:block; margin: 14px 0 7px; font-weight:700; }
+.post input, .post textarea, .post select { width:100%; border:1px solid #9fb1c4; border-radius:8px; padding:11px; font-size:16px; }
+button { border:0; background:var(--accent); color:white; border-radius:8px; padding:14px 20px; font-size:18px; font-weight:800; cursor:pointer; }
 button:disabled { opacity:.55; cursor:not-allowed; }
 .status { margin-left:12px; color:var(--muted); }
-.notice { background:var(--warn); border:1px solid #f0dfb0; padding:12px 14px; border-radius:8px; }
-@media (max-width:760px) { main { padding:18px 10px 60px; } table.tests { min-width: 920px; } .audio-cell { width:180px; } }
+.notice { background:var(--warn); border:1px solid #f0dfb0; padding:13px 15px; border-radius:8px; }
+@media (max-width:900px) { main { padding:20px 12px 70px; } body { font-size:16px; } table.tests { min-width: 1180px; } .audio-cell { width:260px; } audio { width: 240px; } }
 </style>
 <script>
 const APPS_SCRIPT_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbzG036OQcUQnDDy_h2CQ59-SLZ8ohhfpqG0BRMOqiF6GUXNVfDBxYzgpv6w_1pyXdKM/exec";
 const PROLIFIC_COMPLETION_URL = "https://app.prolific.com/submissions/complete?cc=C6IEG2VT";
 const STUDY_ATTRIBUTE = "pitch";
-const TRIALS = [{"qid": "Q01", "set_id": 1, "attribute": "pitch", "target_direction": "negative", "target_text": "lower-pitched", "question": "Which clip sounds lower-pitched?", "clip_a": "audio/Q01_pitch_negative_AESRC__Chinese_G40755__G40755S1113_reference.wav", "clip_b": "audio/Q01_pitch_negative_AESRC__Chinese_G40755__G40755S1113_edited.wav", "clip_a_role": "reference", "clip_b_role": "edited", "correct_choice": "B", "source_trial_id": "0104_pitch_negative_AESRC__Chinese_G40755__G40755S1113", "item_id": "AESRC::Chinese_G40755::G40755S1113", "age_group": "senior_60s", "gender_group": "female", "decision_from_curation": "selected", "selection_score": 1.437606569731205}, {"qid": "Q02", "set_id": 1, "attribute": "pitch", "target_direction": "positive", "target_text": "higher-pitched", "question": "Which clip sounds higher-pitched?", "clip_a": "audio/Q02_pitch_positive_AESRC__British_G00011__G00011S2318_reference.wav", "clip_b": "audio/Q02_pitch_positive_AESRC__British_G00011__G00011S2318_edited.wav", "clip_a_role": "reference", "clip_b_role": "edited", "correct_choice": "B", "source_trial_id": "0134_pitch_positive_AESRC__British_G00011__G00011S2318", "item_id": "AESRC::British_G00011::G00011S2318", "age_group": "young_20s", "gender_group": "male", "decision_from_curation": "selected", "selection_score": 1.6062663012317664}, {"qid": "Q03", "set_id": 1, "attribute": "pitch", "target_direction": "negative", "target_text": "lower-pitched", "question": "Which clip sounds lower-pitched?", "clip_a": "audio/Q03_pitch_negative_GLOBE__train__S_017107__00046647_000011.v2.vad_reference.wav", "clip_b": "audio/Q03_pitch_negative_GLOBE__train__S_017107__00046647_000011.v2.vad_edited.wav", "clip_a_role": "reference", "clip_b_role": "edited", "correct_choice": "B", "source_trial_id": "0112_pitch_negative_GLOBE__train__S_017107__00046647_000011.v2.vad", "item_id": "GLOBE::train::S_017107::00046647_000011.v2.vad", "age_group": "young_20s", "gender_group": "female", "decision_from_curation": "selected", "selection_score": 1.4086127713052656}, {"qid": "Q04", "set_id": 1, "attribute": "pitch", "target_direction": "positive", "target_text": "higher-pitched", "question": "Which clip sounds higher-pitched?", "clip_a": "audio/Q04_pitch_positive_AESRC__Portuguese_G00510__G00510S1048_edited.wav", "clip_b": "audio/Q04_pitch_positive_AESRC__Portuguese_G00510__G00510S1048_reference.wav", "clip_a_role": "edited", "clip_b_role": "reference", "correct_choice": "A", "source_trial_id": "0125_pitch_positive_AESRC__Portuguese_G00510__G00510S1048", "item_id": "AESRC::Portuguese_G00510::G00510S1048", "age_group": "mid_40s", "gender_group": "male", "decision_from_curation": "selected", "selection_score": 1.5888689859930345}, {"qid": "Q05", "set_id": 2, "attribute": "pitch", "target_direction": "negative", "target_text": "lower-pitched", "question": "Which clip sounds lower-pitched?", "clip_a": "audio/Q05_pitch_negative_AESRC__Indian_G00826__G00826S1001_reference.wav", "clip_b": "audio/Q05_pitch_negative_AESRC__Indian_G00826__G00826S1001_edited.wav", "clip_a_role": "reference", "clip_b_role": "edited", "correct_choice": "B", "source_trial_id": "0113_pitch_negative_AESRC__Indian_G00826__G00826S1001", "item_id": "AESRC::Indian_G00826::G00826S1001", "age_group": "young_20s", "gender_group": "female", "decision_from_curation": "selected", "selection_score": 1.4077831955670215}, {"qid": "Q06", "set_id": 2, "attribute": "pitch", "target_direction": "positive", "target_text": "higher-pitched", "question": "Which clip sounds higher-pitched?", "clip_a": "audio/Q06_pitch_positive_AESRC__Chinese_G00541__G00541S1039_reference.wav", "clip_b": "audio/Q06_pitch_positive_AESRC__Chinese_G00541__G00541S1039_edited.wav", "clip_a_role": "reference", "clip_b_role": "edited", "correct_choice": "B", "source_trial_id": "0120_pitch_positive_AESRC__Chinese_G00541__G00541S1039", "item_id": "AESRC::Chinese_G00541::G00541S1039", "age_group": "mid_40s", "gender_group": "female", "decision_from_curation": "maybe", "selection_score": 1.8442189558630415}, {"qid": "Q07", "set_id": 2, "attribute": "pitch", "target_direction": "negative", "target_text": "lower-pitched", "question": "Which clip sounds lower-pitched?", "clip_a": "audio/Q07_pitch_negative_NaturalVoices__MSP-PODCAST_3791__MSP-PODCAST_3791_7_reference.wav", "clip_b": "audio/Q07_pitch_negative_NaturalVoices__MSP-PODCAST_3791__MSP-PODCAST_3791_7_edited.wav", "clip_a_role": "reference", "clip_b_role": "edited", "correct_choice": "B", "source_trial_id": "0114_pitch_negative_NaturalVoices__MSP-PODCAST_3791__MSP-PODCAST_3791_7", "item_id": "NaturalVoices::MSP-PODCAST_3791::MSP-PODCAST_3791_7", "age_group": "young_20s", "gender_group": "female", "decision_from_curation": "selected", "selection_score": 1.3967834224942246}, {"qid": "Q08", "set_id": 2, "attribute": "pitch", "target_direction": "positive", "target_text": "higher-pitched", "question": "Which clip sounds higher-pitched?", "clip_a": "audio/Q08_pitch_positive_LibriTTS__1914__1914_121446_000038_000002_reference.wav", "clip_b": "audio/Q08_pitch_positive_LibriTTS__1914__1914_121446_000038_000002_edited.wav", "clip_a_role": "reference", "clip_b_role": "edited", "correct_choice": "B", "source_trial_id": "0128_pitch_positive_LibriTTS__1914__1914_121446_000038_000002", "item_id": "LibriTTS::1914::1914_121446_000038_000002", "age_group": "senior_60s", "gender_group": "male", "decision_from_curation": "maybe", "selection_score": 1.7547325847300659}, {"qid": "Q09", "set_id": 3, "attribute": "pitch", "target_direction": "negative", "target_text": "lower-pitched", "question": "Which clip sounds lower-pitched?", "clip_a": "audio/Q09_pitch_negative_GLOBE__train__S_018921__00440904_000047.v2.vad_edited.wav", "clip_b": "audio/Q09_pitch_negative_GLOBE__train__S_018921__00440904_000047.v2.vad_reference.wav", "clip_a_role": "edited", "clip_b_role": "reference", "correct_choice": "A", "source_trial_id": "0115_pitch_negative_GLOBE__train__S_018921__00440904_000047.v2.vad", "item_id": "GLOBE::train::S_018921::00440904_000047.v2.vad", "age_group": "young_20s", "gender_group": "female", "decision_from_curation": "selected", "selection_score": 1.3669517090180658}, {"qid": "Q10", "set_id": 3, "attribute": "pitch", "target_direction": "positive", "target_text": "higher-pitched", "question": "Which clip sounds higher-pitched?", "clip_a": "audio/Q10_pitch_positive_VoxCeleb1__train__id11094__lAABD8fznuw__00001_reference.wav", "clip_b": "audio/Q10_pitch_positive_VoxCeleb1__train__id11094__lAABD8fznuw__00001_edited.wav", "clip_a_role": "reference", "clip_b_role": "edited", "correct_choice": "B", "source_trial_id": "0122_pitch_positive_VoxCeleb1__train__id11094__lAABD8fznuw__00001", "item_id": "VoxCeleb1::train::id11094::lAABD8fznuw::00001", "age_group": "mid_40s", "gender_group": "male", "decision_from_curation": "maybe", "selection_score": 1.656846119287585}, {"qid": "Q11", "set_id": 3, "attribute": "pitch", "target_direction": "negative", "target_text": "lower-pitched", "question": "Which clip sounds lower-pitched?", "clip_a": "audio/Q11_pitch_negative_LibriTTS__6227__6227_36632_000028_000000_reference.wav", "clip_b": "audio/Q11_pitch_negative_LibriTTS__6227__6227_36632_000028_000000_edited.wav", "clip_a_role": "reference", "clip_b_role": "edited", "correct_choice": "B", "source_trial_id": "0098_pitch_negative_LibriTTS__6227__6227_36632_000028_000000", "item_id": "LibriTTS::6227::6227_36632_000028_000000", "age_group": "mid_40s", "gender_group": "female", "decision_from_curation": "selected", "selection_score": 1.3086810297030933}, {"qid": "Q12", "set_id": 3, "attribute": "pitch", "target_direction": "positive", "target_text": "higher-pitched", "question": "Which clip sounds higher-pitched?", "clip_a": "audio/Q12_pitch_positive_VoxCeleb1__train__id11199__tvfx-OlFisE__00018_edited.wav", "clip_b": "audio/Q12_pitch_positive_VoxCeleb1__train__id11199__tvfx-OlFisE__00018_reference.wav", "clip_a_role": "edited", "clip_b_role": "reference", "correct_choice": "A", "source_trial_id": "0123_pitch_positive_VoxCeleb1__train__id11199__tvfx-OlFisE__00018", "item_id": "VoxCeleb1::train::id11199::tvfx-OlFisE::00018", "age_group": "mid_40s", "gender_group": "male", "decision_from_curation": "maybe", "selection_score": 1.622638346462801}, {"qid": "Q13", "set_id": 4, "attribute": "pitch", "target_direction": "negative", "target_text": "lower-pitched", "question": "Which clip sounds lower-pitched?", "clip_a": "audio/Q13_pitch_negative_GLOBE__train__S_005643__00361385_000003.v2.vad_edited.wav", "clip_b": "audio/Q13_pitch_negative_GLOBE__train__S_005643__00361385_000003.v2.vad_reference.wav", "clip_a_role": "edited", "clip_b_role": "reference", "correct_choice": "A", "source_trial_id": "0099_pitch_negative_GLOBE__train__S_005643__00361385_000003.v2.vad", "item_id": "GLOBE::train::S_005643::00361385_000003.v2.vad", "age_group": "mid_40s", "gender_group": "female", "decision_from_curation": "selected", "selection_score": 1.2726035323641103}, {"qid": "Q14", "set_id": 4, "attribute": "pitch", "target_direction": "positive", "target_text": "higher-pitched", "question": "Which clip sounds higher-pitched?", "clip_a": "audio/Q14_pitch_positive_NaturalVoices__MSP-PODCAST_2686__MSP-PODCAST_2686_37_edited.wav", "clip_b": "audio/Q14_pitch_positive_NaturalVoices__MSP-PODCAST_2686__MSP-PODCAST_2686_37_reference.wav", "clip_a_role": "edited", "clip_b_role": "reference", "correct_choice": "A", "source_trial_id": "0124_pitch_positive_NaturalVoices__MSP-PODCAST_2686__MSP-PODCAST_2686_37", "item_id": "NaturalVoices::MSP-PODCAST_2686::MSP-PODCAST_2686_37", "age_group": "mid_40s", "gender_group": "male", "decision_from_curation": "maybe", "selection_score": 1.5989021028162913}, {"qid": "Q15", "set_id": 4, "attribute": "pitch", "target_direction": "negative", "target_text": "lower-pitched", "question": "Which clip sounds lower-pitched?", "clip_a": "audio/Q15_pitch_negative_NaturalVoices__MSP-PODCAST_3920__MSP-PODCAST_3920_767_reference.wav", "clip_b": "audio/Q15_pitch_negative_NaturalVoices__MSP-PODCAST_3920__MSP-PODCAST_3920_767_edited.wav", "clip_a_role": "reference", "clip_b_role": "edited", "correct_choice": "B", "source_trial_id": "0105_pitch_negative_NaturalVoices__MSP-PODCAST_3920__MSP-PODCAST_3920_767", "item_id": "NaturalVoices::MSP-PODCAST_3920::MSP-PODCAST_3920_767", "age_group": "senior_60s", "gender_group": "female", "decision_from_curation": "selected", "selection_score": 1.2099947855364404}, {"qid": "Q16", "set_id": 4, "attribute": "pitch", "target_direction": "positive", "target_text": "higher-pitched", "question": "Which clip sounds higher-pitched?", "clip_a": "audio/Q16_pitch_positive_LibriTTS__4425__4425_14497_000030_000002_edited.wav", "clip_b": "audio/Q16_pitch_positive_LibriTTS__4425__4425_14497_000030_000002_reference.wav", "clip_a_role": "edited", "clip_b_role": "reference", "correct_choice": "A", "source_trial_id": "0126_pitch_positive_LibriTTS__4425__4425_14497_000030_000002", "item_id": "LibriTTS::4425::4425_14497_000030_000002", "age_group": "mid_40s", "gender_group": "male", "decision_from_curation": "maybe", "selection_score": 1.5681688699519132}, {"qid": "Q17", "set_id": 5, "attribute": "pitch", "target_direction": "negative", "target_text": "lower-pitched", "question": "Which clip sounds lower-pitched?", "clip_a": "audio/Q17_pitch_negative_LibriTTS__7097__7097_80037_000032_000000_reference.wav", "clip_b": "audio/Q17_pitch_negative_LibriTTS__7097__7097_80037_000032_000000_edited.wav", "clip_a_role": "reference", "clip_b_role": "edited", "correct_choice": "B", "source_trial_id": "0106_pitch_negative_LibriTTS__7097__7097_80037_000032_000000", "item_id": "LibriTTS::7097::7097_80037_000032_000000", "age_group": "senior_60s", "gender_group": "female", "decision_from_curation": "selected", "selection_score": 1.1267768359332608}, {"qid": "Q18", "set_id": 5, "attribute": "pitch", "target_direction": "positive", "target_text": "higher-pitched", "question": "Which clip sounds higher-pitched?", "clip_a": "audio/Q18_pitch_positive_VoxCeleb1__train__id10011__QmFNWMU2hKU__00006_reference.wav", "clip_b": "audio/Q18_pitch_positive_VoxCeleb1__train__id10011__QmFNWMU2hKU__00006_edited.wav", "clip_a_role": "reference", "clip_b_role": "edited", "correct_choice": "B", "source_trial_id": "0131_pitch_positive_VoxCeleb1__train__id10011__QmFNWMU2hKU__00006", "item_id": "VoxCeleb1::train::id10011::QmFNWMU2hKU::00006", "age_group": "senior_60s", "gender_group": "male", "decision_from_curation": "maybe", "selection_score": 1.5518160369999539}, {"qid": "Q19", "set_id": 5, "attribute": "pitch", "target_direction": "negative", "target_text": "lower-pitched", "question": "Which clip sounds lower-pitched?", "clip_a": "audio/Q19_pitch_negative_LibriTTS__203__203_132069_000005_000002_edited.wav", "clip_b": "audio/Q19_pitch_negative_LibriTTS__203__203_132069_000005_000002_reference.wav", "clip_a_role": "edited", "clip_b_role": "reference", "correct_choice": "A", "source_trial_id": "0107_pitch_negative_LibriTTS__203__203_132069_000005_000002", "item_id": "LibriTTS::203::203_132069_000005_000002", "age_group": "senior_60s", "gender_group": "female", "decision_from_curation": "selected", "selection_score": 1.0660924039938244}, {"qid": "Q20", "set_id": 5, "attribute": "pitch", "target_direction": "positive", "target_text": "higher-pitched", "question": "Which clip sounds higher-pitched?", "clip_a": "audio/Q20_pitch_positive_GLOBE__train__S_012138__00480100_000001.v2.vad_reference.wav", "clip_b": "audio/Q20_pitch_positive_GLOBE__train__S_012138__00480100_000001.v2.vad_edited.wav", "clip_a_role": "reference", "clip_b_role": "edited", "correct_choice": "B", "source_trial_id": "0132_pitch_positive_GLOBE__train__S_012138__00480100_000001.v2.vad", "item_id": "GLOBE::train::S_012138::00480100_000001.v2.vad", "age_group": "senior_60s", "gender_group": "male", "decision_from_curation": "maybe", "selection_score": 1.551737161544252}];
+const TRIALS = [{"qid": "Q01", "set_id": 1, "attribute": "pitch", "target_direction": "negative", "question_direction": "positive", "clip_a": "audio/Q01_pitch_negative_AESRC__Chinese_G40755__G40755S1113_edited.wav", "clip_b": "audio/Q01_pitch_negative_AESRC__Chinese_G40755__G40755S1113_reference.wav", "clip_a_role": "edited", "clip_b_role": "reference", "correct_choice": "B", "source_trial_id": "0104_pitch_negative_AESRC__Chinese_G40755__G40755S1113", "item_id": "AESRC::Chinese_G40755::G40755S1113", "age_group": "senior_60s", "gender_group": "female", "decision_from_curation": "selected", "selection_score": 1.437606569731205}, {"qid": "Q02", "set_id": 1, "attribute": "pitch", "target_direction": "positive", "question_direction": "positive", "clip_a": "audio/Q02_pitch_positive_AESRC__British_G00011__G00011S2318_reference.wav", "clip_b": "audio/Q02_pitch_positive_AESRC__British_G00011__G00011S2318_edited.wav", "clip_a_role": "reference", "clip_b_role": "edited", "correct_choice": "B", "source_trial_id": "0134_pitch_positive_AESRC__British_G00011__G00011S2318", "item_id": "AESRC::British_G00011::G00011S2318", "age_group": "young_20s", "gender_group": "male", "decision_from_curation": "selected", "selection_score": 1.6062663012317664}, {"qid": "Q03", "set_id": 1, "attribute": "pitch", "target_direction": "negative", "question_direction": "positive", "clip_a": "audio/Q03_pitch_negative_GLOBE__train__S_017107__00046647_000011.v2.vad_reference.wav", "clip_b": "audio/Q03_pitch_negative_GLOBE__train__S_017107__00046647_000011.v2.vad_edited.wav", "clip_a_role": "reference", "clip_b_role": "edited", "correct_choice": "A", "source_trial_id": "0112_pitch_negative_GLOBE__train__S_017107__00046647_000011.v2.vad", "item_id": "GLOBE::train::S_017107::00046647_000011.v2.vad", "age_group": "young_20s", "gender_group": "female", "decision_from_curation": "selected", "selection_score": 1.4086127713052656}, {"qid": "Q04", "set_id": 1, "attribute": "pitch", "target_direction": "positive", "question_direction": "positive", "clip_a": "audio/Q04_pitch_positive_AESRC__Portuguese_G00510__G00510S1048_reference.wav", "clip_b": "audio/Q04_pitch_positive_AESRC__Portuguese_G00510__G00510S1048_edited.wav", "clip_a_role": "reference", "clip_b_role": "edited", "correct_choice": "B", "source_trial_id": "0125_pitch_positive_AESRC__Portuguese_G00510__G00510S1048", "item_id": "AESRC::Portuguese_G00510::G00510S1048", "age_group": "mid_40s", "gender_group": "male", "decision_from_curation": "selected", "selection_score": 1.5888689859930345}, {"qid": "Q05", "set_id": 2, "attribute": "pitch", "target_direction": "negative", "question_direction": "positive", "clip_a": "audio/Q05_pitch_negative_AESRC__Indian_G00826__G00826S1001_reference.wav", "clip_b": "audio/Q05_pitch_negative_AESRC__Indian_G00826__G00826S1001_edited.wav", "clip_a_role": "reference", "clip_b_role": "edited", "correct_choice": "A", "source_trial_id": "0113_pitch_negative_AESRC__Indian_G00826__G00826S1001", "item_id": "AESRC::Indian_G00826::G00826S1001", "age_group": "young_20s", "gender_group": "female", "decision_from_curation": "selected", "selection_score": 1.4077831955670215}, {"qid": "Q06", "set_id": 2, "attribute": "pitch", "target_direction": "positive", "question_direction": "positive", "clip_a": "audio/Q06_pitch_positive_AESRC__Chinese_G00541__G00541S1039_reference.wav", "clip_b": "audio/Q06_pitch_positive_AESRC__Chinese_G00541__G00541S1039_edited.wav", "clip_a_role": "reference", "clip_b_role": "edited", "correct_choice": "B", "source_trial_id": "0120_pitch_positive_AESRC__Chinese_G00541__G00541S1039", "item_id": "AESRC::Chinese_G00541::G00541S1039", "age_group": "mid_40s", "gender_group": "female", "decision_from_curation": "maybe", "selection_score": 1.8442189558630415}, {"qid": "Q07", "set_id": 2, "attribute": "pitch", "target_direction": "negative", "question_direction": "positive", "clip_a": "audio/Q07_pitch_negative_NaturalVoices__MSP-PODCAST_3791__MSP-PODCAST_3791_7_edited.wav", "clip_b": "audio/Q07_pitch_negative_NaturalVoices__MSP-PODCAST_3791__MSP-PODCAST_3791_7_reference.wav", "clip_a_role": "edited", "clip_b_role": "reference", "correct_choice": "B", "source_trial_id": "0114_pitch_negative_NaturalVoices__MSP-PODCAST_3791__MSP-PODCAST_3791_7", "item_id": "NaturalVoices::MSP-PODCAST_3791::MSP-PODCAST_3791_7", "age_group": "young_20s", "gender_group": "female", "decision_from_curation": "selected", "selection_score": 1.3967834224942246}, {"qid": "Q08", "set_id": 2, "attribute": "pitch", "target_direction": "positive", "question_direction": "positive", "clip_a": "audio/Q08_pitch_positive_LibriTTS__1914__1914_121446_000038_000002_edited.wav", "clip_b": "audio/Q08_pitch_positive_LibriTTS__1914__1914_121446_000038_000002_reference.wav", "clip_a_role": "edited", "clip_b_role": "reference", "correct_choice": "A", "source_trial_id": "0128_pitch_positive_LibriTTS__1914__1914_121446_000038_000002", "item_id": "LibriTTS::1914::1914_121446_000038_000002", "age_group": "senior_60s", "gender_group": "male", "decision_from_curation": "maybe", "selection_score": 1.7547325847300659}, {"qid": "Q09", "set_id": 3, "attribute": "pitch", "target_direction": "negative", "question_direction": "positive", "clip_a": "audio/Q09_pitch_negative_GLOBE__train__S_018921__00440904_000047.v2.vad_reference.wav", "clip_b": "audio/Q09_pitch_negative_GLOBE__train__S_018921__00440904_000047.v2.vad_edited.wav", "clip_a_role": "reference", "clip_b_role": "edited", "correct_choice": "A", "source_trial_id": "0115_pitch_negative_GLOBE__train__S_018921__00440904_000047.v2.vad", "item_id": "GLOBE::train::S_018921::00440904_000047.v2.vad", "age_group": "young_20s", "gender_group": "female", "decision_from_curation": "selected", "selection_score": 1.3669517090180658}, {"qid": "Q10", "set_id": 3, "attribute": "pitch", "target_direction": "positive", "question_direction": "positive", "clip_a": "audio/Q10_pitch_positive_VoxCeleb1__train__id11094__lAABD8fznuw__00001_reference.wav", "clip_b": "audio/Q10_pitch_positive_VoxCeleb1__train__id11094__lAABD8fznuw__00001_edited.wav", "clip_a_role": "reference", "clip_b_role": "edited", "correct_choice": "B", "source_trial_id": "0122_pitch_positive_VoxCeleb1__train__id11094__lAABD8fznuw__00001", "item_id": "VoxCeleb1::train::id11094::lAABD8fznuw::00001", "age_group": "mid_40s", "gender_group": "male", "decision_from_curation": "maybe", "selection_score": 1.656846119287585}, {"qid": "Q11", "set_id": 3, "attribute": "pitch", "target_direction": "negative", "question_direction": "positive", "clip_a": "audio/Q11_pitch_negative_LibriTTS__6227__6227_36632_000028_000000_edited.wav", "clip_b": "audio/Q11_pitch_negative_LibriTTS__6227__6227_36632_000028_000000_reference.wav", "clip_a_role": "edited", "clip_b_role": "reference", "correct_choice": "B", "source_trial_id": "0098_pitch_negative_LibriTTS__6227__6227_36632_000028_000000", "item_id": "LibriTTS::6227::6227_36632_000028_000000", "age_group": "mid_40s", "gender_group": "female", "decision_from_curation": "selected", "selection_score": 1.3086810297030933}, {"qid": "Q12", "set_id": 3, "attribute": "pitch", "target_direction": "positive", "question_direction": "positive", "clip_a": "audio/Q12_pitch_positive_VoxCeleb1__train__id11199__tvfx-OlFisE__00018_edited.wav", "clip_b": "audio/Q12_pitch_positive_VoxCeleb1__train__id11199__tvfx-OlFisE__00018_reference.wav", "clip_a_role": "edited", "clip_b_role": "reference", "correct_choice": "A", "source_trial_id": "0123_pitch_positive_VoxCeleb1__train__id11199__tvfx-OlFisE__00018", "item_id": "VoxCeleb1::train::id11199::tvfx-OlFisE::00018", "age_group": "mid_40s", "gender_group": "male", "decision_from_curation": "maybe", "selection_score": 1.622638346462801}, {"qid": "Q13", "set_id": 4, "attribute": "pitch", "target_direction": "negative", "question_direction": "positive", "clip_a": "audio/Q13_pitch_negative_GLOBE__train__S_005643__00361385_000003.v2.vad_reference.wav", "clip_b": "audio/Q13_pitch_negative_GLOBE__train__S_005643__00361385_000003.v2.vad_edited.wav", "clip_a_role": "reference", "clip_b_role": "edited", "correct_choice": "A", "source_trial_id": "0099_pitch_negative_GLOBE__train__S_005643__00361385_000003.v2.vad", "item_id": "GLOBE::train::S_005643::00361385_000003.v2.vad", "age_group": "mid_40s", "gender_group": "female", "decision_from_curation": "selected", "selection_score": 1.2726035323641103}, {"qid": "Q14", "set_id": 4, "attribute": "pitch", "target_direction": "positive", "question_direction": "positive", "clip_a": "audio/Q14_pitch_positive_NaturalVoices__MSP-PODCAST_2686__MSP-PODCAST_2686_37_reference.wav", "clip_b": "audio/Q14_pitch_positive_NaturalVoices__MSP-PODCAST_2686__MSP-PODCAST_2686_37_edited.wav", "clip_a_role": "reference", "clip_b_role": "edited", "correct_choice": "B", "source_trial_id": "0124_pitch_positive_NaturalVoices__MSP-PODCAST_2686__MSP-PODCAST_2686_37", "item_id": "NaturalVoices::MSP-PODCAST_2686::MSP-PODCAST_2686_37", "age_group": "mid_40s", "gender_group": "male", "decision_from_curation": "maybe", "selection_score": 1.5989021028162913}, {"qid": "Q15", "set_id": 4, "attribute": "pitch", "target_direction": "negative", "question_direction": "positive", "clip_a": "audio/Q15_pitch_negative_NaturalVoices__MSP-PODCAST_3920__MSP-PODCAST_3920_767_reference.wav", "clip_b": "audio/Q15_pitch_negative_NaturalVoices__MSP-PODCAST_3920__MSP-PODCAST_3920_767_edited.wav", "clip_a_role": "reference", "clip_b_role": "edited", "correct_choice": "A", "source_trial_id": "0105_pitch_negative_NaturalVoices__MSP-PODCAST_3920__MSP-PODCAST_3920_767", "item_id": "NaturalVoices::MSP-PODCAST_3920::MSP-PODCAST_3920_767", "age_group": "senior_60s", "gender_group": "female", "decision_from_curation": "selected", "selection_score": 1.2099947855364404}, {"qid": "Q16", "set_id": 4, "attribute": "pitch", "target_direction": "positive", "question_direction": "positive", "clip_a": "audio/Q16_pitch_positive_LibriTTS__4425__4425_14497_000030_000002_reference.wav", "clip_b": "audio/Q16_pitch_positive_LibriTTS__4425__4425_14497_000030_000002_edited.wav", "clip_a_role": "reference", "clip_b_role": "edited", "correct_choice": "B", "source_trial_id": "0126_pitch_positive_LibriTTS__4425__4425_14497_000030_000002", "item_id": "LibriTTS::4425::4425_14497_000030_000002", "age_group": "mid_40s", "gender_group": "male", "decision_from_curation": "maybe", "selection_score": 1.5681688699519132}, {"qid": "Q17", "set_id": 5, "attribute": "pitch", "target_direction": "negative", "question_direction": "positive", "clip_a": "audio/Q17_pitch_negative_LibriTTS__7097__7097_80037_000032_000000_edited.wav", "clip_b": "audio/Q17_pitch_negative_LibriTTS__7097__7097_80037_000032_000000_reference.wav", "clip_a_role": "edited", "clip_b_role": "reference", "correct_choice": "B", "source_trial_id": "0106_pitch_negative_LibriTTS__7097__7097_80037_000032_000000", "item_id": "LibriTTS::7097::7097_80037_000032_000000", "age_group": "senior_60s", "gender_group": "female", "decision_from_curation": "selected", "selection_score": 1.1267768359332608}, {"qid": "Q18", "set_id": 5, "attribute": "pitch", "target_direction": "positive", "question_direction": "positive", "clip_a": "audio/Q18_pitch_positive_VoxCeleb1__train__id10011__QmFNWMU2hKU__00006_edited.wav", "clip_b": "audio/Q18_pitch_positive_VoxCeleb1__train__id10011__QmFNWMU2hKU__00006_reference.wav", "clip_a_role": "edited", "clip_b_role": "reference", "correct_choice": "A", "source_trial_id": "0131_pitch_positive_VoxCeleb1__train__id10011__QmFNWMU2hKU__00006", "item_id": "VoxCeleb1::train::id10011::QmFNWMU2hKU::00006", "age_group": "senior_60s", "gender_group": "male", "decision_from_curation": "maybe", "selection_score": 1.5518160369999539}, {"qid": "Q19", "set_id": 5, "attribute": "pitch", "target_direction": "negative", "question_direction": "positive", "clip_a": "audio/Q19_pitch_negative_LibriTTS__203__203_132069_000005_000002_reference.wav", "clip_b": "audio/Q19_pitch_negative_LibriTTS__203__203_132069_000005_000002_edited.wav", "clip_a_role": "reference", "clip_b_role": "edited", "correct_choice": "A", "source_trial_id": "0107_pitch_negative_LibriTTS__203__203_132069_000005_000002", "item_id": "LibriTTS::203::203_132069_000005_000002", "age_group": "senior_60s", "gender_group": "female", "decision_from_curation": "selected", "selection_score": 1.0660924039938244}, {"qid": "Q20", "set_id": 5, "attribute": "pitch", "target_direction": "positive", "question_direction": "positive", "clip_a": "audio/Q20_pitch_positive_GLOBE__train__S_012138__00480100_000001.v2.vad_edited.wav", "clip_b": "audio/Q20_pitch_positive_GLOBE__train__S_012138__00480100_000001.v2.vad_reference.wav", "clip_a_role": "edited", "clip_b_role": "reference", "correct_choice": "A", "source_trial_id": "0132_pitch_positive_GLOBE__train__S_012138__00480100_000001.v2.vad", "item_id": "GLOBE::train::S_012138::00480100_000001.v2.vad", "age_group": "senior_60s", "gender_group": "male", "decision_from_curation": "maybe", "selection_score": 1.551737161544252}];
 function getProlificParams() {
   const p = new URLSearchParams(window.location.search);
   return { PROLIFIC_PID: p.get('PROLIFIC_PID') || '', STUDY_ID: p.get('STUDY_ID') || '', SESSION_ID: p.get('SESSION_ID') || '' };
@@ -77,7 +79,7 @@ function collectResponses() {
     const checked = document.querySelector(`input[name="${qid}_confidence"]:checked`);
     rows.push({
       qid, attribute: STUDY_ATTRIBUTE, target_direction: tr.dataset.targetDirection,
-      choice: sel ? sel.value : '', confidence: checked ? checked.value : '',
+      question_direction: 'positive', choice: sel ? sel.value : '', confidence: checked ? checked.value : '',
       correct_choice: tr.dataset.correctChoice, is_directionally_correct: sel ? String(sel.value === tr.dataset.correctChoice) : '',
       clip_a: trial.clip_a || '', clip_b: trial.clip_b || '', clip_a_role: trial.clip_a_role || '', clip_b_role: trial.clip_b_role || '',
       source_trial_id: trial.source_trial_id || '', item_id: trial.item_id || ''
@@ -115,9 +117,9 @@ document.addEventListener('DOMContentLoaded', () => { updateCompletion(); docume
 <section class="instructions">
   <p class="notice"><strong>Headphones required.</strong> Please complete this task in a quiet environment using good headphones. You may replay each clip as needed.</p>
   <ul>
-    <li>In each question, listen to both clips and choose which one has a higher or lower habitual pitch, depending on the question. Focus on the overall voice pitch rather than momentary intonation.</li>
+    <li>In each question, listen to both clips and choose which one has the higher habitual pitch. Focus on the overall voice pitch rather than momentary intonation.</li>
     <li>Each row has two clips, <strong>A</strong> and <strong>B</strong>. One clip is the unedited synthesized reference and the other is the edited version.</li>
-    <li>Choose the clip that best matches the question, then rate your confidence from 1 to 7.</li>
+    <li>Choose either <strong>Clip A</strong> or <strong>Clip B</strong>, then rate your confidence from 1 to 7.</li>
     <li>Do not judge recording content or speaker identity. Focus only on habitual pitch.</li>
     <li>Your responses may be screened for completion and consistency.</li>
   </ul>
@@ -125,21 +127,29 @@ document.addEventListener('DOMContentLoaded', () => { updateCompletion(); docume
 
         <section class="test-set">
           <h2>Set 1</h2>
+          <p class="set-question"><strong>Which clip sounds higher-pitched?</strong></p>
           <div class="table-wrap">
           <table class="tests">
-            <thead><tr>
-              <th>Question</th><th>Clip A</th><th>Clip B</th><th>Your answer</th>
-              <th>1<br><span>Not at all</span></th><th>2</th><th>3<br><span>Somewhat</span></th><th>4</th><th>5<br><span>Quite a bit</span></th><th>6</th><th>7<br><span>Extremely</span></th>
-            </tr></thead>
+            <thead>
+              <tr>
+                <th rowspan="2">Question</th>
+                <th rowspan="2">Clip A</th>
+                <th rowspan="2">Clip B</th>
+                <th rowspan="2">Your answer</th>
+                <th colspan="7" class="confidence-title">Confidence rating</th>
+              </tr>
+              <tr class="confidence-row">
+                <th>1<br><span>Not at all</span></th><th>2</th><th>3<br><span>Somewhat</span></th><th>4</th><th>5<br><span>Quite a bit</span></th><th>6</th><th>7<br><span>Extremely</span></th>
+              </tr>
+            </thead>
             <tbody>
       <tr data-qid="Q01" data-attribute="pitch" data-target-direction="negative" data-correct-choice="B">
-        <td class="qid"><strong>Q01</strong><span>lower-pitched</span></td>
-        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q01_pitch_negative_AESRC__Chinese_G40755__G40755S1113_reference.wav" type="audio/wav"></audio></td>
+        <td class="qid"><strong>Q01</strong></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q01_pitch_negative_AESRC__Chinese_G40755__G40755S1113_edited.wav" type="audio/wav"></audio></td>
+        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q01_pitch_negative_AESRC__Chinese_G40755__G40755S1113_reference.wav" type="audio/wav"></audio></td>
         <td class="select-cell">
-          <label>Which clip sounds lower-pitched?</label>
           <select class="overall" name="Q01_overall" required>
-            <option selected value="0">- select one -</option>
+            <option selected value="0">Select Clip A or B</option>
             <option value="A">Clip A</option>
             <option value="B">Clip B</option>
           </select>
@@ -147,41 +157,38 @@ document.addEventListener('DOMContentLoaded', () => { updateCompletion(); docume
         <td class="center"><input name="Q01_confidence" type="radio" value="1" required></td><td class="center"><input name="Q01_confidence" type="radio" value="2" required></td><td class="center"><input name="Q01_confidence" type="radio" value="3" required></td><td class="center"><input name="Q01_confidence" type="radio" value="4" required></td><td class="center"><input name="Q01_confidence" type="radio" value="5" required></td><td class="center"><input name="Q01_confidence" type="radio" value="6" required></td><td class="center"><input name="Q01_confidence" type="radio" value="7" required></td>
       </tr>
       <tr data-qid="Q02" data-attribute="pitch" data-target-direction="positive" data-correct-choice="B">
-        <td class="qid"><strong>Q02</strong><span>higher-pitched</span></td>
+        <td class="qid"><strong>Q02</strong></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q02_pitch_positive_AESRC__British_G00011__G00011S2318_reference.wav" type="audio/wav"></audio></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q02_pitch_positive_AESRC__British_G00011__G00011S2318_edited.wav" type="audio/wav"></audio></td>
         <td class="select-cell">
-          <label>Which clip sounds higher-pitched?</label>
           <select class="overall" name="Q02_overall" required>
-            <option selected value="0">- select one -</option>
+            <option selected value="0">Select Clip A or B</option>
             <option value="A">Clip A</option>
             <option value="B">Clip B</option>
           </select>
         </td>
         <td class="center"><input name="Q02_confidence" type="radio" value="1" required></td><td class="center"><input name="Q02_confidence" type="radio" value="2" required></td><td class="center"><input name="Q02_confidence" type="radio" value="3" required></td><td class="center"><input name="Q02_confidence" type="radio" value="4" required></td><td class="center"><input name="Q02_confidence" type="radio" value="5" required></td><td class="center"><input name="Q02_confidence" type="radio" value="6" required></td><td class="center"><input name="Q02_confidence" type="radio" value="7" required></td>
       </tr>
-      <tr data-qid="Q03" data-attribute="pitch" data-target-direction="negative" data-correct-choice="B">
-        <td class="qid"><strong>Q03</strong><span>lower-pitched</span></td>
+      <tr data-qid="Q03" data-attribute="pitch" data-target-direction="negative" data-correct-choice="A">
+        <td class="qid"><strong>Q03</strong></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q03_pitch_negative_GLOBE__train__S_017107__00046647_000011.v2.vad_reference.wav" type="audio/wav"></audio></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q03_pitch_negative_GLOBE__train__S_017107__00046647_000011.v2.vad_edited.wav" type="audio/wav"></audio></td>
         <td class="select-cell">
-          <label>Which clip sounds lower-pitched?</label>
           <select class="overall" name="Q03_overall" required>
-            <option selected value="0">- select one -</option>
+            <option selected value="0">Select Clip A or B</option>
             <option value="A">Clip A</option>
             <option value="B">Clip B</option>
           </select>
         </td>
         <td class="center"><input name="Q03_confidence" type="radio" value="1" required></td><td class="center"><input name="Q03_confidence" type="radio" value="2" required></td><td class="center"><input name="Q03_confidence" type="radio" value="3" required></td><td class="center"><input name="Q03_confidence" type="radio" value="4" required></td><td class="center"><input name="Q03_confidence" type="radio" value="5" required></td><td class="center"><input name="Q03_confidence" type="radio" value="6" required></td><td class="center"><input name="Q03_confidence" type="radio" value="7" required></td>
       </tr>
-      <tr data-qid="Q04" data-attribute="pitch" data-target-direction="positive" data-correct-choice="A">
-        <td class="qid"><strong>Q04</strong><span>higher-pitched</span></td>
-        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q04_pitch_positive_AESRC__Portuguese_G00510__G00510S1048_edited.wav" type="audio/wav"></audio></td>
+      <tr data-qid="Q04" data-attribute="pitch" data-target-direction="positive" data-correct-choice="B">
+        <td class="qid"><strong>Q04</strong></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q04_pitch_positive_AESRC__Portuguese_G00510__G00510S1048_reference.wav" type="audio/wav"></audio></td>
+        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q04_pitch_positive_AESRC__Portuguese_G00510__G00510S1048_edited.wav" type="audio/wav"></audio></td>
         <td class="select-cell">
-          <label>Which clip sounds higher-pitched?</label>
           <select class="overall" name="Q04_overall" required>
-            <option selected value="0">- select one -</option>
+            <option selected value="0">Select Clip A or B</option>
             <option value="A">Clip A</option>
             <option value="B">Clip B</option>
           </select>
@@ -194,21 +201,29 @@ document.addEventListener('DOMContentLoaded', () => { updateCompletion(); docume
         
         <section class="test-set">
           <h2>Set 2</h2>
+          <p class="set-question"><strong>Which clip sounds higher-pitched?</strong></p>
           <div class="table-wrap">
           <table class="tests">
-            <thead><tr>
-              <th>Question</th><th>Clip A</th><th>Clip B</th><th>Your answer</th>
-              <th>1<br><span>Not at all</span></th><th>2</th><th>3<br><span>Somewhat</span></th><th>4</th><th>5<br><span>Quite a bit</span></th><th>6</th><th>7<br><span>Extremely</span></th>
-            </tr></thead>
+            <thead>
+              <tr>
+                <th rowspan="2">Question</th>
+                <th rowspan="2">Clip A</th>
+                <th rowspan="2">Clip B</th>
+                <th rowspan="2">Your answer</th>
+                <th colspan="7" class="confidence-title">Confidence rating</th>
+              </tr>
+              <tr class="confidence-row">
+                <th>1<br><span>Not at all</span></th><th>2</th><th>3<br><span>Somewhat</span></th><th>4</th><th>5<br><span>Quite a bit</span></th><th>6</th><th>7<br><span>Extremely</span></th>
+              </tr>
+            </thead>
             <tbody>
-      <tr data-qid="Q05" data-attribute="pitch" data-target-direction="negative" data-correct-choice="B">
-        <td class="qid"><strong>Q05</strong><span>lower-pitched</span></td>
+      <tr data-qid="Q05" data-attribute="pitch" data-target-direction="negative" data-correct-choice="A">
+        <td class="qid"><strong>Q05</strong></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q05_pitch_negative_AESRC__Indian_G00826__G00826S1001_reference.wav" type="audio/wav"></audio></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q05_pitch_negative_AESRC__Indian_G00826__G00826S1001_edited.wav" type="audio/wav"></audio></td>
         <td class="select-cell">
-          <label>Which clip sounds lower-pitched?</label>
           <select class="overall" name="Q05_overall" required>
-            <option selected value="0">- select one -</option>
+            <option selected value="0">Select Clip A or B</option>
             <option value="A">Clip A</option>
             <option value="B">Clip B</option>
           </select>
@@ -216,13 +231,12 @@ document.addEventListener('DOMContentLoaded', () => { updateCompletion(); docume
         <td class="center"><input name="Q05_confidence" type="radio" value="1" required></td><td class="center"><input name="Q05_confidence" type="radio" value="2" required></td><td class="center"><input name="Q05_confidence" type="radio" value="3" required></td><td class="center"><input name="Q05_confidence" type="radio" value="4" required></td><td class="center"><input name="Q05_confidence" type="radio" value="5" required></td><td class="center"><input name="Q05_confidence" type="radio" value="6" required></td><td class="center"><input name="Q05_confidence" type="radio" value="7" required></td>
       </tr>
       <tr data-qid="Q06" data-attribute="pitch" data-target-direction="positive" data-correct-choice="B">
-        <td class="qid"><strong>Q06</strong><span>higher-pitched</span></td>
+        <td class="qid"><strong>Q06</strong></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q06_pitch_positive_AESRC__Chinese_G00541__G00541S1039_reference.wav" type="audio/wav"></audio></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q06_pitch_positive_AESRC__Chinese_G00541__G00541S1039_edited.wav" type="audio/wav"></audio></td>
         <td class="select-cell">
-          <label>Which clip sounds higher-pitched?</label>
           <select class="overall" name="Q06_overall" required>
-            <option selected value="0">- select one -</option>
+            <option selected value="0">Select Clip A or B</option>
             <option value="A">Clip A</option>
             <option value="B">Clip B</option>
           </select>
@@ -230,27 +244,25 @@ document.addEventListener('DOMContentLoaded', () => { updateCompletion(); docume
         <td class="center"><input name="Q06_confidence" type="radio" value="1" required></td><td class="center"><input name="Q06_confidence" type="radio" value="2" required></td><td class="center"><input name="Q06_confidence" type="radio" value="3" required></td><td class="center"><input name="Q06_confidence" type="radio" value="4" required></td><td class="center"><input name="Q06_confidence" type="radio" value="5" required></td><td class="center"><input name="Q06_confidence" type="radio" value="6" required></td><td class="center"><input name="Q06_confidence" type="radio" value="7" required></td>
       </tr>
       <tr data-qid="Q07" data-attribute="pitch" data-target-direction="negative" data-correct-choice="B">
-        <td class="qid"><strong>Q07</strong><span>lower-pitched</span></td>
-        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q07_pitch_negative_NaturalVoices__MSP-PODCAST_3791__MSP-PODCAST_3791_7_reference.wav" type="audio/wav"></audio></td>
+        <td class="qid"><strong>Q07</strong></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q07_pitch_negative_NaturalVoices__MSP-PODCAST_3791__MSP-PODCAST_3791_7_edited.wav" type="audio/wav"></audio></td>
+        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q07_pitch_negative_NaturalVoices__MSP-PODCAST_3791__MSP-PODCAST_3791_7_reference.wav" type="audio/wav"></audio></td>
         <td class="select-cell">
-          <label>Which clip sounds lower-pitched?</label>
           <select class="overall" name="Q07_overall" required>
-            <option selected value="0">- select one -</option>
+            <option selected value="0">Select Clip A or B</option>
             <option value="A">Clip A</option>
             <option value="B">Clip B</option>
           </select>
         </td>
         <td class="center"><input name="Q07_confidence" type="radio" value="1" required></td><td class="center"><input name="Q07_confidence" type="radio" value="2" required></td><td class="center"><input name="Q07_confidence" type="radio" value="3" required></td><td class="center"><input name="Q07_confidence" type="radio" value="4" required></td><td class="center"><input name="Q07_confidence" type="radio" value="5" required></td><td class="center"><input name="Q07_confidence" type="radio" value="6" required></td><td class="center"><input name="Q07_confidence" type="radio" value="7" required></td>
       </tr>
-      <tr data-qid="Q08" data-attribute="pitch" data-target-direction="positive" data-correct-choice="B">
-        <td class="qid"><strong>Q08</strong><span>higher-pitched</span></td>
-        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q08_pitch_positive_LibriTTS__1914__1914_121446_000038_000002_reference.wav" type="audio/wav"></audio></td>
+      <tr data-qid="Q08" data-attribute="pitch" data-target-direction="positive" data-correct-choice="A">
+        <td class="qid"><strong>Q08</strong></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q08_pitch_positive_LibriTTS__1914__1914_121446_000038_000002_edited.wav" type="audio/wav"></audio></td>
+        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q08_pitch_positive_LibriTTS__1914__1914_121446_000038_000002_reference.wav" type="audio/wav"></audio></td>
         <td class="select-cell">
-          <label>Which clip sounds higher-pitched?</label>
           <select class="overall" name="Q08_overall" required>
-            <option selected value="0">- select one -</option>
+            <option selected value="0">Select Clip A or B</option>
             <option value="A">Clip A</option>
             <option value="B">Clip B</option>
           </select>
@@ -263,21 +275,29 @@ document.addEventListener('DOMContentLoaded', () => { updateCompletion(); docume
         
         <section class="test-set">
           <h2>Set 3</h2>
+          <p class="set-question"><strong>Which clip sounds higher-pitched?</strong></p>
           <div class="table-wrap">
           <table class="tests">
-            <thead><tr>
-              <th>Question</th><th>Clip A</th><th>Clip B</th><th>Your answer</th>
-              <th>1<br><span>Not at all</span></th><th>2</th><th>3<br><span>Somewhat</span></th><th>4</th><th>5<br><span>Quite a bit</span></th><th>6</th><th>7<br><span>Extremely</span></th>
-            </tr></thead>
+            <thead>
+              <tr>
+                <th rowspan="2">Question</th>
+                <th rowspan="2">Clip A</th>
+                <th rowspan="2">Clip B</th>
+                <th rowspan="2">Your answer</th>
+                <th colspan="7" class="confidence-title">Confidence rating</th>
+              </tr>
+              <tr class="confidence-row">
+                <th>1<br><span>Not at all</span></th><th>2</th><th>3<br><span>Somewhat</span></th><th>4</th><th>5<br><span>Quite a bit</span></th><th>6</th><th>7<br><span>Extremely</span></th>
+              </tr>
+            </thead>
             <tbody>
       <tr data-qid="Q09" data-attribute="pitch" data-target-direction="negative" data-correct-choice="A">
-        <td class="qid"><strong>Q09</strong><span>lower-pitched</span></td>
-        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q09_pitch_negative_GLOBE__train__S_018921__00440904_000047.v2.vad_edited.wav" type="audio/wav"></audio></td>
+        <td class="qid"><strong>Q09</strong></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q09_pitch_negative_GLOBE__train__S_018921__00440904_000047.v2.vad_reference.wav" type="audio/wav"></audio></td>
+        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q09_pitch_negative_GLOBE__train__S_018921__00440904_000047.v2.vad_edited.wav" type="audio/wav"></audio></td>
         <td class="select-cell">
-          <label>Which clip sounds lower-pitched?</label>
           <select class="overall" name="Q09_overall" required>
-            <option selected value="0">- select one -</option>
+            <option selected value="0">Select Clip A or B</option>
             <option value="A">Clip A</option>
             <option value="B">Clip B</option>
           </select>
@@ -285,13 +305,12 @@ document.addEventListener('DOMContentLoaded', () => { updateCompletion(); docume
         <td class="center"><input name="Q09_confidence" type="radio" value="1" required></td><td class="center"><input name="Q09_confidence" type="radio" value="2" required></td><td class="center"><input name="Q09_confidence" type="radio" value="3" required></td><td class="center"><input name="Q09_confidence" type="radio" value="4" required></td><td class="center"><input name="Q09_confidence" type="radio" value="5" required></td><td class="center"><input name="Q09_confidence" type="radio" value="6" required></td><td class="center"><input name="Q09_confidence" type="radio" value="7" required></td>
       </tr>
       <tr data-qid="Q10" data-attribute="pitch" data-target-direction="positive" data-correct-choice="B">
-        <td class="qid"><strong>Q10</strong><span>higher-pitched</span></td>
+        <td class="qid"><strong>Q10</strong></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q10_pitch_positive_VoxCeleb1__train__id11094__lAABD8fznuw__00001_reference.wav" type="audio/wav"></audio></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q10_pitch_positive_VoxCeleb1__train__id11094__lAABD8fznuw__00001_edited.wav" type="audio/wav"></audio></td>
         <td class="select-cell">
-          <label>Which clip sounds higher-pitched?</label>
           <select class="overall" name="Q10_overall" required>
-            <option selected value="0">- select one -</option>
+            <option selected value="0">Select Clip A or B</option>
             <option value="A">Clip A</option>
             <option value="B">Clip B</option>
           </select>
@@ -299,13 +318,12 @@ document.addEventListener('DOMContentLoaded', () => { updateCompletion(); docume
         <td class="center"><input name="Q10_confidence" type="radio" value="1" required></td><td class="center"><input name="Q10_confidence" type="radio" value="2" required></td><td class="center"><input name="Q10_confidence" type="radio" value="3" required></td><td class="center"><input name="Q10_confidence" type="radio" value="4" required></td><td class="center"><input name="Q10_confidence" type="radio" value="5" required></td><td class="center"><input name="Q10_confidence" type="radio" value="6" required></td><td class="center"><input name="Q10_confidence" type="radio" value="7" required></td>
       </tr>
       <tr data-qid="Q11" data-attribute="pitch" data-target-direction="negative" data-correct-choice="B">
-        <td class="qid"><strong>Q11</strong><span>lower-pitched</span></td>
-        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q11_pitch_negative_LibriTTS__6227__6227_36632_000028_000000_reference.wav" type="audio/wav"></audio></td>
+        <td class="qid"><strong>Q11</strong></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q11_pitch_negative_LibriTTS__6227__6227_36632_000028_000000_edited.wav" type="audio/wav"></audio></td>
+        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q11_pitch_negative_LibriTTS__6227__6227_36632_000028_000000_reference.wav" type="audio/wav"></audio></td>
         <td class="select-cell">
-          <label>Which clip sounds lower-pitched?</label>
           <select class="overall" name="Q11_overall" required>
-            <option selected value="0">- select one -</option>
+            <option selected value="0">Select Clip A or B</option>
             <option value="A">Clip A</option>
             <option value="B">Clip B</option>
           </select>
@@ -313,13 +331,12 @@ document.addEventListener('DOMContentLoaded', () => { updateCompletion(); docume
         <td class="center"><input name="Q11_confidence" type="radio" value="1" required></td><td class="center"><input name="Q11_confidence" type="radio" value="2" required></td><td class="center"><input name="Q11_confidence" type="radio" value="3" required></td><td class="center"><input name="Q11_confidence" type="radio" value="4" required></td><td class="center"><input name="Q11_confidence" type="radio" value="5" required></td><td class="center"><input name="Q11_confidence" type="radio" value="6" required></td><td class="center"><input name="Q11_confidence" type="radio" value="7" required></td>
       </tr>
       <tr data-qid="Q12" data-attribute="pitch" data-target-direction="positive" data-correct-choice="A">
-        <td class="qid"><strong>Q12</strong><span>higher-pitched</span></td>
+        <td class="qid"><strong>Q12</strong></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q12_pitch_positive_VoxCeleb1__train__id11199__tvfx-OlFisE__00018_edited.wav" type="audio/wav"></audio></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q12_pitch_positive_VoxCeleb1__train__id11199__tvfx-OlFisE__00018_reference.wav" type="audio/wav"></audio></td>
         <td class="select-cell">
-          <label>Which clip sounds higher-pitched?</label>
           <select class="overall" name="Q12_overall" required>
-            <option selected value="0">- select one -</option>
+            <option selected value="0">Select Clip A or B</option>
             <option value="A">Clip A</option>
             <option value="B">Clip B</option>
           </select>
@@ -332,63 +349,68 @@ document.addEventListener('DOMContentLoaded', () => { updateCompletion(); docume
         
         <section class="test-set">
           <h2>Set 4</h2>
+          <p class="set-question"><strong>Which clip sounds higher-pitched?</strong></p>
           <div class="table-wrap">
           <table class="tests">
-            <thead><tr>
-              <th>Question</th><th>Clip A</th><th>Clip B</th><th>Your answer</th>
-              <th>1<br><span>Not at all</span></th><th>2</th><th>3<br><span>Somewhat</span></th><th>4</th><th>5<br><span>Quite a bit</span></th><th>6</th><th>7<br><span>Extremely</span></th>
-            </tr></thead>
+            <thead>
+              <tr>
+                <th rowspan="2">Question</th>
+                <th rowspan="2">Clip A</th>
+                <th rowspan="2">Clip B</th>
+                <th rowspan="2">Your answer</th>
+                <th colspan="7" class="confidence-title">Confidence rating</th>
+              </tr>
+              <tr class="confidence-row">
+                <th>1<br><span>Not at all</span></th><th>2</th><th>3<br><span>Somewhat</span></th><th>4</th><th>5<br><span>Quite a bit</span></th><th>6</th><th>7<br><span>Extremely</span></th>
+              </tr>
+            </thead>
             <tbody>
       <tr data-qid="Q13" data-attribute="pitch" data-target-direction="negative" data-correct-choice="A">
-        <td class="qid"><strong>Q13</strong><span>lower-pitched</span></td>
-        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q13_pitch_negative_GLOBE__train__S_005643__00361385_000003.v2.vad_edited.wav" type="audio/wav"></audio></td>
+        <td class="qid"><strong>Q13</strong></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q13_pitch_negative_GLOBE__train__S_005643__00361385_000003.v2.vad_reference.wav" type="audio/wav"></audio></td>
+        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q13_pitch_negative_GLOBE__train__S_005643__00361385_000003.v2.vad_edited.wav" type="audio/wav"></audio></td>
         <td class="select-cell">
-          <label>Which clip sounds lower-pitched?</label>
           <select class="overall" name="Q13_overall" required>
-            <option selected value="0">- select one -</option>
+            <option selected value="0">Select Clip A or B</option>
             <option value="A">Clip A</option>
             <option value="B">Clip B</option>
           </select>
         </td>
         <td class="center"><input name="Q13_confidence" type="radio" value="1" required></td><td class="center"><input name="Q13_confidence" type="radio" value="2" required></td><td class="center"><input name="Q13_confidence" type="radio" value="3" required></td><td class="center"><input name="Q13_confidence" type="radio" value="4" required></td><td class="center"><input name="Q13_confidence" type="radio" value="5" required></td><td class="center"><input name="Q13_confidence" type="radio" value="6" required></td><td class="center"><input name="Q13_confidence" type="radio" value="7" required></td>
       </tr>
-      <tr data-qid="Q14" data-attribute="pitch" data-target-direction="positive" data-correct-choice="A">
-        <td class="qid"><strong>Q14</strong><span>higher-pitched</span></td>
-        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q14_pitch_positive_NaturalVoices__MSP-PODCAST_2686__MSP-PODCAST_2686_37_edited.wav" type="audio/wav"></audio></td>
+      <tr data-qid="Q14" data-attribute="pitch" data-target-direction="positive" data-correct-choice="B">
+        <td class="qid"><strong>Q14</strong></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q14_pitch_positive_NaturalVoices__MSP-PODCAST_2686__MSP-PODCAST_2686_37_reference.wav" type="audio/wav"></audio></td>
+        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q14_pitch_positive_NaturalVoices__MSP-PODCAST_2686__MSP-PODCAST_2686_37_edited.wav" type="audio/wav"></audio></td>
         <td class="select-cell">
-          <label>Which clip sounds higher-pitched?</label>
           <select class="overall" name="Q14_overall" required>
-            <option selected value="0">- select one -</option>
+            <option selected value="0">Select Clip A or B</option>
             <option value="A">Clip A</option>
             <option value="B">Clip B</option>
           </select>
         </td>
         <td class="center"><input name="Q14_confidence" type="radio" value="1" required></td><td class="center"><input name="Q14_confidence" type="radio" value="2" required></td><td class="center"><input name="Q14_confidence" type="radio" value="3" required></td><td class="center"><input name="Q14_confidence" type="radio" value="4" required></td><td class="center"><input name="Q14_confidence" type="radio" value="5" required></td><td class="center"><input name="Q14_confidence" type="radio" value="6" required></td><td class="center"><input name="Q14_confidence" type="radio" value="7" required></td>
       </tr>
-      <tr data-qid="Q15" data-attribute="pitch" data-target-direction="negative" data-correct-choice="B">
-        <td class="qid"><strong>Q15</strong><span>lower-pitched</span></td>
+      <tr data-qid="Q15" data-attribute="pitch" data-target-direction="negative" data-correct-choice="A">
+        <td class="qid"><strong>Q15</strong></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q15_pitch_negative_NaturalVoices__MSP-PODCAST_3920__MSP-PODCAST_3920_767_reference.wav" type="audio/wav"></audio></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q15_pitch_negative_NaturalVoices__MSP-PODCAST_3920__MSP-PODCAST_3920_767_edited.wav" type="audio/wav"></audio></td>
         <td class="select-cell">
-          <label>Which clip sounds lower-pitched?</label>
           <select class="overall" name="Q15_overall" required>
-            <option selected value="0">- select one -</option>
+            <option selected value="0">Select Clip A or B</option>
             <option value="A">Clip A</option>
             <option value="B">Clip B</option>
           </select>
         </td>
         <td class="center"><input name="Q15_confidence" type="radio" value="1" required></td><td class="center"><input name="Q15_confidence" type="radio" value="2" required></td><td class="center"><input name="Q15_confidence" type="radio" value="3" required></td><td class="center"><input name="Q15_confidence" type="radio" value="4" required></td><td class="center"><input name="Q15_confidence" type="radio" value="5" required></td><td class="center"><input name="Q15_confidence" type="radio" value="6" required></td><td class="center"><input name="Q15_confidence" type="radio" value="7" required></td>
       </tr>
-      <tr data-qid="Q16" data-attribute="pitch" data-target-direction="positive" data-correct-choice="A">
-        <td class="qid"><strong>Q16</strong><span>higher-pitched</span></td>
-        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q16_pitch_positive_LibriTTS__4425__4425_14497_000030_000002_edited.wav" type="audio/wav"></audio></td>
+      <tr data-qid="Q16" data-attribute="pitch" data-target-direction="positive" data-correct-choice="B">
+        <td class="qid"><strong>Q16</strong></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q16_pitch_positive_LibriTTS__4425__4425_14497_000030_000002_reference.wav" type="audio/wav"></audio></td>
+        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q16_pitch_positive_LibriTTS__4425__4425_14497_000030_000002_edited.wav" type="audio/wav"></audio></td>
         <td class="select-cell">
-          <label>Which clip sounds higher-pitched?</label>
           <select class="overall" name="Q16_overall" required>
-            <option selected value="0">- select one -</option>
+            <option selected value="0">Select Clip A or B</option>
             <option value="A">Clip A</option>
             <option value="B">Clip B</option>
           </select>
@@ -401,35 +423,42 @@ document.addEventListener('DOMContentLoaded', () => { updateCompletion(); docume
         
         <section class="test-set">
           <h2>Set 5</h2>
+          <p class="set-question"><strong>Which clip sounds higher-pitched?</strong></p>
           <div class="table-wrap">
           <table class="tests">
-            <thead><tr>
-              <th>Question</th><th>Clip A</th><th>Clip B</th><th>Your answer</th>
-              <th>1<br><span>Not at all</span></th><th>2</th><th>3<br><span>Somewhat</span></th><th>4</th><th>5<br><span>Quite a bit</span></th><th>6</th><th>7<br><span>Extremely</span></th>
-            </tr></thead>
+            <thead>
+              <tr>
+                <th rowspan="2">Question</th>
+                <th rowspan="2">Clip A</th>
+                <th rowspan="2">Clip B</th>
+                <th rowspan="2">Your answer</th>
+                <th colspan="7" class="confidence-title">Confidence rating</th>
+              </tr>
+              <tr class="confidence-row">
+                <th>1<br><span>Not at all</span></th><th>2</th><th>3<br><span>Somewhat</span></th><th>4</th><th>5<br><span>Quite a bit</span></th><th>6</th><th>7<br><span>Extremely</span></th>
+              </tr>
+            </thead>
             <tbody>
       <tr data-qid="Q17" data-attribute="pitch" data-target-direction="negative" data-correct-choice="B">
-        <td class="qid"><strong>Q17</strong><span>lower-pitched</span></td>
-        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q17_pitch_negative_LibriTTS__7097__7097_80037_000032_000000_reference.wav" type="audio/wav"></audio></td>
+        <td class="qid"><strong>Q17</strong></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q17_pitch_negative_LibriTTS__7097__7097_80037_000032_000000_edited.wav" type="audio/wav"></audio></td>
+        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q17_pitch_negative_LibriTTS__7097__7097_80037_000032_000000_reference.wav" type="audio/wav"></audio></td>
         <td class="select-cell">
-          <label>Which clip sounds lower-pitched?</label>
           <select class="overall" name="Q17_overall" required>
-            <option selected value="0">- select one -</option>
+            <option selected value="0">Select Clip A or B</option>
             <option value="A">Clip A</option>
             <option value="B">Clip B</option>
           </select>
         </td>
         <td class="center"><input name="Q17_confidence" type="radio" value="1" required></td><td class="center"><input name="Q17_confidence" type="radio" value="2" required></td><td class="center"><input name="Q17_confidence" type="radio" value="3" required></td><td class="center"><input name="Q17_confidence" type="radio" value="4" required></td><td class="center"><input name="Q17_confidence" type="radio" value="5" required></td><td class="center"><input name="Q17_confidence" type="radio" value="6" required></td><td class="center"><input name="Q17_confidence" type="radio" value="7" required></td>
       </tr>
-      <tr data-qid="Q18" data-attribute="pitch" data-target-direction="positive" data-correct-choice="B">
-        <td class="qid"><strong>Q18</strong><span>higher-pitched</span></td>
-        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q18_pitch_positive_VoxCeleb1__train__id10011__QmFNWMU2hKU__00006_reference.wav" type="audio/wav"></audio></td>
+      <tr data-qid="Q18" data-attribute="pitch" data-target-direction="positive" data-correct-choice="A">
+        <td class="qid"><strong>Q18</strong></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q18_pitch_positive_VoxCeleb1__train__id10011__QmFNWMU2hKU__00006_edited.wav" type="audio/wav"></audio></td>
+        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q18_pitch_positive_VoxCeleb1__train__id10011__QmFNWMU2hKU__00006_reference.wav" type="audio/wav"></audio></td>
         <td class="select-cell">
-          <label>Which clip sounds higher-pitched?</label>
           <select class="overall" name="Q18_overall" required>
-            <option selected value="0">- select one -</option>
+            <option selected value="0">Select Clip A or B</option>
             <option value="A">Clip A</option>
             <option value="B">Clip B</option>
           </select>
@@ -437,27 +466,25 @@ document.addEventListener('DOMContentLoaded', () => { updateCompletion(); docume
         <td class="center"><input name="Q18_confidence" type="radio" value="1" required></td><td class="center"><input name="Q18_confidence" type="radio" value="2" required></td><td class="center"><input name="Q18_confidence" type="radio" value="3" required></td><td class="center"><input name="Q18_confidence" type="radio" value="4" required></td><td class="center"><input name="Q18_confidence" type="radio" value="5" required></td><td class="center"><input name="Q18_confidence" type="radio" value="6" required></td><td class="center"><input name="Q18_confidence" type="radio" value="7" required></td>
       </tr>
       <tr data-qid="Q19" data-attribute="pitch" data-target-direction="negative" data-correct-choice="A">
-        <td class="qid"><strong>Q19</strong><span>lower-pitched</span></td>
-        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q19_pitch_negative_LibriTTS__203__203_132069_000005_000002_edited.wav" type="audio/wav"></audio></td>
+        <td class="qid"><strong>Q19</strong></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q19_pitch_negative_LibriTTS__203__203_132069_000005_000002_reference.wav" type="audio/wav"></audio></td>
+        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q19_pitch_negative_LibriTTS__203__203_132069_000005_000002_edited.wav" type="audio/wav"></audio></td>
         <td class="select-cell">
-          <label>Which clip sounds lower-pitched?</label>
           <select class="overall" name="Q19_overall" required>
-            <option selected value="0">- select one -</option>
+            <option selected value="0">Select Clip A or B</option>
             <option value="A">Clip A</option>
             <option value="B">Clip B</option>
           </select>
         </td>
         <td class="center"><input name="Q19_confidence" type="radio" value="1" required></td><td class="center"><input name="Q19_confidence" type="radio" value="2" required></td><td class="center"><input name="Q19_confidence" type="radio" value="3" required></td><td class="center"><input name="Q19_confidence" type="radio" value="4" required></td><td class="center"><input name="Q19_confidence" type="radio" value="5" required></td><td class="center"><input name="Q19_confidence" type="radio" value="6" required></td><td class="center"><input name="Q19_confidence" type="radio" value="7" required></td>
       </tr>
-      <tr data-qid="Q20" data-attribute="pitch" data-target-direction="positive" data-correct-choice="B">
-        <td class="qid"><strong>Q20</strong><span>higher-pitched</span></td>
-        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q20_pitch_positive_GLOBE__train__S_012138__00480100_000001.v2.vad_reference.wav" type="audio/wav"></audio></td>
+      <tr data-qid="Q20" data-attribute="pitch" data-target-direction="positive" data-correct-choice="A">
+        <td class="qid"><strong>Q20</strong></td>
         <td class="audio-cell"><audio controls preload="none"><source src="audio/Q20_pitch_positive_GLOBE__train__S_012138__00480100_000001.v2.vad_edited.wav" type="audio/wav"></audio></td>
+        <td class="audio-cell"><audio controls preload="none"><source src="audio/Q20_pitch_positive_GLOBE__train__S_012138__00480100_000001.v2.vad_reference.wav" type="audio/wav"></audio></td>
         <td class="select-cell">
-          <label>Which clip sounds higher-pitched?</label>
           <select class="overall" name="Q20_overall" required>
-            <option selected value="0">- select one -</option>
+            <option selected value="0">Select Clip A or B</option>
             <option value="A">Clip A</option>
             <option value="B">Clip B</option>
           </select>
