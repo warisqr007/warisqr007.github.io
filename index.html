@@ -1,106 +1,751 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Personal webpage">
-    <title>Your Name - Personal Webpage</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-        }
-        section {
-            padding: 20px 0;
-            border-bottom: 1px solid #ccc;
-        }
-        h1, h2 {
-            color: #333;
-        }
-        a {
-            color: #333;
-            text-decoration: none;
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #333;
-            color: #fff;
-            margin-top: 20px;
-        }
-        .contact-info a {
-            color: #333;
-            margin-right: 10px;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Waris Quamer | Speech AI Researcher</title>
+  <meta name="description" content="Waris Quamer is a speech AI researcher at Texas A&M University working on real-time speech anonymization, voice conversion, accent conversion, controllable speech synthesis, and privacy-preserving speech technology.">
+  <meta name="author" content="Waris Quamer">
+  <meta name="keywords" content="Waris Quamer, speech AI, speech anonymization, voice conversion, accent conversion, speech privacy, text-to-speech, Texas A&M University">
+  <link rel="canonical" href="https://warisqr007.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Waris Quamer | Speech AI Researcher">
+  <meta property="og:description" content="Research in real-time speech anonymization, voice conversion, accent conversion, and privacy-preserving speech synthesis.">
+  <meta property="og:url" content="https://warisqr007.github.io/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Waris Quamer | Speech AI Researcher">
+  <meta name="twitter:description" content="Speech AI research at the intersection of privacy, controllability, and low-latency synthesis.">
+  <meta name="theme-color" content="#f7f4ef">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Waris Quamer",
+    "url": "https://warisqr007.github.io/",
+    "email": "mailto:quamer.waris@tamu.edu",
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": "Texas A&M University"
+    },
+    "jobTitle": "Speech AI Researcher",
+    "sameAs": [
+      "https://github.com/warisqr007",
+      "https://linkedin.com/in/warisquamer",
+      "https://scholar.google.com/citations?hl=en&user=D3eJrocAAAAJ&view_op=list_works&sortby=pubdate"
+    ],
+    "knowsAbout": [
+      "Speech anonymization",
+      "Voice conversion",
+      "Accent conversion",
+      "Speech synthesis",
+      "Privacy-preserving machine learning"
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f7f4ef;
+      --surface: #fffdfa;
+      --surface-2: #f1eee8;
+      --ink: #1f2933;
+      --muted: #66717f;
+      --line: #ddd6ca;
+      --maroon: #6f1d1b;
+      --teal: #0f6f68;
+      --gold: #b7791f;
+      --shadow: 0 18px 45px rgba(31, 41, 51, 0.08);
+      --radius: 8px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: var(--teal); text-decoration-thickness: 0.08em; text-underline-offset: 0.2em; }
+    a:hover { color: var(--maroon); }
+
+    .skip-link {
+      position: absolute;
+      left: 12px;
+      top: -60px;
+      z-index: 10;
+      background: var(--ink);
+      color: white;
+      padding: 8px 12px;
+      border-radius: 6px;
+    }
+
+    .skip-link:focus { top: 12px; }
+
+    .shell {
+      width: min(100% - 32px, var(--max));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 310px minmax(0, 1fr);
+      gap: 34px;
+      padding: 34px 0 56px;
+    }
+
+    .profile {
+      position: sticky;
+      top: 24px;
+      align-self: start;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .profile-top {
+      padding: 28px;
+      background: linear-gradient(135deg, rgba(111, 29, 27, 0.1), rgba(15, 111, 104, 0.12));
+      border-bottom: 1px solid var(--line);
+    }
+
+    .avatar {
+      width: 112px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+      background: radial-gradient(circle at 30% 25%, #f3d28b, #9b2c2c 55%, #143d3a 100%);
+      color: white;
+      font-size: 34px;
+      font-weight: 800;
+      letter-spacing: 0;
+      box-shadow: 0 14px 28px rgba(31, 41, 51, 0.18);
+    }
+
+    h1, h2, h3 { line-height: 1.18; letter-spacing: 0; }
+
+    h1 {
+      margin: 0;
+      font-size: 34px;
+    }
+
+    .role {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .profile-body { padding: 22px 28px 28px; }
+
+    .contact-list,
+    .nav-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .contact-list a,
+    .nav-list a,
+    .button-link,
+    .pub-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 36px;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .icon {
+      width: 20px;
+      min-width: 20px;
+      text-align: center;
+      color: var(--maroon);
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .profile hr {
+      border: 0;
+      border-top: 1px solid var(--line);
+      margin: 20px 0;
+    }
+
+    .nav-list a {
+      width: 100%;
+      padding: 7px 8px;
+      border-radius: 6px;
+    }
+
+    .nav-list a:hover,
+    .nav-list a:focus {
+      background: var(--surface-2);
+      color: var(--maroon);
+    }
+
+    main { min-width: 0; }
+
+    .intro {
+      padding: 18px 0 26px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--maroon);
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .intro h2 {
+      margin: 0;
+      font-size: clamp(32px, 4vw, 56px);
+      max-width: 820px;
+    }
+
+    .intro p {
+      max-width: 790px;
+      margin: 18px 0 0;
+      font-size: 18px;
+      color: #3d4852;
+    }
+
+    .quick-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .button-link {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+
+    .button-link.primary {
+      background: var(--ink);
+      color: white;
+      border-color: var(--ink);
+    }
+
+    .button-link:hover { transform: translateY(-1px); }
+
+    section {
+      padding: 34px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    section:last-of-type { border-bottom: 0; }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: 26px;
+    }
+
+    .section-note {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .news-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .news-list li {
+      display: grid;
+      grid-template-columns: 90px minmax(0, 1fr);
+      gap: 14px;
+      align-items: baseline;
+    }
+
+    .date {
+      color: var(--maroon);
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .pub-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .filter-button {
+      min-height: 36px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--surface);
+      color: var(--ink);
+      padding: 7px 10px;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .filter-button[aria-pressed="true"] {
+      background: var(--maroon);
+      border-color: var(--maroon);
+      color: white;
+    }
+
+    .publication-list,
+    .project-grid,
+    .two-col,
+    .fact-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .publication {
+      display: grid;
+      grid-template-columns: 118px minmax(0, 1fr);
+      gap: 18px;
+      padding: 18px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .venue {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 42px;
+      border-radius: 6px;
+      background: #f4eadb;
+      color: var(--maroon);
+      font-weight: 800;
+      text-align: center;
+      padding: 7px;
+      font-size: 13px;
+    }
+
+    .publication h3,
+    .project h3,
+    .info-block h3 {
+      margin: 0 0 6px;
+      font-size: 18px;
+    }
+
+    .authors,
+    .summary,
+    .meta {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .summary { margin-top: 8px; color: #3d4852; }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .pub-link {
+      min-height: 30px;
+      color: var(--teal);
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .project {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .project-media {
+      aspect-ratio: 16 / 8;
+      background: var(--surface-2);
+      border-bottom: 1px solid var(--line);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+
+    .project-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 12px;
+    }
+
+    .project-body { padding: 16px; }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 12px;
+    }
+
+    .tag {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 3px 8px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      background: #fbf7f0;
+    }
+
+    .two-col { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .info-block {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+    }
+
+    .plain-list {
+      margin: 10px 0 0;
+      padding-left: 18px;
+    }
+
+    .plain-list li + li { margin-top: 7px; }
+
+    .fact-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .fact {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px;
+    }
+
+    .fact strong {
+      display: block;
+      color: var(--maroon);
+      font-size: 24px;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    footer {
+      color: var(--muted);
+      padding-top: 28px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .shell { grid-template-columns: 1fr; padding-top: 16px; }
+      .profile { position: static; }
+      .profile-top { display: grid; grid-template-columns: 92px 1fr; gap: 18px; align-items: center; }
+      .avatar { width: 92px; margin: 0; }
+      .profile-body { display: grid; grid-template-columns: 1fr; gap: 0; }
+      .project-grid,
+      .two-col,
+      .fact-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 620px) {
+      .shell { width: min(100% - 22px, var(--max)); }
+      .profile-top { grid-template-columns: 1fr; }
+      .publication { grid-template-columns: 1fr; }
+      .venue { width: fit-content; min-width: 96px; }
+      .news-list li { grid-template-columns: 1fr; gap: 2px; }
+      .section-head { display: block; }
+      .section-note { margin-top: 6px; }
+      h1 { font-size: 30px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .button-link:hover { transform: none; }
+    }
+  </style>
 </head>
 <body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <div class="shell">
+    <aside class="profile" aria-label="Profile">
+      <div class="profile-top">
+        <div class="avatar" aria-hidden="true">WQ</div>
+        <div>
+          <h1>Waris Quamer</h1>
+          <p class="role">Speech AI Researcher<br>Texas A&amp;M University</p>
+        </div>
+      </div>
+      <div class="profile-body">
+        <ul class="contact-list" aria-label="Contact links">
+          <li><a href="mailto:quamer.waris@tamu.edu"><span class="icon">@</span>quamer.waris@tamu.edu</a></li>
+          <li><a href="https://scholar.google.com/citations?hl=en&amp;user=D3eJrocAAAAJ&amp;view_op=list_works&amp;sortby=pubdate"><span class="icon">S</span>Google Scholar</a></li>
+          <li><a href="https://github.com/warisqr007"><span class="icon">G</span>GitHub</a></li>
+          <li><a href="https://linkedin.com/in/warisquamer"><span class="icon">in</span>LinkedIn</a></li>
+          <li><a href="Resume___Waris_Quamer.pdf"><span class="icon">CV</span>Resume / CV</a></li>
+        </ul>
+        <hr>
+        <nav aria-label="Page sections">
+          <ul class="nav-list">
+            <li><a href="#about">About</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#service">Service</a></li>
+          </ul>
+        </nav>
+      </div>
+    </aside>
 
-    <!-- Header Section -->
-    <header>
-        <h1 style="color: #fff;">Waris Quamer</h1>
-        <p>Your tagline or profession here (e.g., Data Scientist, Software Developer)</p>
-    </header>
+    <main id="content">
+      <header class="intro" id="about">
+        <p class="eyebrow">Privacy-preserving and controllable speech technology</p>
+        <h2>Building low-latency speech systems that preserve content while controlling identity, accent, and expression.</h2>
+        <p>
+          I work on speech AI at the intersection of real-time voice conversion, speaker anonymization, accent conversion, controllable speech synthesis, and perceptual evaluation. My recent work studies how to make speech systems usable under strict latency constraints while preserving intelligibility, naturalness, and privacy.
+        </p>
+        <div class="quick-actions" aria-label="Primary links">
+          <a class="button-link primary" href="#publications">View Publications</a>
+          <a class="button-link" href="#projects">Listen to Demos</a>
+          <a class="button-link" href="Resume___Waris_Quamer.pdf">Download CV</a>
+        </div>
+      </header>
 
-    <div class="container">
+      <section id="news" aria-labelledby="news-title">
+        <div class="section-head">
+          <h2 id="news-title">News</h2>
+          <p class="section-note">Recent updates from papers, demos, and research activity.</p>
+        </div>
+        <ul class="news-list">
+          <li><span class="date">2026.02</span><span><a href="https://arxiv.org/abs/2602.09389">TVTSyn</a> is available on arXiv, introducing content-synchronous time-varying timbre for streaming voice conversion and anonymization.</span></li>
+          <li><span class="date">2025</span><span><a href="demos/promptdub/">PromptDub</a> explores controllable expressive dubbing with multimodal foundation models.</span></li>
+          <li><span class="date">2024.10</span><span>The revised version of <a href="https://arxiv.org/abs/2406.09277">End-to-end streaming model for low-latency speech anonymization</a> is available on arXiv.</span></li>
+          <li><span class="date">2024.08</span><span><a href="https://arxiv.org/abs/2408.10997">Disentangling segmental and prosodic factors to non-native speech comprehensibility</a> is available on arXiv.</span></li>
+        </ul>
+      </section>
 
-        <!-- Introduction Section -->
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Hello! I'm a [Your profession] with experience in [field or skills, e.g., web development, data analysis]. I am passionate about [mention interests, e.g., creating user-friendly interfaces, analyzing data to drive decisions, etc.].</p>
-        </section>
+      <section id="publications" aria-labelledby="publications-title">
+        <div class="section-head">
+          <h2 id="publications-title">Selected Publications</h2>
+          <p class="section-note">Use the filters for quick scanning.</p>
+        </div>
+        <div class="pub-toolbar" aria-label="Publication filters">
+          <button class="filter-button" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter-button" type="button" data-filter="privacy" aria-pressed="false">Privacy</button>
+          <button class="filter-button" type="button" data-filter="accent" aria-pressed="false">Accent</button>
+          <button class="filter-button" type="button" data-filter="synthesis" aria-pressed="false">Synthesis</button>
+        </div>
+        <div class="publication-list">
+          <article class="publication" data-tags="privacy synthesis">
+            <div><span class="venue">arXiv 2026</span></div>
+            <div>
+              <h3>TVTSyn: Content-Synchronous Time-Varying Timbre for Streaming Voice Conversion and Anonymization</h3>
+              <p class="authors"><strong>Waris Quamer</strong>, Mu-Ruei Tseng, Ghady Nasrallah, Ricardo Gutierrez-Osuna</p>
+              <p class="summary">Introduces a streamable synthesizer that aligns speaker identity and content at frame level, reaching under 80 ms GPU latency while improving naturalness, transfer, and anonymization.</p>
+              <div class="links">
+                <a class="pub-link" href="https://arxiv.org/abs/2602.09389">Paper</a>
+              </div>
+            </div>
+          </article>
 
-        <!-- Experience Section -->
-        <section id="experience">
-            <h2>Experience</h2>
-            <ul>
-                <li><strong>Job Title</strong> at Company Name - [Year - Year]</li>
-                <li><strong>Job Title</strong> at Company Name - [Year - Year]</li>
-                <!-- Add more as needed -->
+          <article class="publication" data-tags="privacy synthesis">
+            <div><span class="venue">SLT 2024</span></div>
+            <div>
+              <h3>End-to-end Streaming Model for Low-Latency Speech Anonymization</h3>
+              <p class="authors"><strong>Waris Quamer</strong>, Ricardo Gutierrez-Osuna</p>
+              <p class="summary">A streaming speech anonymization model with full and lite versions, reducing latency to 230 ms and 66 ms while preserving naturalness, intelligibility, and privacy.</p>
+              <div class="links">
+                <a class="pub-link" href="https://arxiv.org/abs/2406.09277">Paper</a>
+                <a class="pub-link" href="demos/stream-anonymization/">Demo</a>
+                <a class="pub-link" href="demos/anon-stream-latency/">Latency Samples</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="publication" data-tags="accent synthesis">
+            <div><span class="venue">arXiv 2024</span></div>
+            <div>
+              <h3>Disentangling Segmental and Prosodic Factors to Non-native Speech Comprehensibility</h3>
+              <p class="authors"><strong>Waris Quamer</strong>, Ricardo Gutierrez-Osuna</p>
+              <p class="summary">Studies independent control of segmental and prosodic accent cues and finds that segmental features have a larger impact on perceived comprehensibility than prosody.</p>
+              <div class="links">
+                <a class="pub-link" href="https://arxiv.org/abs/2408.10997">Paper</a>
+                <a class="pub-link" href="demos/prosody-accent-conversion/">Demo</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="publication" data-tags="accent synthesis">
+            <div><span class="venue">Demo</span></div>
+            <div>
+              <h3>Zero-Shot Foreign Accent Conversion without a Native Reference</h3>
+              <p class="authors"><strong>Waris Quamer</strong>, Anurag Das, John Levis, Evgeny Chukharev-Hudilainen, Ricardo Gutierrez-Osuna</p>
+              <p class="summary">Reference-free accent conversion samples using L2-ARCTIC speech, comparing baseline and proposed systems for non-native to American-accent conversion.</p>
+              <div class="links">
+                <a class="pub-link" href="demos/zero-shot-reference-free-ac/">Demo</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="publication" data-tags="synthesis">
+            <div><span class="venue">Demo</span></div>
+            <div>
+              <h3>PromptDub: Controllable Expressive Speech Synthesis using Multimodal Foundation Models</h3>
+              <p class="authors"><strong>Waris Quamer</strong>, Fanjie Kong, Abhinav Jain, Abhishek Yanamandra, Tuan Dinh, Zhu Liu, Vimal Bhat</p>
+              <p class="summary">A controllable dubbing pipeline that uses multimodal scene, audio, and language cues to generate editable expressive TTS prompts.</p>
+              <div class="links">
+                <a class="pub-link" href="demos/promptdub/">Demo</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="publication" data-tags="privacy synthesis">
+            <div><span class="venue">Study</span></div>
+            <div>
+              <h3>RAFT-Edit Listening Studies</h3>
+              <p class="authors">Trait-level evaluation pages for controlled edits of age presentation, gender presentation, pitch, and voice quality.</p>
+              <p class="summary">Interactive A/B listening studies for source-relative static-trait manipulation in speech privacy workflows.</p>
+              <div class="links">
+                <a class="pub-link" href="user-study/RAFT-Edit/">Listening Studies</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="projects" aria-labelledby="projects-title">
+        <div class="section-head">
+          <h2 id="projects-title">Projects and Demos</h2>
+          <p class="section-note">Existing audio demos are preserved and linked here.</p>
+        </div>
+        <div class="project-grid">
+          <article class="project">
+            <div class="project-media"><img src="demos/stream-anonymization/blockdiagram.svg" alt="Block diagram for streaming speech anonymization"></div>
+            <div class="project-body">
+              <h3>Streaming Speech Anonymization</h3>
+              <p class="summary">Low-latency anonymization with full and lite model variants, including audio samples and latency-focused comparisons.</p>
+              <div class="links"><a class="pub-link" href="demos/stream-anonymization/">Open Demo</a><a class="pub-link" href="demos/anon-stream-latency/">Latency Demo</a></div>
+              <div class="tags"><span class="tag">Privacy</span><span class="tag">Streaming</span><span class="tag">Speech synthesis</span></div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-media"><img src="demos/prosody-accent-conversion/blockdiagram.svg" alt="Block diagram for prosody-aware accent conversion"></div>
+            <div class="project-body">
+              <h3>Prosody-Aware Accent Conversion</h3>
+              <p class="summary">Independent manipulation of segmental and prosodic channels to study non-native speech comprehensibility.</p>
+              <div class="links"><a class="pub-link" href="demos/prosody-accent-conversion/">Open Demo</a><a class="pub-link" href="demos/zero-shot-reference-free-ac/">Zero-shot Demo</a></div>
+              <div class="tags"><span class="tag">Accent conversion</span><span class="tag">Prosody</span><span class="tag">Perception</span></div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-media"><img src="demos/darkstream/blockdiagram.svg" alt="Block diagram for DarkStream real-time speech anonymization"></div>
+            <div class="project-body">
+              <h3>DarkStream</h3>
+              <p class="summary">A real-time speech anonymization prototype focused on causal waveform encoding and direct waveform generation.</p>
+              <div class="links"><a class="pub-link" href="demos/darkstream/">Open Demo</a></div>
+              <div class="tags"><span class="tag">Real-time</span><span class="tag">Anonymization</span><span class="tag">Low latency</span></div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-media"><img src="demos/pca-voice-editing/image.png" alt="Visualization for privacy and quality tradeoffs in speaker anonymization"></div>
+            <div class="project-body">
+              <h3>Voice Attribute Editing</h3>
+              <p class="summary">Audio demonstrations around controllable speaker-attribute edits and privacy-quality tradeoffs.</p>
+              <div class="links"><a class="pub-link" href="demos/pca-voice-editing/">Open Demo</a><a class="pub-link" href="demos/rectified-flow/">Rectified Flow Demo</a></div>
+              <div class="tags"><span class="tag">Voice editing</span><span class="tag">Privacy</span><span class="tag">Evaluation</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="experience" aria-labelledby="experience-title">
+        <div class="section-head">
+          <h2 id="experience-title">Experience and Education</h2>
+          <p class="section-note">Selected academic and research context.</p>
+        </div>
+        <div class="two-col">
+          <article class="info-block">
+            <h3>Education</h3>
+            <ul class="plain-list">
+              <li>Texas A&amp;M University, Department of Computer Science and Engineering. Research focus: speech AI, privacy, voice conversion, and speech synthesis.</li>
+              <li>Additional degree timeline, advisor, thesis, and prior education details are available in the CV.</li>
             </ul>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects">
-            <h2>Projects</h2>
-            <ul>
-                <li><a href="#">Project Name 1</a> - Brief description of the project.</li>
-                <li><a href="#">Project Name 2</a> - Brief description of the project.</li>
-                <!-- Add more projects as needed -->
+          </article>
+          <article class="info-block">
+            <h3>Research Experience</h3>
+            <ul class="plain-list">
+              <li>Speech privacy and anonymization: low-latency, end-to-end systems for preserving linguistic content while reducing speaker identity leakage.</li>
+              <li>Accent conversion and intelligibility: controllable segmental/prosodic modeling for non-native speech studies.</li>
+              <li>Expressive speech synthesis: multimodal prompting and controllable dubbing through PromptDub.</li>
             </ul>
-        </section>
+          </article>
+        </div>
+      </section>
 
-        <!-- Contact Section -->
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Feel free to reach out to me at:</p>
-            <p class="contact-info">
-                <a href="mailto:quamer.waris@tamu.edu">quamer.waris@tamu.edu</a><span> | </span>
-                <a href="https://linkedin.com/in/warisquamer" target="_blank">LinkedIn</a><span> | </span>
-                <a href="https://github.com/warisqr007" target="_blank">GitHub</a>
-            </p>
-        </section>
+      <section id="service" aria-labelledby="service-title">
+        <div class="section-head">
+          <h2 id="service-title">Service, Skills, and Keywords</h2>
+          <p class="section-note">Useful for SEO and quick academic scanning.</p>
+        </div>
+        <div class="fact-grid">
+          <div class="fact"><strong>Speech</strong><span>Anonymization, voice conversion, accent conversion, TTS, expressive dubbing.</span></div>
+          <div class="fact"><strong>ML</strong><span>Representation learning, disentanglement, vector quantization, streaming inference.</span></div>
+          <div class="fact"><strong>Eval</strong><span>Perceptual listening tests, speaker verification privacy metrics, intelligibility and naturalness.</span></div>
+        </div>
+      </section>
 
-    </div>
+      <footer>
+        <p>&copy; <span id="year">2026</span> Waris Quamer.</p>
+      </footer>
+    </main>
+  </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Waris Quamer. All rights reserved.</p>
-    </footer>
+  <script>
+    const buttons = document.querySelectorAll(".filter-button");
+    const publications = document.querySelectorAll(".publication");
 
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const filter = button.dataset.filter;
+        buttons.forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
+        publications.forEach((publication) => {
+          const tags = publication.dataset.tags.split(" ");
+          const visible = filter === "all" || tags.includes(filter);
+          publication.hidden = !visible;
+        });
+      });
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
