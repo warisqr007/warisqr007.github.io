@@ -52,6 +52,13 @@ def copy_as_pcm16(source: Path, destination: Path) -> None:
     sf.write(destination, audio, sample_rate, subtype="PCM_16")
 
 
+def normalize_transcript(value: str) -> str:
+    text = " ".join(value.strip().lower().split())
+    if text and text[-1] not in ".?!":
+        text += "."
+    return text
+
+
 def main() -> None:
     if not SOURCE_MANIFEST.exists():
         raise FileNotFoundError(f"Source manifest not found: {SOURCE_MANIFEST}")
@@ -106,7 +113,7 @@ def main() -> None:
             sample = {
                 "id": f"{direction}_{demo_index:02d}",
                 "label": f"Sample {demo_index:02d}",
-                "transcript": row["transcript"].strip(),
+                "transcript": normalize_transcript(row["transcript"]),
                 "original_audio": f"audio/{direction}/{original_name}",
                 "converted_audio": f"audio/{direction}/{converted_name}",
                 "original_duration_sec": round(original_duration, 3),
