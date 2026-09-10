@@ -1,0 +1,345 @@
+{
+  "selection": {
+    "source": "/data/waris/code/anonymousis23.github.io/UserStudy/PHONOS-TASLP26/accent_new/selection_manifest.csv",
+    "policy": "Five highest-NISQA PHONOS outputs per direction from the manually reviewed accent-study pool.",
+    "samples_per_direction": 5
+  },
+  "directions": [
+    {
+      "id": "ame2bri",
+      "source": "General American English",
+      "target": "British English",
+      "source_code": "GAE",
+      "target_code": "BRE",
+      "label": "General American English to British English",
+      "short_label": "GAE to BRE",
+      "samples": [
+        {
+          "id": "ame2bri_01",
+          "label": "Sample 01",
+          "transcript": "AH BUT THESE HENS ANSWERED THE YOUNG MAN THESE HENS OF ARISTOCRATIC LINEAGE WOULD SCORN TO UNDERSTAND THE VULGAR LANGUAGE OF A BARN YARD FOWL",
+          "original_audio": "audio/ame2bri/sample_01_original.wav",
+          "converted_audio": "audio/ame2bri/sample_01_phonos.wav",
+          "original_duration_sec": 8.7,
+          "converted_duration_sec": 8.7
+        },
+        {
+          "id": "ame2bri_02",
+          "label": "Sample 02",
+          "transcript": "I SOON FOUND OUT THAT HE HAD CAUGHT SIGHT OF THE RELIEF ON THE ROAD AND WAS AFRAID TO SHOOT I QUICKLY MADE UP MY MIND",
+          "original_audio": "audio/ame2bri/sample_02_original.wav",
+          "converted_audio": "audio/ame2bri/sample_02_phonos.wav",
+          "original_duration_sec": 6.585,
+          "converted_duration_sec": 6.6
+        },
+        {
+          "id": "ame2bri_03",
+          "label": "Sample 03",
+          "transcript": "BREATHING DEEPLY BRION SOFTLY SPOKE THE AUTO HYPNOTIC PHRASES THAT TRIGGERED THE PROCESS",
+          "original_audio": "audio/ame2bri/sample_03_original.wav",
+          "converted_audio": "audio/ame2bri/sample_03_phonos.wav",
+          "original_duration_sec": 6.635,
+          "converted_duration_sec": 6.64
+        },
+        {
+          "id": "ame2bri_04",
+          "label": "Sample 04",
+          "transcript": "A GENTLE KICK FROM THE TALL BOY IN THE BENCH BEHIND URGED STEPHEN TO ASK A DIFFICULT QUESTION",
+          "original_audio": "audio/ame2bri/sample_04_original.wav",
+          "converted_audio": "audio/ame2bri/sample_04_phonos.wav",
+          "original_duration_sec": 6.61,
+          "converted_duration_sec": 6.62
+        },
+        {
+          "id": "ame2bri_05",
+          "label": "Sample 05",
+          "transcript": "TO EMBARRASS THIS DAMAGING EXPOSURE JUDGE LECOMPTE ISSUED A WRIT AGAINST THE EX GOVERNOR ON A FRIVOLOUS CHARGE OF CONTEMPT",
+          "original_audio": "audio/ame2bri/sample_05_original.wav",
+          "converted_audio": "audio/ame2bri/sample_05_phonos.wav",
+          "original_duration_sec": 8.93,
+          "converted_duration_sec": 8.94
+        }
+      ]
+    },
+    {
+      "id": "ame2ind",
+      "source": "General American English",
+      "target": "Indian English",
+      "source_code": "GAE",
+      "target_code": "INE",
+      "label": "General American English to Indian English",
+      "short_label": "GAE to INE",
+      "samples": [
+        {
+          "id": "ame2ind_01",
+          "label": "Sample 01",
+          "transcript": "A GENTLE KICK FROM THE TALL BOY IN THE BENCH BEHIND URGED STEPHEN TO ASK A DIFFICULT QUESTION",
+          "original_audio": "audio/ame2ind/sample_01_original.wav",
+          "converted_audio": "audio/ame2ind/sample_01_phonos.wav",
+          "original_duration_sec": 6.61,
+          "converted_duration_sec": 6.62
+        },
+        {
+          "id": "ame2ind_02",
+          "label": "Sample 02",
+          "transcript": "THEN THEY STARTED ON AGAIN AND TWO HOURS LATER CAME IN SIGHT OF THE HOUSE OF DOCTOR PIPT",
+          "original_audio": "audio/ame2ind/sample_02_original.wav",
+          "converted_audio": "audio/ame2ind/sample_02_phonos.wav",
+          "original_duration_sec": 6.285,
+          "converted_duration_sec": 6.3
+        },
+        {
+          "id": "ame2ind_03",
+          "label": "Sample 03",
+          "transcript": "I HAVE NEVER KNOWN A MADGE AND YET FROM MY BOYHOOD UPWARD I HAVE DESIRED TO MEET ONE",
+          "original_audio": "audio/ame2ind/sample_03_original.wav",
+          "converted_audio": "audio/ame2ind/sample_03_phonos.wav",
+          "original_duration_sec": 5.71,
+          "converted_duration_sec": 5.72
+        },
+        {
+          "id": "ame2ind_04",
+          "label": "Sample 04",
+          "transcript": "BREATHING DEEPLY BRION SOFTLY SPOKE THE AUTO HYPNOTIC PHRASES THAT TRIGGERED THE PROCESS",
+          "original_audio": "audio/ame2ind/sample_04_original.wav",
+          "converted_audio": "audio/ame2ind/sample_04_phonos.wav",
+          "original_duration_sec": 6.635,
+          "converted_duration_sec": 6.64
+        },
+        {
+          "id": "ame2ind_05",
+          "label": "Sample 05",
+          "transcript": "I SOON FOUND OUT THAT HE HAD CAUGHT SIGHT OF THE RELIEF ON THE ROAD AND WAS AFRAID TO SHOOT I QUICKLY MADE UP MY MIND",
+          "original_audio": "audio/ame2ind/sample_05_original.wav",
+          "converted_audio": "audio/ame2ind/sample_05_phonos.wav",
+          "original_duration_sec": 6.585,
+          "converted_duration_sec": 6.6
+        }
+      ]
+    },
+    {
+      "id": "ame2spn",
+      "source": "General American English",
+      "target": "Spanish-accented English",
+      "source_code": "GAE",
+      "target_code": "SPE",
+      "label": "General American English to Spanish-accented English",
+      "short_label": "GAE to SPE",
+      "samples": [
+        {
+          "id": "ame2spn_01",
+          "label": "Sample 01",
+          "transcript": "A GENTLE KICK FROM THE TALL BOY IN THE BENCH BEHIND URGED STEPHEN TO ASK A DIFFICULT QUESTION",
+          "original_audio": "audio/ame2spn/sample_01_original.wav",
+          "converted_audio": "audio/ame2spn/sample_01_phonos.wav",
+          "original_duration_sec": 6.61,
+          "converted_duration_sec": 6.62
+        },
+        {
+          "id": "ame2spn_02",
+          "label": "Sample 02",
+          "transcript": "TO EMBARRASS THIS DAMAGING EXPOSURE JUDGE LECOMPTE ISSUED A WRIT AGAINST THE EX GOVERNOR ON A FRIVOLOUS CHARGE OF CONTEMPT",
+          "original_audio": "audio/ame2spn/sample_02_original.wav",
+          "converted_audio": "audio/ame2spn/sample_02_phonos.wav",
+          "original_duration_sec": 8.93,
+          "converted_duration_sec": 8.94
+        },
+        {
+          "id": "ame2spn_03",
+          "label": "Sample 03",
+          "transcript": "SURELY IT MUST BE BECAUSE WE ARE IN DANGER OF LOVING EACH OTHER TOO WELL OF LOSING SIGHT OF THE CREATOR IN IDOLATRY OF THE CREATURE",
+          "original_audio": "audio/ame2spn/sample_03_original.wav",
+          "converted_audio": "audio/ame2spn/sample_03_phonos.wav",
+          "original_duration_sec": 7.595,
+          "converted_duration_sec": 7.6
+        },
+        {
+          "id": "ame2spn_04",
+          "label": "Sample 04",
+          "transcript": "UNCAS OCCUPIED A DISTANT CORNER IN A RECLINING ATTITUDE BEING RIGIDLY BOUND BOTH HANDS AND FEET BY STRONG AND PAINFUL WITHES",
+          "original_audio": "audio/ame2spn/sample_04_original.wav",
+          "converted_audio": "audio/ame2spn/sample_04_phonos.wav",
+          "original_duration_sec": 8.23,
+          "converted_duration_sec": 8.24
+        },
+        {
+          "id": "ame2spn_05",
+          "label": "Sample 05",
+          "transcript": "THEY DID NOT KNOW WHO I WAS AND DID NOT LIKE TO ASK ME WHILST I THOUGHT IT BETTER TO PRESERVE A MODEST SILENCE",
+          "original_audio": "audio/ame2spn/sample_05_original.wav",
+          "converted_audio": "audio/ame2spn/sample_05_phonos.wav",
+          "original_duration_sec": 7.445,
+          "converted_duration_sec": 7.46
+        }
+      ]
+    },
+    {
+      "id": "bri2ame",
+      "source": "British English",
+      "target": "General American English",
+      "source_code": "BRE",
+      "target_code": "GAE",
+      "label": "British English to General American English",
+      "short_label": "BRE to GAE",
+      "samples": [
+        {
+          "id": "bri2ame_01",
+          "label": "Sample 01",
+          "transcript": "THEY WROTE VIOLENT CASES SIGNAL TO NOISE AND THE TRAGICAL COMEDY OR COMICAL TRAGEDY OF MISTER PUNCH",
+          "original_audio": "audio/bri2ame/sample_01_original.wav",
+          "converted_audio": "audio/bri2ame/sample_01_phonos.wav",
+          "original_duration_sec": 7.424,
+          "converted_duration_sec": 7.44
+        },
+        {
+          "id": "bri2ame_02",
+          "label": "Sample 02",
+          "transcript": "JASMINE AND AIM VISITED CIARA AND OLIVER IN ST HELENS",
+          "original_audio": "audio/bri2ame/sample_02_original.wav",
+          "converted_audio": "audio/bri2ame/sample_02_phonos.wav",
+          "original_duration_sec": 5.632,
+          "converted_duration_sec": 5.64
+        },
+        {
+          "id": "bri2ame_03",
+          "label": "Sample 03",
+          "transcript": "MONTY PYTHON AND THE HOLY GRAIL IS SLAPSTICK COMEDY FILM CONCERNING THE ARTHURIAN LEGEND",
+          "original_audio": "audio/bri2ame/sample_03_original.wav",
+          "converted_audio": "audio/bri2ame/sample_03_phonos.wav",
+          "original_duration_sec": 5.803,
+          "converted_duration_sec": 5.82
+        },
+        {
+          "id": "bri2ame_04",
+          "label": "Sample 04",
+          "transcript": "MAINTAINING THE RATIO THERE WERE SIX WINDOWS DOWN EACH SIDE AND TWO AT EITHER END",
+          "original_audio": "audio/bri2ame/sample_04_original.wav",
+          "converted_audio": "audio/bri2ame/sample_04_phonos.wav",
+          "original_duration_sec": 5.547,
+          "converted_duration_sec": 5.56
+        },
+        {
+          "id": "bri2ame_05",
+          "label": "Sample 05",
+          "transcript": "ARISTOTLE THOUGHT THAT THE RAINBOW WAS CAUSED BY REFLECTION OF THE SUN S RAYS BY THE RAIN",
+          "original_audio": "audio/bri2ame/sample_05_original.wav",
+          "converted_audio": "audio/bri2ame/sample_05_phonos.wav",
+          "original_duration_sec": 5.973,
+          "converted_duration_sec": 5.98
+        }
+      ]
+    },
+    {
+      "id": "ind2ame",
+      "source": "Indian English",
+      "target": "General American English",
+      "source_code": "INE",
+      "target_code": "GAE",
+      "label": "Indian English to General American English",
+      "short_label": "INE to GAE",
+      "samples": [
+        {
+          "id": "ind2ame_01",
+          "label": "Sample 01",
+          "transcript": "a mailman poses with his cart in front of a residential building.",
+          "original_audio": "audio/ind2ame/sample_01_original.wav",
+          "converted_audio": "audio/ind2ame/sample_01_phonos.wav",
+          "original_duration_sec": 5.724,
+          "converted_duration_sec": 5.74
+        },
+        {
+          "id": "ind2ame_02",
+          "label": "Sample 02",
+          "transcript": "the number of archived stories quickly exploded from hundreds to thousands.",
+          "original_audio": "audio/ind2ame/sample_02_original.wav",
+          "converted_audio": "audio/ind2ame/sample_02_phonos.wav",
+          "original_duration_sec": 5.052,
+          "converted_duration_sec": 5.06
+        },
+        {
+          "id": "ind2ame_03",
+          "label": "Sample 03",
+          "transcript": "quill pens are still used today mainly by professional scribes and calligraphers.",
+          "original_audio": "audio/ind2ame/sample_03_original.wav",
+          "converted_audio": "audio/ind2ame/sample_03_phonos.wav",
+          "original_duration_sec": 5.276,
+          "converted_duration_sec": 5.28
+        },
+        {
+          "id": "ind2ame_04",
+          "label": "Sample 04",
+          "transcript": "the issuance of a tornado warning indicates that residents should take immediate safety precautions.",
+          "original_audio": "audio/ind2ame/sample_04_original.wav",
+          "converted_audio": "audio/ind2ame/sample_04_phonos.wav",
+          "original_duration_sec": 6.204,
+          "converted_duration_sec": 6.22
+        },
+        {
+          "id": "ind2ame_05",
+          "label": "Sample 05",
+          "transcript": "his chief characteristics are extreme refinement and charm, poetic sentiment, and beauty of surface.",
+          "original_audio": "audio/ind2ame/sample_05_original.wav",
+          "converted_audio": "audio/ind2ame/sample_05_phonos.wav",
+          "original_duration_sec": 6.364,
+          "converted_duration_sec": 6.38
+        }
+      ]
+    },
+    {
+      "id": "spn2ame",
+      "source": "Spanish-accented English",
+      "target": "General American English",
+      "source_code": "SPE",
+      "target_code": "GAE",
+      "label": "Spanish-accented English to General American English",
+      "short_label": "SPE to GAE",
+      "samples": [
+        {
+          "id": "spn2ame_01",
+          "label": "Sample 01",
+          "transcript": "AS YOU CAN SEE SOFIT IS THE CURRENT LAYER BUT IF WE USE A DIMENSION",
+          "original_audio": "audio/spn2ame/sample_01_original.wav",
+          "converted_audio": "audio/spn2ame/sample_01_phonos.wav",
+          "original_duration_sec": 5.535,
+          "converted_duration_sec": 5.54
+        },
+        {
+          "id": "spn2ame_02",
+          "label": "Sample 02",
+          "transcript": "AND I THOUGHT THIS DETAIL WOULD BE INTERESTING TO SHOW AND I GOT QUITE A LOT OF RESPONSE",
+          "original_audio": "audio/spn2ame/sample_02_original.wav",
+          "converted_audio": "audio/spn2ame/sample_02_phonos.wav",
+          "original_duration_sec": 6.028,
+          "converted_duration_sec": 6.04
+        },
+        {
+          "id": "spn2ame_03",
+          "label": "Sample 03",
+          "transcript": "project is about sustainable food in nursery schools in spain",
+          "original_audio": "audio/spn2ame/sample_03_original.wav",
+          "converted_audio": "audio/spn2ame/sample_03_phonos.wav",
+          "original_duration_sec": 5.3,
+          "converted_duration_sec": 5.3
+        },
+        {
+          "id": "spn2ame_04",
+          "label": "Sample 04",
+          "transcript": "THE REQUEST WILL COME TO THE ROUTER RIGHT AND THEN THE ROUTER WILL SAY OH THIS IS A NEW SESSION I NEED TO SEND THIS TO THE QUEUE",
+          "original_audio": "audio/spn2ame/sample_04_original.wav",
+          "converted_audio": "audio/spn2ame/sample_04_phonos.wav",
+          "original_duration_sec": 8.115,
+          "converted_duration_sec": 8.12
+        },
+        {
+          "id": "spn2ame_05",
+          "label": "Sample 05",
+          "transcript": "IT EXACERBATES STIGMA PREJUDICE AND STEREOTYPES BUT NOTICE VOICES BETTER",
+          "original_audio": "audio/spn2ame/sample_05_original.wav",
+          "converted_audio": "audio/spn2ame/sample_05_phonos.wav",
+          "original_duration_sec": 5.739,
+          "converted_duration_sec": 5.74
+        }
+      ]
+    }
+  ]
+}
